@@ -81,9 +81,6 @@
 		                            <a href="{{ url('/events') }}">Events</a>
 		                        </li>
 		                        <li>
-		                            <a href="https://t.me/bitcorns" target="_blank">Community</a>
-		                        </li>
-		                        <li>
 		                            <a href="{{ url('/contact') }}">Contact</a>
 		                        </li>
 		                    </ul><!-- .nav-menu END -->
