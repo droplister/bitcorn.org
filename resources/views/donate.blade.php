@@ -68,7 +68,7 @@
 				<div class="xs-donation-form-wraper" >
 					<div class="xs-heading xs-mb-30">
 						<h2 class="xs-title">Make a donation</h2>
-						<p class="small">Obviously, the Bitcorn Foundation is fake, but if you are in a generous mood here are several real charities.</p>
+						<p class="small">Obviously, the Bitcorn Foundation is fake and doesn't accept donations, but here are several real charities and non-profits...</p>
 						<span class="xs-separetor v2"></span>
 					</div><!-- .xs-heading end -->
 					<form action="#" id="xs-donation-form" class="xs-donation-form">

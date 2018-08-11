@@ -55,7 +55,7 @@
 		        <nav class="xs-menus">
 		            <div class="nav-header">
 		                <div class="nav-toggle"></div>
-		                <a href="index.html" class="nav-logo">
+		                <a href="{{ url('/') }}" class="nav-logo">
 		                    <img src="assets/images/logo.png" alt="">
 		                </a>
 		            </div><!-- .nav-header END -->
