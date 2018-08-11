@@ -81,7 +81,7 @@
 		                            <a href="{{ url('/events') }}">Events</a>
 		                        </li>
 		                        <li>
-		                            <a href="{{ url('/community') }}">Community</a>
+		                            <a href="https://t.me/bitcorns" target="_blank">Community</a>
 		                        </li>
 		                        <li>
 		                            <a href="{{ url('/contact') }}">Contact</a>
