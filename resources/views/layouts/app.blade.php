@@ -60,7 +60,7 @@
 		                    <img src="assets/images/logo.png" alt="">
 		                </a>
 		            </div><!-- .nav-header END -->
-		            <div class="nav-menus-wrapper row">
+		            <div class="nav-menus-wrapper row w-100">
 		                <div class="xs-logo-wraper col-lg-2 xs-padding-0">
 		                    <a class="nav-brand" href="{{ url('/') }}">
 		                        <img src="assets/images/logo.png" alt="">
