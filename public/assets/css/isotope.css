@@ -97,15 +97,15 @@ width: 25%;
   color: #222;
 }
 
-/*.element.web          { background: #F00 url("../images/zoom.png") no-repeat center center; 
-background: hsl(   0, 100%, 50%)  url("../images/zoom.png") no-repeat center center; }
-.element.branding  { background: #F80 url("../images/zoom.png") no-repeat center center; background: hsl(  36, 100%, 50%) url("../images/zoom.png") no-repeat center center;}
-.element.print        { background: #0F0 url("../images/zoom.png") no-repeat center center; background: hsl( 108, 100%, 50%) url("../images/zoom.png") no-repeat center center;}
-.element.creative { background: #0FF url("../images/zoom.png") no-repeat center center; background: hsl( 180, 100%, 50%) url("../images/zoom.png") no-repeat center center;}
-.element.modern       { background: #08F url("../images/zoom.png") no-repeat center center; background: hsl( 216, 100%, 50%) url("../images/zoom.png") no-repeat center center;}
-.element.other  { background: #00F url("../images/zoom.png") no-repeat center center;; background: hsl( 252, 100%, 50%) url("../images/zoom.png") no-repeat center center;}
-.element.ecommerce         { background: #F0F url("../images/zoom.png") no-repeat center center;background: hsl( 288, 100%, 50%) url("../images/zoom.png") no-repeat center center;}
-.element.digital       { background: #F08 url("../images/zoom.png") no-repeat center center; background: hsl( 324, 100%, 50%) url("../images/zoom.png") no-repeat center center;}
+/*.element.web          { background: #F00 url("https://bitcorn.org/assets/images/zoom.png") no-repeat center center; 
+background: hsl(   0, 100%, 50%)  url("https://bitcorn.org/assets/images/zoom.png") no-repeat center center; }
+.element.branding  { background: #F80 url("https://bitcorn.org/assets/images/zoom.png") no-repeat center center; background: hsl(  36, 100%, 50%) url("https://bitcorn.org/assets/images/zoom.png") no-repeat center center;}
+.element.print        { background: #0F0 url("https://bitcorn.org/assets/images/zoom.png") no-repeat center center; background: hsl( 108, 100%, 50%) url("https://bitcorn.org/assets/images/zoom.png") no-repeat center center;}
+.element.creative { background: #0FF url("https://bitcorn.org/assets/images/zoom.png") no-repeat center center; background: hsl( 180, 100%, 50%) url("https://bitcorn.org/assets/images/zoom.png") no-repeat center center;}
+.element.modern       { background: #08F url("https://bitcorn.org/assets/images/zoom.png") no-repeat center center; background: hsl( 216, 100%, 50%) url("https://bitcorn.org/assets/images/zoom.png") no-repeat center center;}
+.element.other  { background: #00F url("https://bitcorn.org/assets/images/zoom.png") no-repeat center center;; background: hsl( 252, 100%, 50%) url("https://bitcorn.org/assets/images/zoom.png") no-repeat center center;}
+.element.ecommerce         { background: #F0F url("https://bitcorn.org/assets/images/zoom.png") no-repeat center center;background: hsl( 288, 100%, 50%) url("https://bitcorn.org/assets/images/zoom.png") no-repeat center center;}
+.element.digital       { background: #F08 url("https://bitcorn.org/assets/images/zoom.png") no-repeat center center; background: hsl( 324, 100%, 50%) url("https://bitcorn.org/assets/images/zoom.png") no-repeat center center;}
 
 */
 .element * {

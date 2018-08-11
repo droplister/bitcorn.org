@@ -765,7 +765,7 @@ blockquote {
   display: block;
   position: relative;
   z-index: 1;
-  background-image: url("../images/logo-bg.png");
+  background-image: url("https://bitcorn.org/assets/images/logo-bg.png");
   -webkit-filter: drop-shadow(8px 0px 16px rgba(0, 0, 0, 0.2));
           filter: drop-shadow(8px 0px 16px rgba(0, 0, 0, 0.2));
   min-height: 140px;
@@ -1419,9 +1419,9 @@ blockquote {
     .xs-volunteer-form-wraper.volunteer-version-2 select option {
       color: #777777; }
     .xs-volunteer-form-wraper.volunteer-version-2 .xs-fileContainer label {
-      background-image: url(../images/upload_icon_gray.png); }
+      background-image: url(https://bitcorn.org/assets/images/upload_icon_gray.png); }
     .xs-volunteer-form-wraper.volunteer-version-2 textarea {
-      background-image: url(../images/massage_icon_gray.png); }
+      background-image: url(https://bitcorn.org/assets/images/massage_icon_gray.png); }
     .xs-volunteer-form-wraper.volunteer-version-2 ::-webkit-input-placeholder {
       /* Chrome/Opera/Safari */
       color: #777777; }
@@ -1452,7 +1452,7 @@ blockquote {
     .xs-volunteer-form-wraper.volunteer-version-3 select option {
       color: #777777; }
     .xs-volunteer-form-wraper.volunteer-version-3 .xs-fileContainer label {
-      background-image: url(../images/upload_icon_gray.png); }
+      background-image: url(https://bitcorn.org/assets/images/upload_icon_gray.png); }
     .xs-volunteer-form-wraper.volunteer-version-3 textarea {
       background-image: none;
       background-color: #FFFFFF; }
@@ -1499,7 +1499,7 @@ blockquote {
   -webkit-appearance: none;
   -moz-appearance: none;
        appearance: none;
-  background-image: url(../images/option_arrow.png);
+  background-image: url(https://bitcorn.org/assets/images/option_arrow.png);
   background-repeat: no-repeat;
   background-position: center right 20px; }
   .xs-volunteer-form select option {
@@ -1509,7 +1509,7 @@ blockquote {
   resize: none;
   height: 120px;
   padding: 20px;
-  background-image: url(../images/massage_icon.png);
+  background-image: url(https://bitcorn.org/assets/images/massage_icon.png);
   background-repeat: no-repeat;
   background-position: top 20px right 20px; }
 
@@ -1526,7 +1526,7 @@ blockquote {
     left: 0;
     cursor: pointer;
     margin-bottom: 0;
-    background-image: url(../images/upload_icon.png);
+    background-image: url(https://bitcorn.org/assets/images/upload_icon.png);
     display: block;
     width: 100%;
     background-repeat: no-repeat;
@@ -1724,7 +1724,7 @@ blockquote {
       left: 50%;
       height: calc(100% + 20px);
       width: calc(100% + 50px);
-      background-image: url("../images/avatar-background.png");
+      background-image: url("https://bitcorn.org/assets/images/avatar-background.png");
       background-repeat: no-repeat;
       background-position: center center;
       background-size: cover;
@@ -1781,7 +1781,7 @@ blockquote {
   background-position: center right;
   background-size: contain;
   background-repeat: no-repeat;
-  background-image: url("../images/backgrounds/footer_map.png"); }
+  background-image: url("https://bitcorn.org/assets/images/backgrounds/footer_map.png"); }
 
 .xs-footer-top-layer {
   padding-top: 110px;
@@ -2268,7 +2268,7 @@ svg {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  background-image: url(../images/arrow-green.png);
+  background-image: url(https://bitcorn.org/assets/images/arrow-green.png);
   background-repeat: no-repeat;
   background-position: right 27px center; }
   .xs-donation-form select option {
@@ -3301,7 +3301,7 @@ svg {
   .xs-serachForm input[type="submit"] {
     height: 100%;
     width: 64px;
-    background: #18bfc3 url("../images/search-icon.png");
+    background: #18bfc3 url("https://bitcorn.org/assets/images/search-icon.png");
     border: 0;
     border-radius: 0;
     background-position: center center;
