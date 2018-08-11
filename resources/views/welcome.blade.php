@@ -67,40 +67,21 @@
                 </div><!-- .xs-logo-wraper END -->
                 <div class="col-lg-7">
                     <ul class="nav-menu">
-                        <li><a href="#">Home</a>
-                            <ul class="nav-dropdown">
-                                <li><a href="index.html">Home 1</a></li>
-                                <li><a href="index-v2.html">Home 2</a></li>
-                                <li><a href="index-v3.html">Home 3</a></li>
-                            </ul>
+                        <li>
+                            <a href="{{ url('/') }}">Home</a>
                         </li>
-                        <li><a href="about.html">about</a></li>
-                        <li><a href="causes.html">Causes</a></li>
-                        <li><a href="#">Events</a>
-                            <ul class="nav-dropdown">
-                                <li><a href="event.html">Event</a></li>
-                                <li><a href="event-single.html">Event single</a></li>
-                            </ul>
+                        <li>
+                            <a href="#">About</a>
                         </li>
-                        <li><a href="#">Blog</a>
-                            <ul class="nav-dropdown">
-                                <li><a href="blog.html">Blog</a></li>
-                                <li><a href="blog-single.html">Blog single</a></li>
-                            </ul>
+                        <li>
+                            <a href="#">Causes</a>
                         </li>
-                        <li><a href="#">Pages</a>
-                            <ul class="nav-dropdown">
-                                <li><a href="donate-now.html">donate now</a></li>
-                                <li><a href="faq.html">FAQ</a></li>
-                                <li><a href="mission.html">mission</a></li>
-                                <li><a href="portfolio.html">portfolio</a></li>
-                                <li><a href="pricing.html">pricing</a></li>
-                                <li><a href="service.html">service</a></li>
-                                <li><a href="team.html">team</a></li>
-                                <li><a href="volunteer.html">volunteer</a></li>
-                            </ul>
+                        <li>
+                            <a href="#">Events</a>
                         </li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li>
+                            <a href="#">Contact</a>
+                        </li>
                     </ul><!-- .nav-menu END -->
                 </div>
                 <div class="xs-navs-button d-flex-center-end col-lg-3">
@@ -119,8 +100,8 @@
         <div class="xs-welcome-content" style="background-image: url(assets/images/slider/slider_1.jpg);">
             <div class="container">
                 <div class="xs-welcome-wraper color-white">
-                    <h2>Hunger is stalking the globe</h2>
-                    <p>Hundreds of thousands of children experiencing or witnessing assault <br> and other gender-based violence.</p>
+                    <h2>Dryness is a Global Problem</h2>
+                    <p>Hundreds of thousands of people experience or witness extreme dryness <br> due to a chronic lack of moisture.</p>
                     <div class="xs-btn-wraper">
                         <a href="#" class="btn btn-outline-primary">
                             join us now
@@ -136,27 +117,10 @@
         <div class="xs-welcome-content" style="background-image: url(assets/images/slider/slider_2.jpg);">
             <div class="container">
                 <div class="xs-welcome-wraper color-white">
-                    <h2>Hunger is stalking the globe</h2>
-                    <p>Hundreds of thousands of children experiencing or witnessing assault <br> and other gender-based violence.</p>
+                    <h2>Worldwide Crops Harvest NOW!</h2>
+                    <p>Innovative research into cryptographically modified organisms suggests that <br> new and unprecedented yields are possible.</p>
                     <div class="xs-btn-wraper">
-                        <a href="#" class="btn btn-outline-primary">
-                            join us now
-                        </a>
-                        <a href="#" class="btn btn-primary">
-                            <span class="badge"><i class="fa fa-heart"></i></span> Donate Now
-                        </a>
-                    </div><!-- .xs-btn-wraper END -->
-                </div><!-- .xs-welcome-wraper END -->
-            </div><!-- .container end -->
-            <div class="xs-black-overlay"></div>
-        </div><!-- .xs-welcome-content END -->
-        <div class="xs-welcome-content" style="background-image: url(assets/images/slider/slider_3.jpg);">
-            <div class="container">
-                <div class="xs-welcome-wraper color-white">
-                    <h2>Hunger is stalking the globe</h2>
-                    <p>Hundreds of thousands of children experiencing or witnessing assault <br> and other gender-based violence.</p>
-                    <div class="xs-btn-wraper">
-                        <a href="#" class="btn btn-outline-primary">
+                        <a href="https://bitcorns.com/" class="btn btn-outline-primary">
                             join us now
                         </a>
                         <a href="#" class="btn btn-primary">
@@ -177,8 +141,8 @@
             <div class="col-md-12 col-lg-6">
                 <div class="xs-archive-content">
                     <div class="xs-heading">
-                        <h2 class="xs-line-title">Our Missions</h2>
-                        <h3 class="xs-title big" data-title="Archived">Archived</h3>
+                        <h2 class="xs-line-title">Our Mission</h2>
+                        <h3 class="xs-title big" data-title="Moisture">100% Moisture</h3>
                     </div>
                     <p>We register and regulate charities in England and Wales, to ensure that the public can support charities with confidence. As registrar, we are responsible for maintaining an accurate.</p>
                     <h5>Our strategic priorities up to 2018 are:</h5>
