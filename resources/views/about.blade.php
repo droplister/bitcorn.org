@@ -56,7 +56,7 @@
 			</div>
 			<div class="col-md-4">
 				<div class="xs-about-feature">
-					<h3>Our Vission</h3>
+					<h3>Our Vision</h3>
 					<p class="lead">Holistically implement real blockchain solutions that can bring moisture to all farms globally by the year 2022.</p>
 				</div>
 			</div>
@@ -84,28 +84,28 @@
 			<div class="col-lg-3 col-md-6">
 				<div class="xs-single-funFact color-white">
 					<i class="icon-donation_2"></i>
-					<span class="number-percentage-count number-percentage" data-value="10" data-animation-duration="3500">0</span><span>M</span>
+					<span class="number-percentage-count number-percentage" data-value="5.2" data-animation-duration="3500">0</span><span>M</span>
 					<small>BITCORN</small>
 				</div>
 			</div>
 			<div class="col-lg-3 col-md-6">
 				<div class="xs-single-funFact color-white">
 					<i class="icon-group"></i>
-					<span class="number-percentage-count number-percentage" data-value="25" data-animation-duration="3500">0</span><span>k</span>
+					<span class="number-percentage-count number-percentage" data-value="289" data-animation-duration="3500">0</span>
 					<small>Farmers</small>
 				</div>
 			</div>
 			<div class="col-lg-3 col-md-6">
 				<div class="xs-single-funFact color-white">
 					<i class="icon-children"></i>
-					<span class="number-percentage-count number-percentage" data-value="30" data-animation-duration="3500">0</span><span>k</span>
+					<span class="number-percentage-count number-percentage" data-value="11" data-animation-duration="3500">0</span>
 					<small>Co-Ops</small>
 				</div>
 			</div>
 			<div class="col-lg-3 col-md-6">
 				<div class="xs-single-funFact color-white">
 					<i class="icon-planet-earth"></i>
-					<span class="number-percentage-count number-percentage" data-value="14" data-animation-duration="3500">0</span><span>k</span>
+					<span class="number-percentage-count number-percentage" data-value="140" data-animation-duration="3500">0</span>
 					<small>Places</small>
 				</div>
 			</div>
