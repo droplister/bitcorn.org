@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Events')
+
 @section('content')
 <!-- welcome section -->
 <!--breadcumb start here-->

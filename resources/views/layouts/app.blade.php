@@ -35,7 +35,7 @@
         <link rel="stylesheet" href="assets/css/responsive.css" />
         
         <!-- use only color version -->
-        <!-- <link rel="stylesheet" type="text/css" href="assets/css/colors/color-4.css"> -->
+        <link rel="stylesheet" type="text/css" href="assets/css/colors/color-4.css">
     </head>
     <body>
 	    <!--[if lt IE 10]>

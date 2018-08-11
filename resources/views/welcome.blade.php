@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Bitcorn Foundation')
+
 @section('content')
 <!-- welcome section -->
 <section class="xs-welcome-slider">

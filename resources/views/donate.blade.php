@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Donate')
+
 @section('content')
 <!-- welcome section -->
 <!--breadcumb start here-->
@@ -32,21 +34,21 @@
 				<div class="xs-service-promo box-color bg-green">
 					<span class="icon-groceries"></span>
 					<h5>Sean's Outpost</h5>
-					<p>Homeless outreach program. Over 167,360 meals provided. <a href="http://www.seansoutpost.com/" target="_blank">Learn more &raquo;</a></p>
+					<p>Homeless outreach program in Pensacola, FL. <a href="http://www.seansoutpost.com/" target="_blank">Learn more &raquo;</a></p>
 				</div><!-- .xs-service-promo END -->
 			</div>
 			<div class="col-md-6 col-lg-3">
 				<div class="xs-service-promo box-color bg-blue">
 					<span class="icon-heartbeat"></span>
-					<h5>Medical <br>Facilities for People</h5>
-					<p>663 million people drink dirty water. Learn how access to clean water.</p>
+					<h5>Cherch of Blerk</h5>
+					<p>Crypto-based religion focused on disaster relief. <a href="http://cherchofblerk.com/" target="_blank">Learn more &raquo;</a></p>
 				</div><!-- .xs-service-promo END -->
 			</div>
 			<div class="col-md-6 col-lg-3">
 				<div class="xs-service-promo box-color bg-purple">
 					<span class="icon-open-book"></span>
-					<h5>Pure Education <br>For Every Children</h5>
-					<p>663 million people drink dirty water. Learn how access to clean water.</p>
+					<h5>Internet Archive</h5>
+					<p>Non-profit for saving the internet's history. <a href="https://archive.org/" target="_blank">Learn more &raquo;</a></p>
 				</div><!-- .xs-service-promo END -->
 			</div>
 		</div><!-- .row end -->
