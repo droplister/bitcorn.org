@@ -61,7 +61,7 @@
             </div><!-- .nav-header END -->
             <div class="nav-menus-wrapper row">
                 <div class="xs-logo-wraper col-lg-2 xs-padding-0">
-                    <a class="nav-brand" href="index.html">
+                    <a class="nav-brand" href="{{ url('/') }}">
                         <img src="assets/images/logo.png" alt="">
                     </a>
                 </div><!-- .xs-logo-wraper END -->
@@ -103,7 +103,7 @@
                     <h2>Dryness is a Global Problem</h2>
                     <p>Hundreds of thousands of people experience or witness extreme dryness <br> due to a chronic lack of moisture.</p>
                     <div class="xs-btn-wraper">
-                        <a href="#" class="btn btn-outline-primary">
+                        <a href="https://bitcorns.com/" class="btn btn-outline-primary">
                             join us now
                         </a>
                         <a href="#" class="btn btn-primary">
@@ -117,8 +117,25 @@
         <div class="xs-welcome-content" style="background-image: url(assets/images/slider/slider_2.jpg);">
             <div class="container">
                 <div class="xs-welcome-wraper color-white">
-                    <h2>Worldwide Crops Harvest NOW!</h2>
+                    <h2>We're Funding Research</h2>
                     <p>Innovative research into cryptographically modified organisms suggests that <br> new and unprecedented yields are possible.</p>
+                    <div class="xs-btn-wraper">
+                        <a href="https://bitcorns.com/" class="btn btn-outline-primary">
+                            join us now
+                        </a>
+                        <a href="#" class="btn btn-primary">
+                            <span class="badge"><i class="fa fa-heart"></i></span> Donate Now
+                        </a>
+                    </div><!-- .xs-btn-wraper END -->
+                </div><!-- .xs-welcome-wraper END -->
+            </div><!-- .container end -->
+            <div class="xs-black-overlay"></div>
+        </div><!-- .xs-welcome-content END -->
+        <div class="xs-welcome-content" style="background-image: url(assets/images/slider/slider_3.jpg);">
+            <div class="container">
+                <div class="xs-welcome-wraper color-white">
+                    <h2>Harvest Crops Worldwide</h2>
+                    <p>With your help we can spread CMOs to the furthest reaches of the globe <br> and be track their location on the blockchain.</p>
                     <div class="xs-btn-wraper">
                         <a href="https://bitcorns.com/" class="btn btn-outline-primary">
                             join us now
