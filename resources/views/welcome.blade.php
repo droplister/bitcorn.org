@@ -8,7 +8,7 @@
             <div class="container">
                 <div class="xs-welcome-wraper color-white">
                     <h2>Dryness is a Global Problem</h2>
-                    <p>Hundreds of thousands of people experience or witness extreme dryness <br> due to a chronic lack of moisture.</p>
+                    <p>Hundreds of thousands of people experience or witness extreme dryness <br class="d-none d-md-block" /> due to a chronic lack of moisture.</p>
                     <div class="xs-btn-wraper">
                         <a href="https://bitcorns.com/" class="btn btn-outline-primary">
                             join us now
@@ -25,7 +25,7 @@
             <div class="container">
                 <div class="xs-welcome-wraper color-white">
                     <h2>We're Funding Research</h2>
-                    <p>Innovative research into cryptographically modified organisms suggests that <br> new and unprecedented yields are possible.</p>
+                    <p>Innovative research into cryptographically modified organisms suggests that <br class="d-none d-md-block" /> new and unprecedented yields are possible.</p>
                     <div class="xs-btn-wraper">
                         <a href="https://bitcorns.com/" class="btn btn-outline-primary">
                             join us now
@@ -42,7 +42,7 @@
             <div class="container">
                 <div class="xs-welcome-wraper color-white">
                     <h2>Harvest Crops Worldwide</h2>
-                    <p>With your help we can spread CMOs to the furthest reaches of the globe <br> and track those crops on the blockchain.</p>
+                    <p>With your help we can spread CMOs to the furthest reaches of the globe <br class="d-none d-md-block" /> and track those crops on the blockchain.</p>
                     <div class="xs-btn-wraper">
                         <a href="https://bitcorns.com/" class="btn btn-outline-primary">
                             join us now
