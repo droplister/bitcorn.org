@@ -8,7 +8,7 @@
             <div class="container">
                 <div class="xs-welcome-wraper color-white">
                     <h2>Dryness is a Global Problem</h2>
-                    <p>Hundreds of thousands of people experience or witness extreme dryness <br class="d-none d-md-block" /> due to a chronic lack of moisture.</p>
+                    <p>Hundreds of thousands of farmers annually experience extreme dryness <br class="d-none d-md-block" /> due to a chronic lack of moisture.</p>
                     <div class="xs-btn-wraper">
                         <a href="https://bitcorns.com/" class="btn btn-outline-primary">
                             join us now
