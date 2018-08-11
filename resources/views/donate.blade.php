@@ -27,28 +27,28 @@
 				<div class="xs-service-promo box-color bg-light-red">
 					<span class="icon-water"></span>
 					<h5>The Water Project</h5>
-					<p>A charity providing access to clean water in Africa. <a href="https://thewaterproject.org/" target="_blank">Learn more &raquo;</a></p>
+					<p>A charity providing access to clean water in Africa. <br /> <a href="https://thewaterproject.org/" target="_blank">Learn more &raquo;</a></p>
 				</div><!-- .xs-service-promo END -->
 			</div>
 			<div class="col-md-6 col-lg-3">
 				<div class="xs-service-promo box-color bg-green">
 					<span class="icon-groceries"></span>
 					<h5>Sean's Outpost</h5>
-					<p>Homeless outreach program in Pensacola, FL. <a href="http://www.seansoutpost.com/" target="_blank">Learn more &raquo;</a></p>
+					<p>Homeless outreach program in Pensacola, FL. <br /> <a href="http://www.seansoutpost.com/" target="_blank">Learn more &raquo;</a></p>
 				</div><!-- .xs-service-promo END -->
 			</div>
 			<div class="col-md-6 col-lg-3">
 				<div class="xs-service-promo box-color bg-blue">
 					<span class="icon-heartbeat"></span>
 					<h5>Cherch of Blerk</h5>
-					<p>Crypto-based religion focused on disaster relief. <a href="http://cherchofblerk.com/" target="_blank">Learn more &raquo;</a></p>
+					<p>Crypto-based religion focused on disaster relief. <br /> <a href="http://cherchofblerk.com/" target="_blank">Learn more &raquo;</a></p>
 				</div><!-- .xs-service-promo END -->
 			</div>
 			<div class="col-md-6 col-lg-3">
 				<div class="xs-service-promo box-color bg-purple">
 					<span class="icon-open-book"></span>
 					<h5>Internet Archive</h5>
-					<p>Non-profit for saving the internet's history. <a href="https://archive.org/" target="_blank">Learn more &raquo;</a></p>
+					<p>Non-profit for saving the internet's history. <br /> <a href="https://archive.org/" target="_blank">Learn more &raquo;</a></p>
 				</div><!-- .xs-service-promo END -->
 			</div>
 		</div><!-- .row end -->
@@ -68,7 +68,7 @@
 				<div class="xs-donation-form-wraper" >
 					<div class="xs-heading xs-mb-30">
 						<h2 class="xs-title">Make a donation</h2>
-						<p class="small">Obviously, this is a fake organization, but if you are feeling in a generous mood here are several charities.</p>
+						<p class="small">Obviously, the Bitcorn Foundation is fake, but if you are in a generous mood here are several real charities.</p>
 						<span class="xs-separetor v2"></span>
 					</div><!-- .xs-heading end -->
 					<form action="#" id="xs-donation-form" class="xs-donation-form">
@@ -90,7 +90,7 @@
 							</select>
 						</div><!-- .xs-input-group END -->
 
-						<button type="submit" class="btn btn-warning"><span class="badge"><i class="fa fa-heart"></i></span> Donate now</button>
+						<button type="submit" class="btn btn-warning" onclick="javascript:location.href = 'http://cherchofblerk.com/donate';"><span class="badge"><i class="fa fa-heart"></i></span> Donate now</button>
 					</form><!-- .xs-donation-form #xs-donation-form END -->
 				</div>
 			</div>

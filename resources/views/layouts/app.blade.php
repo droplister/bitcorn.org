@@ -109,6 +109,7 @@
                         <div class="col-md-6">
                             <nav class="xs-footer-menu">
                                 <ul>
+                                    <li><a href="{{ url('/about') }}">About</a></li>
                                     <li><a href="https://t.me/bitcorns">Telegram</a></li>
                                     <li><a href="{{ url('/contact') }}">Contact</a></li>
                                 </ul>

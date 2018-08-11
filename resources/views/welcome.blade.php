@@ -630,33 +630,7 @@
     </div><!-- .container end -->
 </section><!-- End events section -->
 
-<!-- partners section -->
-<section class="bg-gray xs-partner-section" style="background-image: url('assets/images/map.png');">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-5">
-                <div class="xs-partner-content">
-                    <div class="xs-heading xs-mb-40">
-                        <h2 class="xs-mb-0 xs-title">Trusted by the biggest <span>brand.</span></h2>
-                    </div>
-                    <p>In-kind donations from our donors and partners allow charity: water to pass 100% of public donations straight to water projects. We are deeply grateful for those who have surprised us with their generosity. A big thanks to the following companies and people who have helped make charity: water’s work possible.</p>
-                    <a href="#" class="btn btn-primary">
-                        join us now
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-7">
-                <ul class="fundpress-partners">
-                    <li><a href="#"><img src="assets/images/partner/client_1.png" alt=""></a></li>
-                    <li><a href="#"><img src="assets/images/partner/client_2.png" alt=""></a></li>
-                    <li><a href="#"><img src="assets/images/partner/client_3.png" alt=""></a></li>
-                    <li><a href="#"><img src="assets/images/partner/client_4.png" alt=""></a></li>
-                    <li><a href="#"><img src="assets/images/partner/client_5.png" alt=""></a></li>
-                </ul>
-            </div>
-        </div><!-- .row end -->
-    </div><!-- .container end -->
-</section><!-- End partners section -->
+    @include('partials.partners')
 
 <!-- journal section -->
 <section class="xs-section-padding">
