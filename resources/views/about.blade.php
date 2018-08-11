@@ -27,7 +27,7 @@
 				<div class="xs-video-popup-wraper">
 					<img src="assets/images/video_img.jpg" alt="">
 					<div class="xs-video-popup-content">
-						<a href="https://www.youtube.com/watch?v=Tb1HsAGy-ls" class="xs-video-popup xs-round-btn">
+						<a href="https://www.youtube.com/watch?v=sF9Pzu7GqZE" class="xs-video-popup xs-round-btn">
 							<i class="fa fa-play"></i>
 						</a>
 					</div><!-- .xs-video-popup-content end -->
