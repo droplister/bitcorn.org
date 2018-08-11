@@ -80,6 +80,12 @@
                             <a href="#">Events</a>
                         </li>
                         <li>
+                            <a href="#">News</a>
+                        </li>
+                        <li>
+                            <a href="#">Community</a>
+                        </li>
+                        <li>
                             <a href="#">Contact</a>
                         </li>
                     </ul><!-- .nav-menu END -->
@@ -135,7 +141,7 @@
             <div class="container">
                 <div class="xs-welcome-wraper color-white">
                     <h2>Harvest Crops Worldwide</h2>
-                    <p>With your help we can spread CMOs to the furthest reaches of the globe <br> and be track their location on the blockchain.</p>
+                    <p>With your help we can spread CMOs to the furthest reaches of the globe <br> and track those crops on the blockchain.</p>
                     <div class="xs-btn-wraper">
                         <a href="https://bitcorns.com/" class="btn btn-outline-primary">
                             join us now
@@ -161,11 +167,11 @@
                         <h2 class="xs-line-title">Our Mission</h2>
                         <h3 class="xs-title big" data-title="Moisture">100% Moisture</h3>
                     </div>
-                    <p>We register and regulate charities in England and Wales, to ensure that the public can support charities with confidence. As registrar, we are responsible for maintaining an accurate.</p>
+                    <p>We register and regulate Bitcorn cards, to ensure that the public can support moist farms with confidence. As registrar, we are responsible for maintaining accurate records.</p>
                     <h5>Our strategic priorities up to 2018 are:</h5>
                     <ul class="xs-unorder-list arrow">
-                        <li>Protecting charities from abuse or mismanagement</li>
-                        <li>Enabling trustees to run their charities effectively</li>
+                        <li>Protecting large farms from mismanagement</li>
+                        <li>Enabling new cooperative missions effectively</li>
                         <li>Encouraging greater transparency and accountability</li>
                     </ul>
                     <ul class="xs-funfact-list">
@@ -173,25 +179,25 @@
                             <p>
                                 <span class="number-percentage-count number-percentage" data-value="132" data-animation-duration="3500">0</span><sup> + </sup>
                             </p>
-                            <span>Primary Schools</span>
+                            <span>Bitcorn Farms</span>
                         </li>
                         <li>
                             <p>
                                 <span class="number-percentage-count number-percentage" data-value="19" data-animation-duration="3500">0</span><sup> + </sup>
                             </p>
-                            <span>Hospitals</span>
+                            <span>Cooperatives</span>
                         </li>
                         <li>
                             <p>
                                 <span class="number-percentage-count number-percentage" data-value="90" data-animation-duration="3500">0</span><sup> + </sup>
                             </p>
-                            <span>Volunteers</span>
+                            <span>Certified Cards</span>
                         </li>
                         <li>
                             <p>
                                 <span class="number-percentage-count number-percentage" data-value="27" data-animation-duration="3500">0</span><sup> + </sup>
                             </p>
-                            <span>Winning Awards</span>
+                            <span>Blockchain</span>
                         </li>
                         <div class="clearfix"></div>
                     </ul>
@@ -219,10 +225,10 @@
             <div class="col-md-9 col-xl-9">
                 <h2 class="xs-title">Popular Causes</h2>
                 <span class="xs-separetor dashed"></span>
-                <p>FundPress has built a platform focused on aiding entrepreneurs, startups, and <br> companies raise capital from anyone.</p>
+                <p>The Bitcorn.org platform is focused on helping entrepreneurs, startups, and <br> starving artists achieve their dreams.</p>
             </div><!-- .xs-heading-title END -->
             <div class="col-xl-3 col-md-3 xs-btn-wraper">
-                <a href="" class="btn btn-primary">all Causes</a>
+                <a href="" class="btn btn-primary">All Causes</a>
             </div><!-- .xs-btn-wraper END -->
         </div><!-- .row end -->
         <div class="row">
