@@ -61,7 +61,7 @@
             <div class="container">
                 <div class="xs-welcome-wraper color-white">
                     <h2>A World Without Dryness</h2>
-                    <p>We have a mission and the vision to drive out dry memes everywhere <br class="d-none d-md-block" /> and replace them with memes soaked in moistness.</p>
+                    <p>We have a mission and the vision to drive out dry memes everywhere <br class="d-none d-md-block" /> and replace them with memes soaked in moisture.</p>
                     <div class="xs-btn-wraper">
                         <a href="https://bitcorns.com/" class="btn btn-outline-primary">
                             join us now
@@ -420,7 +420,7 @@
             <div class="col-md-8 col-lg-7">
                 <div class="xs-volunteer-form-wraper bg-aqua">
                     <h2>Become a Volunteer</h2>
-                    <p>It only takes a minute to makes a difference. We're a totally legit, world-class organization that's not going to stop until the world is moist.</p>
+                    <p>It only takes a minute to makes a difference. We're a totally legit, world-class organization. And we're not going to stop until the world is moist.</p>
                     <form action="#" method="POST" id="volunteer-form" class="xs-volunteer-form">
                         <div class="row">
                             <div class="col-lg-6">
