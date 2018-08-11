@@ -66,7 +66,6 @@
 					<ul class="xs-unorder-list play green-icon">
 						<li>Alpha bids</li>
 						<li>Reliable memes</li>
-						<li>Cost-effectiveness</li>
 						<li>Vaporwave aestetic</li>
 					</ul>
 				</div>
