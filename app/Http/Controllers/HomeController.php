@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Cause;
+use App\Event;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
