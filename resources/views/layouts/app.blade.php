@@ -125,7 +125,7 @@
                                         </form>
                                     </li>
                                 @endguest
-                                    <li><a href="https://t.me/bitcorns">Community</a></li>
+                                    <li><a href="https://t.me/bitcorns" target="_blank">Community</a></li>
                                     <li><a href="{{ route('contact.create') }}">Contact</a></li>
                                 </ul>
                             </nav>

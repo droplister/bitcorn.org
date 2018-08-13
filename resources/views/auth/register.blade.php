@@ -56,10 +56,15 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+                            <div class="col-md-6 offset-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="terms" id="terms" {{ old('terms') ? 'checked' : '' }}>
 
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                                    <label class="form-check-label" for="terms">
+                                        {{ __('I agree to the') }}
+                                        <a href="{{ route('pages.terms') }}" target="_blank">{{ __('Terms of Service') }}</a>.
+                                    </label>
+                                </div>
                             </div>
                         </div>
 
