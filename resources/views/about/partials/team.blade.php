@@ -20,7 +20,7 @@
 					</div>
 				</div>
 			</div>
-            @foreach($user as $user)
+            @foreach($users as $user)
 			<div class="col-md-6 col-lg-3">
 				<div class="xs-single-team">
 					<img src="{{ asset('assets/images/team/team_8.png') }}" alt="{{ $user->name }}">
