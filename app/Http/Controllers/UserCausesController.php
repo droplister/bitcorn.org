@@ -24,7 +24,7 @@ class UserCausesController extends Controller
      */
     public function index(Request $request, $user)
     {
-        if(Auth::user()->id === $user)
+        if(Auth::user()->id === (int) $user)
         {
             $causes = Auth::user()->causes;
 
