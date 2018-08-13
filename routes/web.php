@@ -14,7 +14,8 @@
 Auth::routes();
 Route::get('/', 'HomeController@index')->name('home.index');
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard.index');
-Route::put('/users/{user}', 'UsersController@update')->name('users.update');
+Route::resource('users', 'UsersController', ['only' => ['update']]);
+Route::resource('users.causes', 'UserCausesController', ['only' => ['index', 'create']]);
 Route::resource('causes', 'CausesController');
 Route::resource('elections', 'ElectionsController');
 Route::resource('elections.candidates', 'CandidatesController');
