@@ -1,5 +1,5 @@
 @component('mail::message')
-# {{ name }} said,
+# {{ $name }} said,
 
 {{ $message }}
 @endcomponent
