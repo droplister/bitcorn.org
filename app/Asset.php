@@ -12,10 +12,21 @@ class Asset extends Model
      * @var array
      */
     protected $fillable = [
+        'type',
         'name',
         'issuance',
         'divisible',
     ];
+
+    /**
+     * Asset Election
+     * 
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function election()
+    {
+        return $this->hasOne(Election::class);
+    }
 
     /**
      * Asset Causes

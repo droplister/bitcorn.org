@@ -17,7 +17,7 @@ class CreateEventsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('description');
-            $table->string('event_url');
+            $table->string('event_url')->nullable();
             $table->string('image_url');
             $table->timestamp('scheduled_at')->index();
             $table->timestamps();
