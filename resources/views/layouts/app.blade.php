@@ -109,8 +109,23 @@
                         <div class="col-md-6">
                             <nav class="xs-footer-menu">
                                 <ul>
-                                    <li><a href="{{ route('about.index') }}">About</a></li>
-                                    <li><a href="https://t.me/bitcorns">Telegram</a></li>
+                                    @guest
+                                    <li><a href="{{ route('login') }}">Login</a></li>
+                                    @else
+                                    <li>
+                                        <a href="{{ route('logout') }}"
+                                           onclick="event.preventDefault();
+                                                         document.getElementById('logout-form').submit();">
+                                            <i class="fa fa-sign-out"></i>
+                                            Logout
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            @csrf
+                                        </form>
+                                    </li>
+                                    @endguest
+                                    <li><a href="https://t.me/bitcorns">Community</a></li>
                                     <li><a href="{{ route('contact.create') }}">Contact</a></li>
                                 </ul>
                             </nav>
