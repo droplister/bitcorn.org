@@ -49,4 +49,12 @@ class Candidate extends Model
     {
         return $this->hasMany(Vote::class);
     }
+
+    /**
+     * Elected Candidates
+     */
+    public function scopeElected($query)
+    {
+        return $query->where('elected', '=', 1);
+    }
 }

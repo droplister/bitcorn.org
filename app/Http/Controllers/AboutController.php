@@ -16,6 +16,9 @@ class AboutController extends Controller
         $data = file_get_contents('https://bitcorns.com/api/info');
         $data = json_decode($data, true);
 
-        return view('about.index', compact('data'));
+        $last_election = Election::latest('decided_at')->first();
+        $users = $last_election ? $last_election->candidates()->elected()->get() : [];
+
+        return view('about.index', compact('data', 'users'));
     }
 }

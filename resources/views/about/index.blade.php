@@ -13,6 +13,8 @@
         @include('about.partials.video')
         @include('about.partials.mission')
         @include('about.partials.facts')
+        @include('about.partials.what')
+        @include('about.partials.team')
         @include('partials.partners')
     </main>
 @endsection

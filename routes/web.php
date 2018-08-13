@@ -15,7 +15,6 @@ Auth::routes();
 Route::get('/', 'HomeController@index')->name('home.index');
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard.index');
 Route::get('/about', 'AboutController@index')->name('about.index');
-Route::get('/board', 'BoardController@index')->name('board.index');
 Route::get('/donate', 'DonateController@index')->name('donate.index');
 Route::resource('causes', 'CausesController');
 Route::resource('elections', 'ElectionsController');
