@@ -8,31 +8,31 @@ Author URI: http://themeforest.net/user/XpeedStudio/portfolio
 
 
 /*--------------------------------------------------------------============================================================
-										1. Typography
+                                        1. Typography
 =============================================================--------------------------------------------------------------*/
 
 body {
-	font-family: $bodyFont;
-	font-weight: $bodyFontWeight;
-	font-size: $bfSize;
-	line-height: $blineHeight;
-	color: $bcolor;
-	background-color: $color-white;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	overflow-x: hidden;
+    font-family: $bodyFont;
+    font-weight: $bodyFontWeight;
+    font-size: $bfSize;
+    line-height: $blineHeight;
+    color: $bcolor;
+    background-color: $color-white;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
 }
 iframe {
-	border: none;
+    border: none;
 }
 a,
 b,
 div,
 ul,
 li {
-	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-	-webkit-tap-highlight-color: transparent;
-	-moz-outline-: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+    -moz-outline-: none;
 }
 a:focus,
 a:active,
@@ -44,39 +44,39 @@ textarea,
 textarea:hover,
 textarea:focus,
 textarea:active {
-	-moz-outline: none;
-	outline: none;
+    -moz-outline: none;
+    outline: none;
 }
 img:not([draggable]),
 embed,
 object,
 video {
-	max-width: 100%;
-	height: auto;
+    max-width: 100%;
+    height: auto;
 }
 a {
-	text-decoration: none;
-	outline: 0;
+    text-decoration: none;
+    outline: 0;
 }
 a:active,
 a:focus,
 a:hover,
 a:visited {
-	text-decoration: none;
-	outline: 0;
+    text-decoration: none;
+    outline: 0;
 }
 img {
-	border: none;
-	max-width: 100%;
+    border: none;
+    max-width: 100%;
 }
 ul , li {
-	margin: 0;
-	padding: 0;
-	list-style: none
+    margin: 0;
+    padding: 0;
+    list-style: none
 }
 .clear-both:before,
 .clear-both:after {
-	display: table;
-	content: "";
-	clear: both;
+    display: table;
+    content: "";
+    clear: both;
 }

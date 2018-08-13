@@ -26,8 +26,8 @@ blockquote span,
 .xs-line-title,
 .xs-feature-content h2 span, .xs-feature-content-v2 h2 span,
 blockquote:before{
-	color: #ED1C24 !important;
-	transition: all .4s ease;
+    color: #ED1C24 !important;
+    transition: all .4s ease;
 }
 
 /* backgrounds */
@@ -53,8 +53,8 @@ blockquote:before{
 #preloader ,
 button.btn-secondary.btn-color-alt,
 .xs-round-nav {
-	background-color: #ED1C24 !important;
-	transition: all .4s ease;
+    background-color: #ED1C24 !important;
+    transition: all .4s ease;
 }
 
 /* border color */
@@ -62,13 +62,13 @@ button.btn-secondary.btn-color-alt,
 .xs-volunteer-form select,
 .xs-volunteer-form textarea ,
 .xs-volunteer-form .xs-fileContainer {
-	border-color: #ED1C24 !important;
-	transition: all .4s ease;
+    border-color: #ED1C24 !important;
+    transition: all .4s ease;
 } */
 
 .xs-feature-box.highlight {
-	background-color: #d6131b !important;
-	transition: all .4s ease;
+    background-color: #d6131b !important;
+    transition: all .4s ease;
 }
 
 
@@ -121,8 +121,8 @@ button.btn-secondary.btn-color-alt,
 .color-navy-blue,
 .xs-event-content a:not(.btn),
 .btn-secondary.btn-color-alt  {
-	color: #002147 !important;
-	transition: all .4s ease;
+    color: #002147 !important;
+    transition: all .4s ease;
 }
 
 /* background color */
@@ -141,16 +141,16 @@ button.btn-secondary.btn-color-alt,
 .xs-widnow-wraper.active .xs-window-nav .xs-window-opener,
 .xs-evnet-meta-date,
 .xs-blog-post-details .post-meta-date {
-	background-color: #002147 !important;
-	transition: all .4s ease;
+    background-color: #002147 !important;
+    transition: all .4s ease;
 }
 .btn-secondary.btn-color-alt:hover {
-	background-color: #002147 !important;
+    background-color: #002147 !important;
 }
 /* background */
 .entry-content blockquote {
-	background: #002147 !important;
-	transition: all .4s ease;
+    background: #002147 !important;
+    transition: all .4s ease;
 }
 
 .xs-service-promo.box-image span ,
@@ -162,26 +162,26 @@ button.btn-secondary.btn-color-alt,
 .xs-service-promo.box-color h5, 
 .xs-service-promo.box-color p,
 .xs-unorder-list.check li::before{
-	color:#fff !important;
-	transition: all .4s ease;
+    color:#fff !important;
+    transition: all .4s ease;
 }
 
 .xs-black-overlay.bg-aqua {
-	opacity: .8;
+    opacity: .8;
 }
 
 .xs-contact-form.contact-form-v2 ::-webkit-input-placeholder {
-	/* Chrome/Opera/Safari */
-	color: #FFFFFF; }
+    /* Chrome/Opera/Safari */
+    color: #FFFFFF; }
   
   .xs-contact-form.contact-form-v2 ::-moz-placeholder {
-	/* Firefox 19+ */
-	color: #FFFFFF; }
+    /* Firefox 19+ */
+    color: #FFFFFF; }
   
   .xs-contact-form.contact-form-v2 :-ms-input-placeholder {
-	/* IE 10+ */
-	color: #FFFFFF; }
+    /* IE 10+ */
+    color: #FFFFFF; }
   
   .xs-contact-form.contact-form-v2 :-moz-placeholder {
-	/* Firefox 18- */
-	color: #FFFFFF; }
+    /* Firefox 18- */
+    color: #FFFFFF; }
