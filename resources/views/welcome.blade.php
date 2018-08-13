@@ -453,20 +453,42 @@
             <div class="col-lg-6 row xs-single-event">
                 <div class="col-md-5">
                     <div class="xs-event-image">
-                        <img src="assets/images/event/event_1.jpg" alt="">
+                        <img src="assets/images/event/event_4.jpg" alt="">
                         <div class="xs-entry-date">
-                            <span class="entry-date-day">27</span>
-                            <span class="entry-date-month">dec</span>
+                            <span class="entry-date-day">1</span>
+                            <span class="entry-date-month">Oct</span>
                         </div>
                         <div class="xs-black-overlay"></div>
                     </div><!-- .xs-event-image END -->
                 </div>
                 <div class="col-md-7">
                     <div class="xs-event-content">
-                        <a href="#">Raspberry velbet</a>
-                        <p>In a time of overwhelming emotions, sadness, and pain, obligations.</p>
-                        <div class="xs-countdown-timer" data-countdown="2020/01/24"></div>
-                        <a href="#" class="btn btn-primary">
+                        <a href="https://bitcorns.com/almanac">Bitcorn Harvest #3</a>
+                        <p>2,625,000 BITCORN is expected to be harvested on this day.</p>
+                        <div class="xs-countdown-timer" data-countdown="2018/10/01"></div>
+                        <a href="https://bitcorns.com/almanac" class="btn btn-primary">
+                            Learn More
+                        </a>
+                    </div><!-- .xs-event-content END -->
+                </div>
+            </div><!-- .xs-single-event END -->
+            <div class="col-lg-6 row xs-single-event">
+                <div class="col-md-5">
+                    <div class="xs-event-image">
+                        <img src="assets/images/event/event_1.jpg" alt="">
+                        <div class="xs-entry-date">
+                            <span class="entry-date-day">1</span>
+                            <span class="entry-date-month">Jan</span>
+                        </div>
+                        <div class="xs-black-overlay"></div>
+                    </div><!-- .xs-event-image END -->
+                </div>
+                <div class="col-md-7">
+                    <div class="xs-event-content">
+                        <a href="https://bitcorns.com/almanac">Bitcorn Harvest #4</a>
+                        <p>2,625,000 BITCORN is expected to be harvested on this day.</p>
+                        <div class="xs-countdown-timer" data-countdown="2019/01/01"></div>
+                        <a href="https://bitcorns.com/almanac" class="btn btn-primary">
                             Learn More
                         </a>
                     </div><!-- .xs-event-content END -->
@@ -477,18 +499,18 @@
                     <div class="xs-event-image">
                         <img src="assets/images/event/event_2.jpg" alt="">
                         <div class="xs-entry-date">
-                            <span class="entry-date-day">15</span>
-                            <span class="entry-date-month">aug</span>
+                            <span class="entry-date-day">1</span>
+                            <span class="entry-date-month">Apr</span>
                         </div>
                         <div class="xs-black-overlay"></div>
                     </div><!-- .xs-event-image END -->
                 </div>
                 <div class="col-md-7">
                     <div class="xs-event-content">
-                        <a href="#">Arsenal, the intelligent.</a>
-                        <p>In a time of overwhelming emotions, sadness, and pain, obligations.</p>
-                        <div class="xs-countdown-timer" data-countdown="2020/08/24"></div>
-                        <a href="#" class="btn btn-primary">
+                        <a href="https://bitcorns.com/almanac">Bitcorn Harvest #5</a>
+                        <p>1,312,500 BITCORN is expected to be harvested on this day.</p>
+                        <div class="xs-countdown-timer" data-countdown="2019/04/01"></div>
+                        <a href="https://bitcorns.com/almanac" class="btn btn-primary">
                             Learn More
                         </a>
                     </div><!-- .xs-event-content END -->
@@ -499,40 +521,18 @@
                     <div class="xs-event-image">
                         <img src="assets/images/event/event_3.jpg" alt="">
                         <div class="xs-entry-date">
-                            <span class="entry-date-day">24</span>
-                            <span class="entry-date-month">jan</span>
+                            <span class="entry-date-day">1</span>
+                            <span class="entry-date-month">Jul</span>
                         </div>
                         <div class="xs-black-overlay"></div>
                     </div><!-- .xs-event-image END -->
                 </div>
                 <div class="col-md-7">
                     <div class="xs-event-content">
-                        <a href="#">Waterproof drone that</a>
-                        <p>In a time of overwhelming emotions, sadness, and pain, obligations.</p>
-                        <div class="xs-countdown-timer" data-countdown="2019/05/24"></div>
-                        <a href="#" class="btn btn-primary">
-                            Learn More
-                        </a>
-                    </div><!-- .xs-event-content END -->
-                </div>
-            </div><!-- .xs-single-event END -->
-            <div class="col-lg-6 row xs-single-event">
-                <div class="col-md-5">
-                    <div class="xs-event-image">
-                        <img src="assets/images/event/event_4.jpg" alt="">
-                        <div class="xs-entry-date">
-                            <span class="entry-date-day">23</span>
-                            <span class="entry-date-month">jun</span>
-                        </div>
-                        <div class="xs-black-overlay"></div>
-                    </div><!-- .xs-event-image END -->
-                </div>
-                <div class="col-md-7">
-                    <div class="xs-event-content">
-                        <a href="">Braille Literacy Tool for.</a>
-                        <p>In a time of overwhelming emotions, sadness, and pain, obligations.</p>
-                        <div class="xs-countdown-timer" data-countdown="2020/02/24"></div>
-                        <a href="#" class="btn btn-primary">
+                        <a href="https://bitcorns.com/almanac">Bitcorn Harvest #6</a>
+                        <p>1,312,500 BITCORN is expected to be harvested on this day.</p>
+                        <div class="xs-countdown-timer" data-countdown="2019/07/01"></div>
+                        <a href="https://bitcorns.com/almanac" class="btn btn-primary">
                             Learn More
                         </a>
                     </div><!-- .xs-event-content END -->
