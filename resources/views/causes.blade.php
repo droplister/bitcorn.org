@@ -12,7 +12,7 @@
             <h2>Causes</h2>
             <p>Give a helping hand for poor people</p>
             <ul class="xs-breadcumb">
-                <li class="badge badge-pill badge-primary"><a href="{{ url('/') }}" class="color-white"> Home /</a> Causes</li>
+                <li class="badge badge-pill badge-primary"><a href="{{ route('home.index') }}" class="color-white"> Home /</a> Causes</li>
             </ul>
         </div>
     </div>

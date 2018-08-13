@@ -6,7 +6,7 @@
             <p>{{ $subtitle }}</p>
             <ul class="xs-breadcumb">
                 <li class="badge badge-pill badge-primary">
-                    <a href="{{ url('/') }}" class="color-white"> Home /</a> {{ $breadcrumb }}
+                    <a href="{{ route('home.index') }}" class="color-white"> Home /</a> {{ $breadcrumb }}
                 </li>
             </ul>
         </div>

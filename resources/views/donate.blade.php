@@ -13,7 +13,7 @@
             <h2>Donate Now</h2>
             <ul class="xs-breadcumb">
                 <li class="badge badge-pill badge-primary">
-                    <a href="{{ url('/') }}" class="color-white">Home /</a> Donate
+                    <a href="{{ route('home.index') }}" class="color-white">Home /</a> Donate
                 </li>
             </ul>
         </div>

@@ -55,20 +55,20 @@
                 <nav class="xs-menus">
                     <div class="nav-header">
                         <div class="nav-toggle"></div>
-                        <a href="{{ url('/') }}" class="nav-logo">
-                            <img src="assets/images/logo.png" alt="">
+                        <a href="{{ route('home.index') }}" class="nav-logo">
+                            <img src="{{ asset('assets/images/logo.png') }}" alt="">
                         </a>
                     </div><!-- .nav-header END -->
                     <div class="nav-menus-wrapper row">
                         <div class="xs-logo-wraper col-lg-2 xs-padding-0">
-                            <a class="nav-brand" href="{{ url('/') }}">
-                                <img src="assets/images/logo.png" alt="">
+                            <a class="nav-brand" href="{{ route('home.index') }}">
+                                <img src="{{ asset('assets/images/logo.png') }}" alt="">
                             </a>
                         </div><!-- .xs-logo-wraper END -->
                         <div class="col-lg-7">
                             <ul class="nav-menu">
                                 <li>
-                                    <a href="{{ url('/') }}">Home</a>
+                                    <a href="{{ route('home.index') }}">Home</a>
                                 </li>
                                 <li>
                                     <a href="{{ route('about.index') }}">About</a>
