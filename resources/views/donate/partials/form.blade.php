@@ -1,4 +1,4 @@
-<form action="http://cherchofblerk.com/donate" id="xs-donation-form" class="xs-donation-form">
+<form action="https://thewaterproject.org/give-water" id="xs-donation-form" class="xs-donation-form">
     <div class="xs-input-group">
         <label for="xs-donate-name">Donation Amount <span class="color-light-red">*</span></label>
         <input type="text" name="name" id="xs-donate-name" class="form-control" placeholder="Minimum of $5">
