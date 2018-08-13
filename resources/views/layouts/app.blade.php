@@ -102,7 +102,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="xs-copyright-text">
-                                <p>&copy; Copyright {{ date('Y') }} <a href="https://familymediallc.com/">Family Media LLC</a> <a href="{{ route('pages.terms') }}">Terms</a> <a href="{{ route('pages.privacy') }}">Privacy</a> <a href="{{ route('pages.disclaimer') }}">Disclaimer</a></p>
+                                <p>&copy; Copyright {{ date('Y') }} <a href="{{ route('pages.terms') }}" class="ml-3">Terms</a> <a href="{{ route('pages.privacy') }}" class="ml-3">Privacy</a> <a href="{{ route('pages.disclaimer') }}" class="ml-3">Disclaimer</a></p>
                             </div>
                         </div>
                         <div class="col-md-6">
