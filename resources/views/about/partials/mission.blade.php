@@ -26,7 +26,7 @@
                     <ul class="xs-unorder-list play green-icon">
                         <li>Alpha bids</li>
                         <li>Reliable memes</li>
-                        <li>Vaporwave aestetic</li>
+                        <li>Vaporwave aesthetic</li>
                     </ul>
                 </div>
             </div>

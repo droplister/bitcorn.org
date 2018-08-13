@@ -71,21 +71,21 @@
                                     <a href="{{ url('/') }}">Home</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('/about') }}">About</a>
+                                    <a href="{{ route('about.index') }}">About</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('/causes') }}">Causes</a>
+                                    <a href="{{ route('causes.index') }}">Causes</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('/events') }}">Events</a>
+                                    <a href="{{ route('events.index') }}">Events</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('/contact') }}">Contact</a>
+                                    <a href="{{ route('contact.create') }}">Contact</a>
                                 </li>
                             </ul><!-- .nav-menu END -->
                         </div>
                         <div class="xs-navs-button d-flex-center-end col-lg-3">
-                            <a href="{{ url('/donate') }}" class="btn btn-primary">
+                            <a href="{{ route('donate.index') }}" class="btn btn-primary">
                                 <span class="badge"><i class="fa fa-heart"></i></span> Donate Now
                             </a>
                         </div><!-- .xs-navs-button END -->
@@ -109,9 +109,9 @@
                         <div class="col-md-6">
                             <nav class="xs-footer-menu">
                                 <ul>
-                                    <li><a href="{{ url('/about') }}">About</a></li>
+                                    <li><a href="{{ route('about.index') }}">About</a></li>
                                     <li><a href="https://t.me/bitcorns">Telegram</a></li>
-                                    <li><a href="{{ url('/contact') }}">Contact</a></li>
+                                    <li><a href="{{ route('contact.create') }}">Contact</a></li>
                                 </ul>
                             </nav>
                         </div>

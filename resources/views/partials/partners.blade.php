@@ -8,7 +8,7 @@
                         <h2 class="xs-mb-0 xs-title">Built on the best <span class="color-green">blockchain.</span></h2>
                     </div>
                     <p>We are deeply grateful for those who have created the Bitcoin blockchain, as well as, those who developed Counterparty. A big thanks to the following companies and projects who have helped make the Bitcorn Foundation's work possible.</p>
-                    <a href="{{ url('/contact') }}" class="btn btn-primary bg-orange">
+                    <a href="{{ route('contact.create') }}" class="btn btn-primary bg-orange">
                         join us now
                     </a>
                 </div>
