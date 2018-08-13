@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Storage;
 use App\Event;
+use Auth, Storage;
 use Illuminate\Http\Request;
 
 class EventsController extends Controller
@@ -41,7 +41,9 @@ class EventsController extends Controller
     {
         // Add User Validation
 
-        return view('events.create');
+        $user = Auth::user();
+
+        return view('events.create', compact('user'));
     }
 
     /**
