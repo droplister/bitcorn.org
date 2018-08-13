@@ -170,6 +170,6 @@ class Cause extends Model
      */
     public function scopePopular($query)
     {
-        return $query->approved()->withCount('pledges')->orderBy('pledges_count', 'desc');
+        return $query->active()->withCount('pledges')->orderBy('pledges_count', 'desc');
     }
 }
