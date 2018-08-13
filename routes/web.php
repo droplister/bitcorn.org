@@ -11,26 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/about', function () {
-    return view('about');
-});
-
-Route::get('/causes', function () {
-    return view('causes');
-});
-
-Route::get('/events', function () {
-    return view('events');
-});
-
-Route::get('/contact', function () {
-    return view('contact');
-});
-
-Route::get('/donate', function () {
-    return view('donate');
-});
+Auth::routes();
+Route::get('/', 'HomeController@index')->name('home.index');
+Route::get('/about', 'AboutController@index')->name('about.index');
+Route::get('/board', 'BoardController@index')->name('board.index');
+Route::get('/donate', 'DonateController@index')->name('donate.index');
+Route::resource('causes', 'CausesController');
+Route::resource('elections', 'ElectionsController');
+Route::resource('elections.candidates', 'CandidatesController');
+Route::resource('events', 'EventsController');
+Route::resource('contact', 'ContactController', ['only' => ['create', 'store']]);
