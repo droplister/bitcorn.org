@@ -59,7 +59,7 @@ class EventsController extends Controller
         $request->validate([
             'name' => 'required|max:255|unique:events',
             'description' => 'required|max:255',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif|width:200|height:234',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|dimensions:width=200,height=234',
             'event_url' => 'required|url',
             'scheduled_at' => 'required|date|after:yesterday',
         ]);
