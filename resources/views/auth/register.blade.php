@@ -3,11 +3,6 @@
 @section('title', 'Register')
 
 @section('content')
-    @include('partials.breadcrumbs', [
-        'background' => asset('assets/images/backgrounds/contact_bg.jpg'),
-        'title' => 'Register',
-        'breadcrumb' => 'Register',
-    ])
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
