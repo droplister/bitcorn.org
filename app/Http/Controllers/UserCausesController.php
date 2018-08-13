@@ -26,9 +26,11 @@ class UserCausesController extends Controller
     {
         if(Auth::user()->id === (int) $user)
         {
-            $causes = Auth::user()->causes;
+            $user = Auth::user();
 
-            return view('user.causes', compact('causes'));
+            $causes = $user->causes;
+
+            return view('user.causes', compact('user', 'causes'));
         }
         else
         {
