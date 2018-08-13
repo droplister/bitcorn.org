@@ -14,13 +14,14 @@
 Auth::routes();
 Route::get('/', 'HomeController@index')->name('home.index');
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard.index');
-Route::get('/about', 'AboutController@index')->name('about.index');
-Route::get('/donate', 'DonateController@index')->name('donate.index');
+Route::put('/users/{user}', 'UsersController@update')->name('users.update');
 Route::resource('causes', 'CausesController');
 Route::resource('elections', 'ElectionsController');
 Route::resource('elections.candidates', 'CandidatesController');
 Route::resource('events', 'EventsController');
 Route::resource('contact', 'ContactController', ['only' => ['create', 'store']]);
+Route::get('/about', 'AboutController@index')->name('about.index');
+Route::get('/donate', 'DonateController@index')->name('donate.index');
 Route::get('/disclaimer', 'PagesController@disclaimer')->name('pages.disclaimer');
 Route::get('/privacy', 'PagesController@privacy')->name('pages.privacy');
 Route::get('/terms', 'PagesController@terms')->name('pages.terms');
