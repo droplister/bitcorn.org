@@ -13,29 +13,29 @@
 
         <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700%7CRoboto+Slab:400,700" rel="stylesheet">
 
-        <link rel="icon" type="image/png" href="favicon.ico">
+        <link rel="icon" type="image/png" href="{{ asset('favicon.ico') }}">
 
-        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-        <link rel="stylesheet" href="assets/css/xsIcon.css">
-        <link rel="stylesheet" href="assets/css/isotope.css">
-        <link rel="stylesheet" href="assets/css/magnific-popup.css">
-        <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-        <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
-        <link rel="stylesheet" href="assets/css/animate.css">
+        <link rel="stylesheet" href="{{ asset('assets/css/font-awesome.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/xsIcon.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/isotope.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/magnific-popup.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/owl.theme.default.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}">
         
 
         <!--For Plugins external css-->
-        <link rel="stylesheet" href="assets/css/plugins.css" />
+        <link rel="stylesheet" href="{{ asset('assets/css/plugins.css') }}" />
 
         <!--Theme custom css -->
-        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 
         <!--Theme Responsive css-->
-        <link rel="stylesheet" href="assets/css/responsive.css" />
+        <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}" />
         
         <!-- use only color version -->
-        <link rel="stylesheet" type="text/css" href="assets/css/colors/color-4.css">
+        <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/colors/color-4.css') }}">
     </head>
     <body>
         <!--[if lt IE 10]>
@@ -138,17 +138,17 @@
             </div>
         </footer>       
 
-        <script src="assets/js/jquery-3.2.1.min.js"></script>
-        <script src="assets/js/plugins.js"></script>
-        <script src="assets/js/bootstrap.min.js"></script>
-        <script src="assets/js/isotope.pkgd.min.js"></script>
-        <script src="assets/js/jquery.magnific-popup.min.js"></script>
-        <script src="assets/js/owl.carousel.min.js"></script>
-        <script src="assets/js/jquery.waypoints.min.js"></script>
-        <script src="assets/js/jquery.countdown.min.js"></script>
-        <script src="assets/js/spectragram.min.js"></script>
+        <script src="{{ asset('assets/js/jquery-3.2.1.min.js') }}"></script>
+        <script src="{{ asset('assets/js/plugins.js') }}"></script>
+        <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('assets/js/isotope.pkgd.min.js') }}"></script>
+        <script src="{{ asset('assets/js/jquery.magnific-popup.min.js') }}"></script>
+        <script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
+        <script src="{{ asset('assets/js/jquery.waypoints.min.js') }}"></script>
+        <script src="{{ asset('assets/js/jquery.countdown.min.js') }}"></script>
+        <script src="{{ asset('assets/js/spectragram.min.js') }}"></script>
         <script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyCy7becgYuLwns3uumNm6WdBYkBpLfy44k"></script>
 
-        <script src="assets/js/main.js"></script>
+        <script src="{{ asset('assets/js/main.js') }}"></script>
     </body>
 </html>
