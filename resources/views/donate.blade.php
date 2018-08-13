@@ -74,7 +74,7 @@
                         <p class="small">Obviously, the Bitcorn Foundation is fake and doesn't accept donations, but here are several real charities and non-profits.</p>
                         <span class="xs-separetor v2"></span>
                     </div><!-- .xs-heading end -->
-                    <form action="#" id="xs-donation-form" class="xs-donation-form">
+                    <form action="http://cherchofblerk.com/donate" id="xs-donation-form" class="xs-donation-form">
                         <div class="xs-input-group">
                             <label for="xs-donate-name">Donation Amount <span class="color-light-red">*</span></label>
                             <input type="text" name="name" id="xs-donate-name" class="form-control" placeholder="Minimum of $5">
@@ -83,7 +83,7 @@
                         <div class="xs-input-group">
                             <label for="xs-donate-charity">List of Evaluated Charities <span class="color-light-red" >*</span></label>
                             <select name="charity-name" id="xs-donate-charity" class="form-control" onchange="javascript:location.href = this.value;">
-                                <option value="http://cherchofblerk.com/donate">Select</option>
+                                <option value="">Select</option>
                                 <option value="http://cherchofblerk.com/donate">Cherch of Blerk</option>
                                 <option value="https://coincenter.org/donate">Coin Center</option>
                                 <option value="https://archive.org/donate/">Internet Archive</option>
