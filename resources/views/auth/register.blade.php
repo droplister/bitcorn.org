@@ -1,6 +1,14 @@
 @extends('layouts.app')
 
+@section('title', 'Register')
+
 @section('content')
+    @include('partials.breadcrumbs', [
+        'background' => asset('assets/images/backgrounds/contact_bg.jpg'),
+        'title' => 'Register',
+        'subtitle' => 'Bitcorn.org',
+        'breadcrumb' => 'Register',
+    ])
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
