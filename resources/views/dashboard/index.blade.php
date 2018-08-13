@@ -9,7 +9,7 @@
                 @include('partials.sidebar', ['active' => 'dashboard'])
             </div>
             <div class="col-md-8">
-                <div class="card">
+                <div class="card mb-4">
                     <div class="card-header">Welcome Back!</div>
 
                     <div class="card-body">
