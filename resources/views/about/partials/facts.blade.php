@@ -9,7 +9,7 @@
             <div class="col-lg-3 col-md-6">
                 <div class="xs-single-funFact color-white">
                     <i class="icon-donation_2"></i>
-                    <span class="number-percentage-count number-percentage" data-value="{{ number_format($data['total_reward'] / 1000000, 1) }}" data-animation-duration="3500">0</span><span>M</span>
+                    <span class="number-percentage-count number-percentage" data-value="{{ number_format($data['total_rewards'] / 1000000, 1) }}" data-animation-duration="3500">0</span><span>M</span>
                     <small>BITCORN</small>
                 </div>
             </div>
