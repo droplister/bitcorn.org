@@ -3,7 +3,9 @@
     <div class="container">
         <div class="color-white xs-inner-banner-content">
             <h2>{{ $title }}</h2>
+            @if(isset($subtitle))
             <p>{{ $subtitle }}</p>
+            @endif
             <ul class="xs-breadcumb">
                 <li class="badge badge-pill badge-primary">
                     <a href="{{ route('home.index') }}" class="color-white"> Home /</a> {{ $breadcrumb }}

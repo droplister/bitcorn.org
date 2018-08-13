@@ -6,7 +6,6 @@
     @include('partials.breadcrumbs', [
         'background' => asset('assets/images/backgrounds/contact_bg.jpg'),
         'title' => 'Login',
-        'subtitle' => 'Bitcorn.org',
         'breadcrumb' => 'Login',
     ])
 <div class="container">
