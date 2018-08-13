@@ -1421,7 +1421,7 @@ blockquote {
     .xs-volunteer-form-wraper.volunteer-version-2 .xs-fileContainer label {
       background-image: url(https://bitcorn.org/assets/images/upload_icon_gray.png); }
     .xs-volunteer-form-wraper.volunteer-version-2 textarea {
-      background-image: url(https://bitcorn.org/assets/images/massage_icon_gray.png); }
+      background-image: url(https://bitcorn.org/assets/images/message_icon_gray.png); }
     .xs-volunteer-form-wraper.volunteer-version-2 ::-webkit-input-placeholder {
       /* Chrome/Opera/Safari */
       color: #777777; }
@@ -1509,7 +1509,7 @@ blockquote {
   resize: none;
   height: 120px;
   padding: 20px;
-  background-image: url(https://bitcorn.org/assets/images/massage_icon.png);
+  background-image: url(https://bitcorn.org/assets/images/message_icon.png);
   background-repeat: no-repeat;
   background-position: top 20px right 20px; }
 
@@ -2078,7 +2078,7 @@ svg {
 .xs-contact-form .input-group {
   margin-bottom: 20px; }
 
-.xs-contact-form .massage-group .input-group-text {
+.xs-contact-form .message-group .input-group-text {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;

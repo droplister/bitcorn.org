@@ -12,8 +12,8 @@
             <div class="input-group-text"><i class="fa fa-envelope-o"></i></div>
         </div>
     </div>
-    <div class="input-group massage-group">
-        <textarea name="massage" placeholder="Enter Your Message....." id="xs-massage" class="form-control" cols="30" rows="10"></textarea>
+    <div class="input-group message-group">
+        <textarea name="message" placeholder="Enter Your Message....." id="xs-message" class="form-control" cols="30" rows="10"></textarea>
         <div class="input-group-append">
             <div class="input-group-text"><i class="fa fa-pencil"></i></div>
         </div>

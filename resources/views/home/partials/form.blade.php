@@ -8,6 +8,6 @@
             <input type="email" name="email" id="email" class="form-control" placeholder="Your Email">
         </div>
     </div>
-    <textarea name="massage" id="massage" placeholder="Enter your massage" cols="30" class="form-control" rows="10"></textarea>
+    <textarea name="message" id="message" placeholder="Enter your message" cols="30" class="form-control" rows="10"></textarea>
     <button type="submit" class="btn btn-secondary btn-color-alt">apply now</button>
 </form>
