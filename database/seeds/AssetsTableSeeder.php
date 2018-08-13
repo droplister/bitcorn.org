@@ -97,7 +97,7 @@ class AssetsTableSeeder extends Seeder
      * @param  string  $type
      * @return void
      */
-    private seedAssets($assets, $type)
+    private function seedAssets($assets, $type)
     {
         // Each asset
         foreach($assets as $asset => $data)
