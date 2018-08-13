@@ -17,7 +17,7 @@ class CreateAssetsTable extends Migration
             $table->increments('id');
             $table->string('type');
             $table->string('name');
-            $table->unsignedInteger('issuance');
+            $table->unsignedBigInteger('issuance');
             $table->boolean('divisible');
             $table->timestamps();
         });
