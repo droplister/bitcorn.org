@@ -2,7 +2,7 @@
     <div class="container">
         <div class="xs-heading row xs-mb-60">
             <div class="col-md-9 col-xl-9">
-                <h2 class="xs-title">Bitcorner Causes</h2>
+                <h2 class="xs-title">Bitcorn Causes</h2>
                 <span class="xs-separetor dashed"></span>
                 <p>The Bitcorn.org platform also helps entrepreneurs, startups, and <br> starving artists achieve their dreams.</p>
             </div>
