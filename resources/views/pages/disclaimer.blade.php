@@ -15,9 +15,9 @@
                         <p>We are live-action role playing (LARPing) as part of the larger Bitcorn Crops game, very much in the tradition of the <a href="http://rarepepefoundation.com/">Rare Pepe Foundation</a> and the citizens of <a href="https://en.wikipedia.org/wiki/Liberland">Liberland</a>.</p>
                         <p>The Bitcorn Foundation is not a 501(c)(3). It does not accept donations. In fact, we beg you to spend no time on this joke of an organization and instead volunteer or donate to worthy charities and non-profits, like those listed <a href="{{ route('donate.index') }}">here</a>.</p>
                         <p>Participating as a "member" of "the board" doesn't confer any authority to you to enter into contracts or any crazy shit like that. That should be self-evident. And if you're a real twat, you'll probably be asked to stop playing and to take your ball home.</p>
-                        <p>For the love of god, don't take the Bitcorn Foundation too seriously. Let it be what it is, another avenue for wacky memes and hijinks.</p>
-                        <p>But, again, there is always "that guy". In fact,if you are reading this, you might literally be "that guy". Consider, if you are "that guy", we will probably admonish you with these disclaimers and laught at you, if your ego becomes bruised and you want to flip over the game board.</p>
-                        <p>Okay? Alright.</p>
+                        <p>For the love of god, don't take the Bitcorn Foundation too seriously. Let it be what it is, another avenue for wacky memes and hijinks. If everyone is cool, we can have a lot of fun. Be cool.</p>
+                        <p>But, again, there is always "that guy". In fact, if you are reading this, you might literally be "that guy". Consider, if you are "that guy", we will probably admonish you with these disclaimers and laught at you, if your ego becomes bruised and you want to flip over the game board.</p>
+                        <p>Alright? Okay.</p>
                     </div>
                 </div>
             </div>
