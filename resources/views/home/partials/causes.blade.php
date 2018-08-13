@@ -4,7 +4,7 @@
             <div class="col-md-9 col-xl-9">
                 <h2 class="xs-title">Bitcorn Causes</h2>
                 <span class="xs-separetor dashed"></span>
-                <p>The Bitcorn.org platform also helps entrepreneurs, startups, and <br> starving artists achieve their dreams.</p>
+                <p>The Bitcorn.org platform tries to help entrepreneurs, startups, and <br> starving artists achieve their dreams.</p>
             </div>
             <div class="col-xl-3 col-md-3 xs-btn-wraper">
                 <a href="{{ route('causes.index') }}" class="btn btn-primary">All Causes</a>
