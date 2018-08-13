@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Election extends Model
 {
-	use Touchable;
+    use Touchable;
 
     /**
      * The attributes that are mass assignable.

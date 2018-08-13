@@ -1,5 +1,5 @@
 <form action="{{ route('contact.create') }}" method="POST" id="volunteer-form" class="xs-volunteer-form">
-	@csrf
+    @csrf
     <div class="row">
         <div class="col-lg-6">
             <input type="text" name="name" id="name" class="form-control" placeholder="Your Name">

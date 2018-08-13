@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Cause extends Model
 {
-	use Touchable;
+    use Touchable;
 
     /**
      * The attributes that are mass assignable.

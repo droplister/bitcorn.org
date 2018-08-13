@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row col-lg-10 xs-heading mx-auto">
             <h2 class="xs-title color-white small">
-            	Our foundation was founded in 2018 and we're only just getting started.
+                Our foundation was founded in 2018 and we're only just getting started.
             </h2>
         </div>
         <div class="row">

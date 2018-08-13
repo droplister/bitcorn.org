@@ -8,7 +8,7 @@
             </div>
         </div>
         <div class="row">
-        	@foreach($events as $event)
+            @foreach($events as $event)
                 @include('events.partials.event')
             @endforeach
         </div>

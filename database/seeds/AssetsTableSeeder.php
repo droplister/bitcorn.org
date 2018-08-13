@@ -34,62 +34,62 @@ class AssetsTableSeeder extends Seeder
     public function run()
     {
         $pledge_assets = [
-        	'BITCORN' => [
-        		'divisible' => 0,
-        	],
-        	'XCP' => [
-        		'divisible' => 1,
-        	]
+            'BITCORN' => [
+                'divisible' => 0,
+            ],
+            'XCP' => [
+                'divisible' => 1,
+            ]
         ];
 
-		$this->seedAssets($pledge_assets, 'pledge');
+        $this->seedAssets($pledge_assets, 'pledge');
 
         $vote_assets = [
-        	'CROPS.VOTE0' => [
-        		'divisible' => 1,
-        	],
-        	'CROPS.VOTE1' => [
-        		'divisible' => 1,
-        	],
-        	'CROPS.VOTE2' => [
-        		'divisible' => 1,
-        	],
-        	'CROPS.VOTE3' => [
-        		'divisible' => 1,
-        	],
-        	'CROPS.VOTE4' => [
-        		'divisible' => 1,
-        	],
-        	'CROPS.VOTE5' => [
-        		'divisible' => 1,
-        	],
-        	'CROPS.VOTE6' => [
-        		'divisible' => 1,
-        	],
-        	'CROPS.VOTE7' => [
-        		'divisible' => 1,
-        	],
-        	'CROPS.VOTE8' => [
-        		'divisible' => 1,
-        	],
-        	'CROPS.VOTE9' => [
-        		'divisible' => 1,
-        	],
-        	'CROPS.VOTE10' => [
-        		'divisible' => 1,
-        	],
-        	'CROPS.VOTE11' => [
-        		'divisible' => 1,
-        	],
-        	'CROPS.VOTE12' => [
-        		'divisible' => 1,
-        	],
-        	'CROPS.VOTE13' => [
-        		'divisible' => 1,
-        	],
+            'CROPS.VOTE0' => [
+                'divisible' => 1,
+            ],
+            'CROPS.VOTE1' => [
+                'divisible' => 1,
+            ],
+            'CROPS.VOTE2' => [
+                'divisible' => 1,
+            ],
+            'CROPS.VOTE3' => [
+                'divisible' => 1,
+            ],
+            'CROPS.VOTE4' => [
+                'divisible' => 1,
+            ],
+            'CROPS.VOTE5' => [
+                'divisible' => 1,
+            ],
+            'CROPS.VOTE6' => [
+                'divisible' => 1,
+            ],
+            'CROPS.VOTE7' => [
+                'divisible' => 1,
+            ],
+            'CROPS.VOTE8' => [
+                'divisible' => 1,
+            ],
+            'CROPS.VOTE9' => [
+                'divisible' => 1,
+            ],
+            'CROPS.VOTE10' => [
+                'divisible' => 1,
+            ],
+            'CROPS.VOTE11' => [
+                'divisible' => 1,
+            ],
+            'CROPS.VOTE12' => [
+                'divisible' => 1,
+            ],
+            'CROPS.VOTE13' => [
+                'divisible' => 1,
+            ],
         ];
 
-		$this->seedAssets($vote_assets, 'vote');
+        $this->seedAssets($vote_assets, 'vote');
     }
 
     /**
@@ -109,7 +109,7 @@ class AssetsTableSeeder extends Seeder
 
             // Create it!
             Asset::create([
-            	'type' => $type,
+                'type' => $type,
                 'name' => $asset,
                 'issuance' => $issuance,
                 'divisible' => $data['divisible'],
