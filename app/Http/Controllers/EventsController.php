@@ -81,7 +81,7 @@ class EventsController extends Controller
      * @param  integer  $event
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request, $event)
+    public function destroy(Request $request, $event)
     {
         // Add User Validation
 

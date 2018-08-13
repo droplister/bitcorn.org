@@ -40,13 +40,13 @@
             </div>
             <div class="col-md-12 col-lg-6 row xs-archive-image">
                 <div class="col-md-12 xs-mb-30">
-                    <img src="{{ asset('assets/images/archive-img-1.jpg' }}" alt="" class="rounded">
+                    <img src="{{ asset('assets/images/archive-img-1.jpg') }}" alt="" class="rounded">
                 </div>
                 <div class="col-md-6 col-sm-6">
-                    <img src="{{ asset('assets/images/archive-img-2.jpg' }}" alt="" class="rounded">
+                    <img src="{{ asset('assets/images/archive-img-2.jpg') }}" alt="" class="rounded">
                 </div>
                 <div class="col-md-6 col-sm-6">
-                    <img src="{{ asset('assets/images/archive-img-3.jpg' }}" alt="" class="rounded">
+                    <img src="{{ asset('assets/images/archive-img-3.jpg') }}" alt="" class="rounded">
                 </div>
             </div>
         </div>
