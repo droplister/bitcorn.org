@@ -1,7 +1,5 @@
 <?php
 
-namespace App\Database\Seeds;
-
 use App\Asset;
 use JsonRPC\Client;
 use Illuminate\Database\Seeder;
