@@ -109,9 +109,10 @@
                         <div class="col-md-6">
                             <nav class="xs-footer-menu">
                                 <ul>
-                                    @guest
+                                @guest
                                     <li><a href="{{ route('login') }}">Login</a></li>
-                                    @else
+                                    <li><a href="{{ route('register') }}">Register</a></li>
+                                @else
                                     <li>
                                         <a href="{{ route('logout') }}"
                                            onclick="event.preventDefault();
@@ -124,7 +125,7 @@
                                             @csrf
                                         </form>
                                     </li>
-                                    @endguest
+                                @endguest
                                     <li><a href="https://t.me/bitcorns">Community</a></li>
                                     <li><a href="{{ route('contact.create') }}">Contact</a></li>
                                 </ul>
