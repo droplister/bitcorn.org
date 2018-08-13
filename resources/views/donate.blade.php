@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'Donate')
+@section('title', 'Donate Now')
+@section('description', 'Make a donation to charitable organizations and non-profit organizations that are focused on or accept cryptocurrencies, like Bitcoin.')
 
 @section('content')
 <!-- welcome section -->
@@ -11,7 +12,9 @@
 		<div class="color-white xs-inner-banner-content">
 			<h2>Donate Now</h2>
 			<ul class="xs-breadcumb">
-				<li class="badge badge-pill badge-primary"><a href="{{ url('/') }}" class="color-white"> Home /</a> Donate</li>
+				<li class="badge badge-pill badge-primary">
+					<a href="{{ url('/') }}" class="color-white">Home /</a> Donate
+				</li>
 			</ul>
 		</div>
 	</div>
@@ -27,28 +30,28 @@
 				<div class="xs-service-promo box-color bg-light-red">
 					<span class="icon-water"></span>
 					<h5>The Water Project</h5>
-					<p>A charity providing access to clean water in Africa. <br /> <a href="https://thewaterproject.org/" target="_blank">Learn more &raquo;</a></p>
+					<p>A charity providing access to clean water in Africa. <br /> <a href="https://thewaterproject.org/" target="_blank" class="text-white font-weight-bold">Learn more &raquo;</a></p>
 				</div><!-- .xs-service-promo END -->
 			</div>
 			<div class="col-md-6 col-lg-3">
 				<div class="xs-service-promo box-color bg-green">
 					<span class="icon-groceries"></span>
 					<h5>Sean's Outpost</h5>
-					<p>Homeless outreach program in Pensacola, FL. <br /> <a href="http://www.seansoutpost.com/" target="_blank">Learn more &raquo;</a></p>
+					<p>Homeless outreach program in Pensacola, FL. <br /> <a href="http://www.seansoutpost.com/" target="_blank" class="text-white font-weight-bold">Learn more &raquo;</a></p>
 				</div><!-- .xs-service-promo END -->
 			</div>
 			<div class="col-md-6 col-lg-3">
 				<div class="xs-service-promo box-color bg-blue">
 					<span class="icon-heartbeat"></span>
 					<h5>Cherch of Blerk</h5>
-					<p>Crypto-based religion focused on disaster relief. <br /> <a href="http://cherchofblerk.com/" target="_blank">Learn more &raquo;</a></p>
+					<p>Crypto-based religion focused on disaster relief. <br /> <a href="http://cherchofblerk.com/" target="_blank" class="text-white font-weight-bold">Learn more &raquo;</a></p>
 				</div><!-- .xs-service-promo END -->
 			</div>
 			<div class="col-md-6 col-lg-3">
 				<div class="xs-service-promo box-color bg-purple">
 					<span class="icon-open-book"></span>
 					<h5>Internet Archive</h5>
-					<p>Non-profit for saving the internet's history. <br /> <a href="https://archive.org/" target="_blank">Learn more &raquo;</a></p>
+					<p>Non-profit for saving the internet's history. <br /> <a href="https://archive.org/" target="_blank" class="text-white font-weight-bold">Learn more &raquo;</a></p>
 				</div><!-- .xs-service-promo END -->
 			</div>
 		</div><!-- .row end -->
@@ -68,19 +71,19 @@
 				<div class="xs-donation-form-wraper" >
 					<div class="xs-heading xs-mb-30">
 						<h2 class="xs-title">Make a donation</h2>
-						<p class="small">Obviously, the Bitcorn Foundation is fake and doesn't accept donations, but here are several real charities and non-profits...</p>
+						<p class="small">Obviously, the Bitcorn Foundation is fake and doesn't accept donations, but here are several real charities and non-profits.</p>
 						<span class="xs-separetor v2"></span>
 					</div><!-- .xs-heading end -->
 					<form action="#" id="xs-donation-form" class="xs-donation-form">
 						<div class="xs-input-group">
-							<label for="xs-donate-name">Donation Amount <span class="color-light-red">**</span></label>
+							<label for="xs-donate-name">Donation Amount <span class="color-light-red">*</span></label>
 							<input type="text" name="name" id="xs-donate-name" class="form-control" placeholder="Minimum of $5">
 						</div><!-- .xs-input-group END -->
 						
 						<div class="xs-input-group">
-							<label for="xs-donate-charity">List of Evaluated Charities <span class="color-light-red" >**</span></label>
+							<label for="xs-donate-charity">List of Evaluated Charities <span class="color-light-red" >*</span></label>
 							<select name="charity-name" id="xs-donate-charity" class="form-control" onchange="javascript:location.href = this.value;">
-								<option value="">Select</option>
+								<option value="http://cherchofblerk.com/donate">Select</option>
 								<option value="http://cherchofblerk.com/donate">Cherch of Blerk</option>
 								<option value="https://coincenter.org/donate">Coin Center</option>
 								<option value="https://archive.org/donate/">Internet Archive</option>
@@ -90,7 +93,9 @@
 							</select>
 						</div><!-- .xs-input-group END -->
 
-						<button type="submit" class="btn btn-warning" onclick="javascript:location.href = 'http://cherchofblerk.com/donate';"><span class="badge"><i class="fa fa-heart"></i></span> Donate now</button>
+						<button type="submit" class="btn btn-warning">
+							<span class="badge"><i class="fa fa-heart"></i></span> Donate now
+						</button>
 					</form><!-- .xs-donation-form #xs-donation-form END -->
 				</div>
 			</div>

@@ -94,20 +94,20 @@
                         <li>Enabling new cooperative missions effectively</li>
                         <li>Encouraging greater transparency and accountability</li>
                     </ul>
-                    <ul class="xs-funfact-list">
-                        <li>
+                    <ul class="xs-funfact-list row">
+                        <li class="col-4 col-md-3">
                             <p>
                                 <span class="number-percentage-count number-percentage" data-value="289" data-animation-duration="3500">0</span><sup> + </sup>
                             </p>
                             <span>Bitcorn Farms</span>
                         </li>
-                        <li>
+                        <li class="col-4 col-md-3">
                             <p>
                                 <span class="number-percentage-count number-percentage" data-value="11" data-animation-duration="3500">0</span><sup> + </sup>
                             </p>
                             <span>Cooperatives</span>
                         </li>
-                        <li>
+                        <li class="col-4 col-md-3">
                             <p>
                                 <span class="number-percentage-count number-percentage" data-value="72" data-animation-duration="3500">0</span><sup> + </sup>
                             </p>
