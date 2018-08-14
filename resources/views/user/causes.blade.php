@@ -21,7 +21,7 @@
                     </div>
 
                     <div class="card-body">
-                        <p>{{ $cause->pledged }} {{ $cause->asset->name }}</p>
+                        <p>{{ $cause->pledged_normalized }} {{ $cause->asset->name }}</p>
                         <div class="progress mb-3">
                           <div class="progress-bar bg-success" role="progressbar" style="width: {{ $cause->progress === 0 ? 1 : $cause->progress }}%" aria-valuenow="{{ $cause->progress === 0 ? 1 : $cause->progress }}" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
