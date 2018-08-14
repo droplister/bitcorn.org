@@ -29,7 +29,8 @@ class ElectionCandidatesController extends Controller
     public function store(Request $request, $election)
     {
         $request->validate([
-            'content' => 'required',
+            'content' => 'required|min:10|max:5000',
+            'terms' => 'required',
         ]);
 
         $election = Election::findOrFail($election);
@@ -38,7 +39,6 @@ class ElectionCandidatesController extends Controller
         {
             return back()->with('error', 'You are already a candidate!');
         }
-
 
         $candidate = Candidate::create([
             'election_id' => $election->id,

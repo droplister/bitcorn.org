@@ -68,7 +68,20 @@
                                                         <div class="input-group-text"><i class="fa fa-pencil"></i></div>
                                                     </div>
                                                 </div>
-                                                <button class="btn btn-success" type="submit" id="xs-submit">Submit</button>
+
+                                                <div class="form-group">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" name="terms" id="terms" {{ old('terms') ? 'checked' : '' }} style="height:inherit">
+
+                                                        <label class="form-check-label" for="terms">
+                                                            I have reviewed my platform. Let's go!
+                                                        </label>
+                                                    </div>
+                                                </div>
+
+                                                <button class="btn btn-success" type="submit" id="xs-submit">
+                                                    Submit
+                                                </button>
                                             </form>
                                         </div>
                                     </div><!-- #mapLocation END -->
