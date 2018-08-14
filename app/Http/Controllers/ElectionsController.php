@@ -84,15 +84,15 @@ class ElectionsController extends Controller
             'scheduled_at' => $request->scheduled_at,
         ]);
 
-        $election = Election::create([
-            'event_id' => $event->id,
-            'asset_id' => $request->asset_id,
-        ]);
+        // $election = Election::create([
+        //     'event_id' => $event->id,
+        //     'asset_id' => $request->asset_id,
+        // ]);
 
-        $event->update([
-            'event_url' => route('elections.show', ['election' => $election->id]),
-        ]);
+        // $event->update([
+        //     'event_url' => route('elections.show', ['election' => $election->id]),
+        // ]);
         
-        return dd($event);
+        return redirect(route('elections.create'))->with('success', 'Election Created');
     }
 }
