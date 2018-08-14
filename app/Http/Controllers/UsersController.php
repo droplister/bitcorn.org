@@ -29,15 +29,15 @@ class UsersController extends Controller
             'email' => 'required|string|email|max:255',
         ]);
 
-        if(Auth::user()->id === $user)
+        if(Auth::user()->id === (int) $user)
         {
         	Auth::user()->update($request->all());
         }
         else
         {
-            return back()->with('error', 'Access Denied');
+            return abort('404');
         }
 
-        return back()->with('success', 'Profile Updated');
+        return redirect(route('dashboard.index'))->with('success', 'Profile Updated');
     }
 }
