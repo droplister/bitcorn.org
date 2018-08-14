@@ -37,7 +37,7 @@
                     </div>
 
                     <div class="card-body">
-                        <p>Your cause is pending review and approval.</p>
+                        <p>Your cause is pending review and approval. If not approved, it may be deleted.</p>
                     </div>
                 </div>
                 @endif
