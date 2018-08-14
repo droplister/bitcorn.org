@@ -90,7 +90,6 @@ class ElectionsController extends Controller
         ]);
 
         $event->update([
-            'scheduled_at' => $request->scheduled_at,
             'event_url' => route('elections.show', ['election' => $election->id]),
         ]);
 
