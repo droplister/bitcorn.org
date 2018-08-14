@@ -3,16 +3,13 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>@yield('title')</title>
-        <meta name="description" content="@yield('description')">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-        <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700%7CRoboto+Slab:400,700" rel="stylesheet">
+        <title>@yield('title')</title>
+        <meta name="description" content="@yield('description')">
 
-        <link rel="icon" type="image/png" href="{{ asset('favicon.ico') }}">
+        <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700%7CRoboto+Slab:400,700" rel="stylesheet">
 
         <link rel="stylesheet" href="{{ asset('assets/css/font-awesome.min.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
@@ -22,18 +19,9 @@
         <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/css/owl.theme.default.min.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}">
-        
-
-        <!--For Plugins external css-->
         <link rel="stylesheet" href="{{ asset('assets/css/plugins.css') }}" />
-
-        <!--Theme custom css -->
         <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
-
-        <!--Theme Responsive css-->
         <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}" />
-        
-        <!-- use only color version -->
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/colors/color-4.css') }}">
     </head>
     <body>
@@ -46,24 +34,20 @@
                 <div class="double-bounce1"></div>
                 <div class="double-bounce2"></div>
             </div>
-        </div><!-- #preloader -->
+        </div>
 
-        <!-- header section -->
         <header class="xs-header header-transparent">
             <div class="container">
                 <nav class="xs-menus">
                     <div class="nav-header">
                         <div class="nav-toggle"></div>
-                        <a href="{{ route('home.index') }}" class="nav-logo">
-                            <img src="{{ asset('assets/images/logo.png') }}" alt="">
-                        </a>
-                    </div><!-- .nav-header END -->
+                    </div>
                     <div class="nav-menus-wrapper row">
                         <div class="xs-logo-wraper col-lg-2 xs-padding-0">
                             <a class="nav-brand" href="{{ route('home.index') }}">
                                 <img src="{{ asset('assets/images/logo.png') }}" alt="">
                             </a>
-                        </div><!-- .xs-logo-wraper END -->
+                        </div>
                         <div class="col-lg-7">
                             <ul class="nav-menu">
                                 <li>
@@ -81,21 +65,20 @@
                                 <li>
                                     <a href="{{ route('contact.create') }}">Contact</a>
                                 </li>
-                            </ul><!-- .nav-menu END -->
+                            </ul>
                         </div>
                         <div class="xs-navs-button d-flex-center-end col-lg-3">
                             <a href="{{ route('donate.index') }}" class="btn btn-primary">
                                 <span class="badge"><i class="fa fa-heart"></i></span> Donate Now
                             </a>
-                        </div><!-- .xs-navs-button END -->
-                    </div><!-- .nav-menus-wrapper .row END -->
-                </nav><!-- .xs-menus .fundpress-menu END -->
-            </div><!-- .container end -->
-        </header><!-- End header section -->
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
 
         @yield('content')
 
-        <!-- footer section start -->
         <footer class="xs-footer-section">
             <div class="container">
                 <div class="xs-copyright">
