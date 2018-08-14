@@ -9,6 +9,7 @@ return [
         'user' => env('CP_USER', 'rpc'),
         'password' => env('CP_PASSWORD', '1234'),
     ],
+    'contact_email' => env('CONTACT_EMAIL', 'bitcorncrops+contact@gmail.com'),
     'deposit_address' => env('DEPOSIT_ADDRESS', '1BitcornFoundationVotingxxy262cTk'),
     'foundation_chatroom' => env('FOUNDATION_CHATROOM'),
 ];

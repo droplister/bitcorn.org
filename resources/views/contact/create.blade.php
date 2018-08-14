@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Contact')
+@section('title', 'Contact Us')
 
 @section('content')
     @include('partials.breadcrumbs', [

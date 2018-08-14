@@ -29,6 +29,7 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
+        // Basic Validation
         $request->validate([
             'name' => 'required',
             'email' => 'required|email',
@@ -36,9 +37,11 @@ class ContactController extends Controller
             'g-recaptcha-response' => 'required|captcha',
         ]);
 
-        Mail::to('bitcorncrops+contact@gmail.com')
+        // Send Via Email
+        Mail::to(config('bitcorn.contact_email'))
             ->send(new ContactEmail($request->name, $request->email, $request->message));
 
+        // Telegram Chat
         Notification::route('telegram', config('bitcorn.foundation_chatroom'))
             ->notify(new EmailReceived($request->name, $request->email, $request->message));
 
