@@ -13,6 +13,7 @@
                     <div class="card-header">New Election</div>
 
                     <div class="card-body">
+                        @include('partials.session')
                         @include('elections.partials.form')
                     </div>
                 </div>

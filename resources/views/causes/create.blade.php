@@ -16,6 +16,7 @@
                     <div class="card-header">New Cause</div>
 
                     <div class="card-body">
+                        @include('partials.session')
                         @include('causes.partials.form')
                     </div>
                 </div>

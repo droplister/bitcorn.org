@@ -23,6 +23,7 @@
                     <div class="card-header">Edit Profile</div>
 
                     <div class="card-body">
+                        @include('partials.session')
                         @include('dashboard.partials.form')
                     </div>
                 </div>
