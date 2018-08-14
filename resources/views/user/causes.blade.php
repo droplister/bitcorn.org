@@ -12,22 +12,36 @@
                 @include('partials.sidebar', ['active' => 'causes'])
             </div>
             <div class="col-md-8">
+                @foreach($causes as $cause)
+                <div class="card">
+                    <div class="card-header">
+                        <a href="{{ route('causes.show', ['causes' => $cause->id]) }}">{{ $cause->name }}</a>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="progress">
+                          <div class="progress-bar bg-success" role="progressbar" style="width: {{ $cause->progress }}%" aria-valuenow="{{ $cause->progress }}" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        @if($cause->pledged > 0)
+                        <p>{{ $cause->asset->name }} will be paid to {{ $cause->address }} on {{ $cause->ended_at->toDateString() }}.</p>
+                        @else
+                        <p>You have not yet received any pledges for your cause. Promote it!</p>
+                        @endif
+                    </div>
+                </div>
+                @endforeach
+                @if(count($causes) === 0)
                 <div class="card">
                     <div class="card-header">My Causes</div>
 
                     <div class="card-body">
-                        @foreach($causes as $cause)
-                            <p><a href="{{ route('causes.show', ['causes' => $cause->id]) }}">{{ $cause->name }}</a></p>
-                            <p>Status: {{ $cause->approved_at ? 'Approved' : 'Pending' }}</p>
-                        @endforeach
-                        @if(count($causes) === 0)
-                            <p>You have not created any causes yet.</p>
-                            <a href="{{ route('causes.create') }}" class="btn btn-xs btn-primary">
-                                New Cause
-                            </a>
-                        @endif
+                        <p>You have not created any causes yet.</p>
+                        <a href="{{ route('causes.create') }}" class="btn btn-xs btn-primary">
+                            New Cause
+                        </a>
                     </div>
                 </div>
+                @endif
             </div>
         </div>
     </div>
