@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'About')
+@section('title', 'About Us')
+@section('description', 'The Bitcorn Foundation exists to eradicate extreme dryness. We owe it to our children to irrigate the future today.')
 
 @section('content')
     @include('partials.breadcrumbs', [

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Cache;
 use App\Election;
 use Illuminate\Http\Request;
 
@@ -14,11 +15,23 @@ class AboutController extends Controller
      */
     public function index()
     {
-        $data = file_get_contents('https://bitcorns.com/api/info');
-        $data = json_decode($data, true);
+        // Bitcorn API
+        $data = Cache::remember('api_info', 60,
+            function () {
+                $data = file_get_contents('https://bitcorns.com/api/info');
 
-        $last_election = Election::latest('decided_at')->first();
-        $users = $last_election ? $last_election->candidates()->elected()->get() : [];
+                return json_decode($data, true);
+            }
+        );
+
+        // "The Board"
+        $users = Cache::remember('members', 60,
+            function () {
+                $last_election = Election::latest('decided_at')->first();
+
+                return $last_election ? $last_election->candidates()->elected()->get() : [];
+            }
+        );
 
         return view('about.index', compact('data', 'users'));
     }
