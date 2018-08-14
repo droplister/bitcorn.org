@@ -5,6 +5,7 @@
 @section('content')
     <div class="container">
         <h1 class="pb-3 mb-4 border-bottom">
+            <a href="{{ route('causes.index') }}"><i class="fa fa-heart"></i></a>
             My Causes
         </h1>
         <div class="row justify-content-center">
