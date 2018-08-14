@@ -21,6 +21,9 @@
                     </div>
                 </div>
                 <p class="text-muted text-center py-4 mb-0">
+                    <a href="{{ route('home.index') }}">
+                        Home
+                    </a>
                     <a href="{{ route('pages.terms') }}">
                         Terms
                     </a>
