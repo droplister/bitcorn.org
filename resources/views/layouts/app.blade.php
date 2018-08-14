@@ -108,12 +108,7 @@
                         <div class="col-md-6">
                             <nav class="xs-footer-menu">
                                 <ul>
-                                    @guest
-                                    <li><a href="{{ route('login') }}">Login</a></li>
-                                    <li><a href="{{ route('register') }}">Register</a></li>
-                                    @else
                                     <li><a href="{{ route('dashboard.index') }}">Dashboard</a></li>
-                                    @endguest
                                     <li><a href="https://t.me/bitcorns" target="_blank">Community</a></li>
                                     <li><a href="{{ route('contact.create') }}">Contact</a></li>
                                 </ul>

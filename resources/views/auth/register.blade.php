@@ -13,6 +13,13 @@
                         @include('auth.forms.register')
                     </div>
                 </div>
+                <p class="text-muted text-center py-4 mb-0">
+                    Already have an account?
+                    <a href="{{ route('login') }}" class="ml-1">
+                        <i class="fa fa-sign-in"></i>
+                        Sign in
+                    </a>
+                </p>
             </div>
         </div>
     </div>
