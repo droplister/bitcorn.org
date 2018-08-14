@@ -155,16 +155,32 @@
 
     <hr class="my-4" />
 
-    <h6 class="font-weight-normal">Last Step!</h6>
+    <h6 class="font-weight-normal">The final steps...</h6>
+
+    <div class="alert alert-danger mt-3">
+        <b>Warning: </b> This is brand new software and bugs may occur. Including, ones that cause pledged funds to be lost or miscounted. If you can't deal with that... Go away.
+    </div>
 
     <div class="alert alert-warning mt-3">
         <b>Notice:</b> Once submitted, you cannot edit your cause. Please, review everything above, especially the address where you will be receiving funds raised.
     </div>
 
+    <div class="alert alert-info mt-3">
+        <b>Info:</b> The way Bitcorn.org works, when your campaign ends, you will be sent whatever amount you were able to raise, regardless of the target you set.
+    </div>
+
+    <div class="form-group">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="terms" id="terms" style="height:inherit">
+
+            <label class="form-check-label" for="terms"> I have read the above notices and <a href="https://bitcorn.org/disclaimer" target="_blank">this disclaimer</a>. It's not lost on me that this is a light-hearted memetic project and I submit this cause in good faith. If my cause is not approved, I'm cool with that. There's probably a very reasonable reason for it.</label>
+        </div>
+    </div>
+
     <div class="form-group row mb-0">
         <div class="col-md-6">
             <button type="submit" class="btn btn-primary">
-                {{ __('Submit') }}
+                {{ __('Submit of Review') }}
             </button>
         </div>
     </div>

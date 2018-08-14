@@ -86,6 +86,7 @@ class CausesController extends Controller
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|dimensions:width=370,height=240',
             'asset_id' => 'required|exists:assets,id',
             'ended_at' => 'required|date|after:yesterday',
+            'terms' => 'required',
         ]);
 
         $asset = Asset::find($request->asset_id);
