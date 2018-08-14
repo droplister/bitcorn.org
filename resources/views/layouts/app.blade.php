@@ -117,8 +117,10 @@
                     </div>
                 </div>
             </div>
-            <div class="xs-back-to-top-wraper">
-                <a href="#" class="xs-back-to-top"><i class="fa fa-angle-up"></i></a>
+            <div class="xs-back-to-top-wraper d-none d-sm-inline-block">
+                <a href="#" class="xs-back-to-top">
+                    <i class="fa fa-angle-up"></i>
+                </a>
             </div>
         </footer>       
 
