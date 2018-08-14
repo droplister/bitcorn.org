@@ -21,6 +21,23 @@ class ElectionsController extends Controller
     }
 
     /**
+     * Show Election
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  integer  $election
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Request $request, $election)
+    {
+        $election = Election::findOrFail($election);
+
+        $candidates_ranked = $election->candidates()->orderBy('votes_total', 'desc')->get();
+        $candidates_random = $election->candidates()->inRandomOrder()->get();
+
+        return view('election.show', compact('election', 'candidates_ranked', 'candidates_random'));
+    }
+
+    /**
      * Create Election
      *
      * @param  \Illuminate\Http\Request  $request

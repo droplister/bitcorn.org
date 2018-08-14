@@ -9,7 +9,6 @@
         'subtitle' => 'Lend a helping hand!',
         'breadcrumb' => 'Causes',
     ])
-
     <main class="xs-main">
         @include('causes.partials.categories')
         <section class="bg-gray waypoint-tigger xs-section-padding">
