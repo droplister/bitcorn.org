@@ -19,6 +19,17 @@
                         <p><strong>Other Information:</strong> Every computer has an IP (Internet Protocol) address. IP addresses of computers used to visit this site are noted. In addition, we automatically collect other information such as email addresses, browser types, operating systems, and the URL addresses of sites clicked to and from this site.</p>
                     </div>
                 </div>
+                <p class="text-muted text-center py-4 mb-0">
+                    <a href="{{ route('pages.terms') }}">
+                        Terms
+                    </a>
+                    <a href="{{ route('pages.privacy') }}" class="ml-2">
+                        Privacy
+                    </a>
+                    <a href="{{ route('pages.disclaimer') }}" class="ml-2">
+                        Disclaimer
+                    </a>
+                </p>
             </div>
         </div>
     </div>

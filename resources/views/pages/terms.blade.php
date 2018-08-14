@@ -92,6 +92,17 @@
                         </div>
                     </div>
                 </div>
+                <p class="text-muted text-center py-4 mb-0">
+                    <a href="{{ route('pages.terms') }}">
+                        Terms
+                    </a>
+                    <a href="{{ route('pages.privacy') }}" class="ml-2">
+                        Privacy
+                    </a>
+                    <a href="{{ route('pages.disclaimer') }}" class="ml-2">
+                        Disclaimer
+                    </a>
+                </p>
             </div>
         </div>
     </div>
