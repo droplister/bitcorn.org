@@ -99,7 +99,7 @@ class CausesController extends Controller
 
         if($target > $asset->issuance)
         {
-            return back()->with('error', 'You cannot raise more than asset\'s supply.')
+            return back()->with('error', 'You cannot raise more than asset\'s supply.');
         }
 
         $image_path = Storage::putFile('public/causes', $request->image);
