@@ -13,13 +13,6 @@
                         @include('auth.forms.reset')
                     </div>
                 </div>
-                <p class="text-muted text-center py-4 mb-0">
-                    Don't have an account?
-                    <a href="{{ route('register') }}" class="ml-1">
-                        <i class="fa fa-user"></i>
-                        Register
-                    </a>
-                </p>
             </div>
         </div>
     </div>
