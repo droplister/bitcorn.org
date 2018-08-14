@@ -43,7 +43,7 @@ class ElectionCandidatesController extends Controller
         $candidate = Candidate::create([
             'election_id' => $election->id,
             'user_id' => Auth::user()->id,
-            'memo' => 'E' . $election->id . 'C' . $election->candidates()->count() + 1,
+            'memo' => 'E' . $election->id . 'C' . $election->candidates()->count(),
             'content' => strip_tags($request->content),
         ]);
 

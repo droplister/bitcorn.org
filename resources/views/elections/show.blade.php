@@ -21,7 +21,7 @@
                         <div class="col-lg-8 xs-event-wraper">
                             <div class="xs-event-content">
                                 <h4>Voting Info</h4>
-                                <p>Every harvest, we hold an election to decided who will serve on the Bitcorn Foundation. Candidates can nominate themselves and state their platform. And holders of CROPS are distributed a voting token with which they can cast their votes. Nominations start as soon as the last election ends and the election winners are decided at a given block height, roughly approximating the day after the last harvest.</p>
+                                <p>Every harvest, we hold an election to decided who will serve on the Bitcorn Foundation. Candidates can nominate themselves and state their platform. Holders of CROPS are distributed a voting token with which they can cast their votes. Nominations start as soon as the last election ends and the election winners are decided at a given block height, roughly approximating the day after the last harvest.</p>
                             </div>
                             <!-- horizontal tab -->
                             <div class="xs-horizontal-tabs">
@@ -41,17 +41,18 @@
                                 <!-- Tab panes -->
                                 <div class="tab-content">
                                     <div class="tab-pane fade show active" id="candidates" role="tabpanel">
+                                        @if(count($candidates_ranked) === 0)
+                                        <p class="mb-0"><em>No candidates yet - Why not you?!</em></p>
+                                        @else
+                                        <p>Here are our election candidates:</p>
                                         <ul class="xs-unorder-list circle green-icon">
-                                            <p>Here are our election candidates:</p>
                                             @foreach($candidates_ranked as $candidate)
                                             <li>
                                                 {{ $candidate->user->name }} - {{ $candidate->votes_total }} Votes
                                             </li>
                                             @endforeach
-                                            @if(count($candidates_ranked) === 0)
-                                                <p><em>No candidates yet - Why not you?!</em></p>
-                                            @endif
                                         </ul>
+                                        @endif
                                     </div><!-- #facilities END -->
                                     <div class="tab-pane" id="candidate" role="tabpanel">
                                         <div class="xs-contact-form-wraper">
@@ -76,7 +77,7 @@
                                                         <input class="form-check-input" type="checkbox" name="terms" id="terms" {{ old('terms') ? 'checked' : '' }} style="height:inherit">
 
                                                         <label class="form-check-label" for="terms">
-                                                            I have reviewed my platform. Let's go!
+                                                            I have reviewed my platform and <a href="{{ route('pages.disclaimer') }}" target="_blank">this disclaimer</a>.
                                                         </label>
                                                     </div>
                                                 </div>
