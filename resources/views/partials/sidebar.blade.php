@@ -5,6 +5,9 @@
     <a href="{{ route('users.causes.index', ['user' => $user->id]) }}" class="list-group-item list-group-item-action{{ $active === 'causes' ? ' active' : '' }}">
       My Causes
     </a>
+    <a href="{{ route('causes.create') }}" class="list-group-item list-group-item-action">
+      New Cause
+    </a>
     <a href="{{ route('events.create') }}" class="list-group-item list-group-item-action{{ $active === 'events' ? ' active' : '' }}">
       New Event
     </a>
