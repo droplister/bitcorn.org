@@ -75,6 +75,6 @@ class Event extends Model
      */
     public function scopeUpcoming($query)
     {
-        return $query->where('scheduled_at', '>', Carbon::now()->toDateString())->latest('scheduled_at');
+        return $query->where('scheduled_at', '>', Carbon::now()->toDateString())->oldest('scheduled_at');
     }
 }
