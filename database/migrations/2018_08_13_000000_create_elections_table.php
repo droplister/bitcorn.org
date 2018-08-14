@@ -17,7 +17,8 @@ class CreateElectionsTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('event_id')->unique();
             $table->unsignedInteger('asset_id')->unique();
-            $table->unsignedInteger('block')->nullable();
+            $table->unsignedInteger('positions')->default(2);
+            $table->unsignedInteger('block_index')->nullable();
             $table->timestamp('decided_at')->nullable();
             $table->timestamps();
         });

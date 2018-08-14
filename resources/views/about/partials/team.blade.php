@@ -4,7 +4,7 @@
             <div class="col-md-9 col-xl-9">
                 <h2 class="xs-title">"The Board"</h2>
                 <span class="xs-separetor dashed"></span>
-                <p>The Bitcorn Foundation has four board seats. The unelected Chairmain reigns supreme. While the other three board seats are regularly elected by their peers. <a href="{{ route('events.index') }}">See Events &raquo;</a></p>
+                <p>The Bitcorn Foundation has three board seats. The unelected Chairmain reigns supreme. While the other two board seats are regularly elected by their peers. <a href="{{ route('events.index') }}">See Events &raquo;</a></p>
             </div>
         </div>
         <div class="row xs-mb-60">

@@ -17,7 +17,8 @@ class Election extends Model
     protected $fillable = [
         'event_id',
         'asset_id',
-        'block',
+        'positions',
+        'block_index',
         'decided_at',
     ];
 
