@@ -89,9 +89,9 @@ class ElectionsController extends Controller
             'asset_id' => $request->asset_id,
         ]);
 
-        // $event->update([
-        //     'event_url' => route('elections.show', ['election' => $election->id]),
-        // ]);
+        $event->update([
+            'event_url' => route('elections.show', ['election' => $election->id]),
+        ]);
         
         return redirect(route('elections.create'))->with('success', 'Election Created');
     }

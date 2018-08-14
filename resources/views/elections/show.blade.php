@@ -55,7 +55,13 @@
                                     </div><!-- #facilities END -->
                                     <div class="tab-pane" id="candidate" role="tabpanel">
                                         <div class="xs-contact-form-wraper">
+                                            @guest
+                                            <div class="alert alert-warning">
+                                                <b>Login Required:</b> Your candidacy won't save unless you <a href="{{ route('login') }}">login</a> first!
+                                            </div>
+                                            @else
                                             @include('partials.session')
+                                            @endguest
                                             <form action="{{ route('elections.candidates.store', ['election' => $election->id]) }}" method="POST" id="xs-contact-form" class="xs-contact-form">
                                                 @csrf
                                                 <div class="input-group message-group">
