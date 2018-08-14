@@ -1,4 +1,4 @@
-<form method="POST" action="{{ route('events.store') }}" enctype="multipart/form-data">
+<form method="POST" action="{{ route('elections.store') }}" enctype="multipart/form-data">
     @csrf
 
     <div class="form-group row">
