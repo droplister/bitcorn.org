@@ -70,7 +70,7 @@ class EventsController extends Controller
         Event::create([
             'name' => $request->name,
             'description' => $request->description,
-            'image_url' => $image_url,
+            'image_url' => url($image_url),
             'event_url' => $request->event_url,
             'scheduled_at' => $request->scheduled_at,
         ]);

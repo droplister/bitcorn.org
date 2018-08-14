@@ -34,7 +34,7 @@ class ElectionsController extends Controller
         $candidates_ranked = $election->candidates()->orderBy('votes_total', 'desc')->get();
         $candidates_random = $election->candidates()->inRandomOrder()->get();
 
-        return view('election.show', compact('election', 'candidates_ranked', 'candidates_random'));
+        return view('elections.show', compact('election', 'candidates_ranked', 'candidates_random'));
     }
 
     /**
@@ -80,7 +80,7 @@ class ElectionsController extends Controller
         $event = Event::create([
             'name' => $request->name,
             'description' => $request->description,
-            'image_url' => $image_url,
+            'image_url' => url($image_url),
             'scheduled_at' => $request->scheduled_at,
         ]);
 
