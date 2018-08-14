@@ -17,6 +17,9 @@
 
                     <div class="card-body">
                         <p>From this dashboard you can edit your profile and create amazing causes. If you want to change your password, just logout and go through the "Forgot Password" path.</p>
+                        <a href="{{ route('home.index') }}" class="btn btn-xs btn-primary">
+                            Homepage
+                        </a>
                     </div>
                 </div>
                 <div class="card">
