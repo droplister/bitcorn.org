@@ -19,6 +19,25 @@ class Pledge extends Model
     ];
 
     /**
+     * The attributes that are appended.
+     *
+     * @var array
+     */
+    protected $appends = [
+        'amount_normalized',
+    ];
+
+    /**
+     * Amount Normalized
+     *
+     * @return string
+     */
+    public function getAmountNormalizedAttribute()
+    {
+        return normalizeQuantity($this->amount, $this->cause->asset->divisible);
+    }
+
+    /**
      * Pledge Cause
      * 
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

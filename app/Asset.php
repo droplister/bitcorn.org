@@ -19,6 +19,25 @@ class Asset extends Model
     ];
 
     /**
+     * The attributes that are appended.
+     *
+     * @var array
+     */
+    protected $appends = [
+        'issuance_normalized',
+    ];
+
+    /**
+     * Issuance Normalized
+     *
+     * @return string
+     */
+    public function getIssuanceNormalizedAttribute()
+    {
+        return normalizeQuantity($this->issuance, $this->divisible);
+    }
+
+    /**
      * Asset Election
      * 
      * @return \Illuminate\Database\Eloquent\Relations\HasOne

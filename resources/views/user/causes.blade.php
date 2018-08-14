@@ -35,11 +35,11 @@
                 @else
                 <div class="card">
                     <div class="card-header">
-                        {{ $cause->name }}
+                        <a href="{{ route('causes.show', ['causes' => $cause->id]) }}">{{ $cause->name }}</a>
                     </div>
 
                     <div class="card-body">
-                        <p>Your cause is pending review and approval. If not approved, it may be deleted.</p>
+                        <p>Your cause is pending review. If not approved, it may be deleted.</p>
                     </div>
                 </div>
                 @endif

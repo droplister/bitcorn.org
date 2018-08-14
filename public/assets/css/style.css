@@ -2966,8 +2966,6 @@ svg {
   .xs-blog-post-details .post-media img {
     width: 100%;
     display: block; }
-  .xs-blog-post-details .post-body {
-    border-top: 0; }
   .xs-blog-post-details .entry-header {
     margin-top: -89px;
     margin-bottom: 30px; }
@@ -3173,9 +3171,7 @@ svg {
   margin-bottom: 40px; }
 
 .xs-blog-post-comment .comment-list {
-  padding: 0;
-  margin-bottom: 30px;
-  border-bottom: 1px solid #f1f1f1; }
+  padding: 0; }
 
 .xs-blog-post-comment .comment-meta .comment-author {
   display: table; }

@@ -21,6 +21,25 @@ class Candidate extends Model
     ];
 
     /**
+     * The attributes that are appended.
+     *
+     * @var array
+     */
+    protected $appends = [
+        'votes_total_normalized',
+    ];
+
+    /**
+     * Votes Total Normalized
+     *
+     * @return string
+     */
+    public function getVotesTotalNormalizedAttribute()
+    {
+        return normalizeQuantity($this->votes_total, $this->election->asset->divisible);
+    }
+
+    /**
      * Candidate Election
      * 
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

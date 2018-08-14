@@ -53,6 +53,9 @@ class Cause extends Model
         'name',
         'days_left',
         'progress',
+        'target_normalized',
+        'pledged_normalized',
+        'released_normalized',
     ];
 
     /**
@@ -83,6 +86,36 @@ class Cause extends Model
     public function getProgressAttribute()
     {
         return number_format($this->pledged / $this->target * 100, 0);
+    }
+
+    /**
+     * Target Normalized
+     *
+     * @return string
+     */
+    public function getTargetNormalizedAttribute()
+    {
+        return normalizeQuantity($this->target, $this->asset->divisible);
+    }
+
+    /**
+     * Pledged Normalized
+     *
+     * @return string
+     */
+    public function getPledgedNormalizedAttribute()
+    {
+        return normalizeQuantity($this->pledged, $this->asset->divisible);
+    }
+
+    /**
+     * Released Normalized
+     *
+     * @return string
+     */
+    public function getReleasedNormalizedAttribute()
+    {
+        return normalizeQuantity($this->released, $this->asset->divisible);
     }
 
     /**

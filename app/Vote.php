@@ -19,6 +19,25 @@ class Vote extends Model
     ];
 
     /**
+     * The attributes that are appended.
+     *
+     * @var array
+     */
+    protected $appends = [
+        'amount_normalized',
+    ];
+
+    /**
+     * Amount Normalized
+     *
+     * @return string
+     */
+    public function getAmountNormalizedAttribute()
+    {
+        return normalizeQuantity($this->amount, $this->candidate->election->asset->divisible);
+    }
+
+    /**
      * Vote Candidate
      * 
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

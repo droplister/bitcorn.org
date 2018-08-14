@@ -20,7 +20,7 @@
                             <div class="post-body xs-border xs-padding-40">
                                 <div class="entry-content">
                                     <h1>{{ $cause->name }}</h1>
-                                    <p>By: {{ $cause->user->name }} - Seeking {{ $cause->target }} {{ $cause->asset->name }} by {{ $cause->ended_at->format('F jS, 4') }}.</p>
+                                    <p>By: {{ $cause->user->name }} - Posted: {{ $cause->approved_at->format('F jS, 4') }}.</p>
                                     <img src="{{ $cause->image_url }}" class="float-left mb-4 mr-4 d-none d-sm-inline-block" />
                                     <img src="{{ $cause->image_url }}" class="mb-4 d-block d-sm-none" />
                                     @markdown($cause->content)
@@ -29,7 +29,7 @@
                         </article>
 
                         <h3>{{ $cause->progress }}% Pledged</h3>
-                        <div class="progress">
+                        <div class="progress mb-5">
                             <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: {{ $cause->progress === 0 ? 1 : $cause->progress }}%" aria-valuenow="{{ $cause->progress === 0 ? 1 : $cause->progress }}" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
         
