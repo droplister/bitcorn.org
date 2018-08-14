@@ -51,7 +51,6 @@ class Cause extends Model
      */
     protected $appends = [
         'name',
-        'date',
         'days_left',
         'progress',
     ];
@@ -64,16 +63,6 @@ class Cause extends Model
     public function getNameAttribute()
     {
         return "{$this->title}: {$this->subtitle}";
-    }
-
-    /**
-     * Cause Date
-     *
-     * @return string
-     */
-    public function getDateAttribute()
-    {
-        return $this->ended_at->format('Y/m/d');
     }
 
     /**

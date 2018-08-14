@@ -18,4 +18,3 @@
         Pledge {{ $cause->asset->name }}
     </button>
 </div>
-<div class="xs-countdown-timer timer-style-2 xs-mb-30" data-countdown="{{ $cause->date }}"></div>
