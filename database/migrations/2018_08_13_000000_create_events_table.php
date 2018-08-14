@@ -19,7 +19,7 @@ class CreateEventsTable extends Migration
             $table->string('description');
             $table->string('event_url')->nullable();
             $table->string('image_url');
-            $table->timestamp('scheduled_at');
+            $table->timestamp('scheduled_at')->nullable();
             $table->timestamps();
         });
     }

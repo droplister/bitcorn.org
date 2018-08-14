@@ -27,7 +27,7 @@ class CreateCausesTable extends Migration
             $table->unsignedBigInteger('target');
             $table->unsignedBigInteger('pledged')->default(0);
             $table->unsignedBigInteger('released')->default(0);
-            $table->timestamp('ended_at');
+            $table->timestamp('ended_at')->nullable();
             $table->timestamp('approved_at')->nullable();
             $table->timestamp('released_at')->nullable();
             $table->timestamps();
