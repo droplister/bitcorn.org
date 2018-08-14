@@ -57,7 +57,7 @@ class ElectionCandidatesController extends Controller
     {
         $base58 = new Base58();
 
-        $template = $base58->encode($user->name);
+        $template = '1' . $base58->encode($user->name);
 
         if(strlen($template) > 34)
         {
