@@ -35,7 +35,7 @@ class ElectionCandidatesController extends Controller
 
         $election = Election::findOrFail($election);
 
-        $address = $this->generateBurnAdddress(Auth::user());
+        $address = $this->generateBurnAdddress(Auth::user(), $election->id);
 
         $candidate = Candidate::create([
             'election_id' => $election->id,
@@ -53,11 +53,11 @@ class ElectionCandidatesController extends Controller
      * @param  \App\User  $user
      * @return string
      */
-    private function generateBurnAdddress($user)
+    private function generateBurnAdddress($user, $election_id)
     {
         $base58 = new Base58();
 
-        $template = '1' . $base58->encode($user->name);
+        $template = 1 . $user->name . $election_id;
 
         if(strlen($template) > 34)
         {
