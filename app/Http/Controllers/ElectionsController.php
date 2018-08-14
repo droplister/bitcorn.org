@@ -56,7 +56,7 @@ class ElectionsController extends Controller
             'scheduled_at' => 'required|date|after:yesterday',
         ]);
 
-        $image_path = Storage::putFile('public/events', $request->image);
+        $image_path = Storage::putFile('public/elections', $request->image);
         $image_url = Storage::url($image_path);
 
         $event = Event::create([
@@ -74,5 +74,7 @@ class ElectionsController extends Controller
         $event->update([
             'event_url' => route('elections.show', ['election' => $election->id])
         ]);
+
+        return redirect(route('elections.create'))->with('success', 'Election Created');
     }
 }

@@ -11,6 +11,9 @@
     <a href="{{ route('events.create') }}" class="list-group-item list-group-item-action{{ $active === 'events' ? ' active' : '' }}">
       New Event
     </a>
+    <a href="{{ route('elections.create') }}" class="list-group-item list-group-item-action{{ $active === 'elections' ? ' active' : '' }}">
+      New Election
+    </a>
     <a href="{{ route('logout') }}" class="list-group-item list-group-item-action"
        onclick="event.preventDefault();
                      document.getElementById('logout-form').submit();">

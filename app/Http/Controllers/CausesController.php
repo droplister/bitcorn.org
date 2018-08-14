@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use App\Cause;
 use Illuminate\Http\Request;
 
@@ -41,7 +42,11 @@ class CausesController extends Controller
     {
         // Add User Validation
 
-        return view('causes.create');
+        $user = Auth::user();
+
+        $assets = Asset::whereType('pledge')->get();
+
+        return view('causes.create', ['user', 'assets']);
     }
 
     /**
@@ -55,8 +60,35 @@ class CausesController extends Controller
         // Add User Validation
 
         $request->validate([
-            //
+            'title' => 'required|max:255',
+            'subtitle' => 'required|max:255',
+            'content' => 'required|max:5000',
+            'address' => 'required|min:26|max:34',
+            'memo' => 'required|unique:causes|min:4|max:12',
+            'target' => 'required|min:0|numeric',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|dimensions:width=200,height=234',
+            'asset_id' => 'required|exists:assets,id',
+            'ended_at' => 'required|date|after:yesterday',
         ]);
+
+        $image_path = Storage::putFile('public/causes', $request->image);
+        $image_url = Storage::url($image_path);
+
+        $cause = Cause::create([
+            'user_id' => Auth::user()->id,
+            'asset_id' => $request->asset_id,
+            'title' => $request->title,
+            'subtitle' => $request->subtitle,
+            'content' => $request->content,
+            'address' => $request->address,
+            'memo' => $request->memo,
+            'target' => $request->target,
+            'content' => $request->content,
+            'image_url' => $image_url,
+            'ended_at' => $request->ended_at,
+        ]);
+
+        return back()->with('success', 'Cause Created');
     }
 
     /**
