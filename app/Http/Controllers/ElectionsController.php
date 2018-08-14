@@ -93,8 +93,6 @@ class ElectionsController extends Controller
             'event_url' => route('elections.show', ['election' => $election->id])
         ]);
 
-        return dd($request);
-
         return redirect(route('elections.create'))->with('success', 'Election Created');
     }
 }
