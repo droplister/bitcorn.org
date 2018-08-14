@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Auth;
 use App\Asset;
 use App\Event;
 use App\Election;
+use Auth, Storage;
 use Illuminate\Http\Request;
 
 class ElectionsController extends Controller
