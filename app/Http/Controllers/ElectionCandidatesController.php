@@ -34,7 +34,7 @@ class ElectionCandidatesController extends Controller
 
         $election = Election::findOrFail($election);
 
-        $address = $this->generateAddress(Auth:user());
+        $address = $this->generateAddress(Auth::user());
 
         $candidate = Candidate::create([
             'election_id' => $election->id,

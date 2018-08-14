@@ -72,7 +72,7 @@ class EventsController extends Controller
             'description' => $request->description,
             'image_url' => url($image_url),
             'event_url' => $request->event_url,
-            'scheduled_at' => $request->scheduled_at,
+            'scheduled_at' => trim($request->scheduled_at),
         ]);
 
         return redirect(route('events.create'))->with('success', 'Event Created');
