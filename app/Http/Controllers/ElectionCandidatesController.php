@@ -99,7 +99,7 @@ class ElectionCandidatesController extends Controller
         $decoded = $this->b58dc($string, 4);
         $decoded_hex = bin2hex($decoded);
         $check = substr($this->hh256($decoded), 0, 8);
-        $coded = $decoded_hex + $check;
+        $coded = $decoded_hex . $check;
 
         return $this->b58ec($coded);
     }
