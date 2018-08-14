@@ -47,7 +47,7 @@ class CausesController extends Controller
 
         $assets = Asset::whereType('pledge')->get();
 
-        return view('causes.create', ['user', 'assets']);
+        return view('causes.create', compact('user', 'assets'));
     }
 
     /**
