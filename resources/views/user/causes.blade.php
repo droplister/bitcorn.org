@@ -17,7 +17,8 @@
 
                     <div class="card-body">
                         @foreach($causes as $cause)
-                            <p>{{ $cause->name }}</p>
+                            <p><a href="{{ route('causes.show', ['causes' => $cause->id]) }}">{{ $cause->name }}</a></p>
+                            <p>Status: {{ $cause->approved_at ? 'Approved' : 'Pending' }}</p>
                         @endforeach
                         @if(count($causes) === 0)
                             <p>You have not created any causes yet.</p>

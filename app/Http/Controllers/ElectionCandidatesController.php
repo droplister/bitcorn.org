@@ -58,6 +58,9 @@ class ElectionCandidatesController extends Controller
         $base58 = new Base58();
 
         $template = 1 . $user->name . $election_id;
+        $alphabet = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz";
+
+        $template = implode('', array_intersect(str_split($template), str_split($alphabet)));
 
         if(strlen($template) > 34)
         {
