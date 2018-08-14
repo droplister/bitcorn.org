@@ -19,7 +19,7 @@
                     <div class="row">
                         <div class="col-lg-8 xs-event-wraper">
                             <div class="xs-event-content">
-                                {{ $cause->content }}
+                                @markdown($cause->content)
                             </div>
                         </div>
                         <div class="col-lg-4">
