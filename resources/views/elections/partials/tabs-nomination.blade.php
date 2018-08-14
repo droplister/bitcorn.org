@@ -27,7 +27,7 @@
                 </div>
             </div>
 
-            <button class="btn btn-success" type="submit" id="xs-submit">
+            <button class="btn btn-success" type="submit" id="xs-submit"{{ Auth::check() ? '' : ' disabled' }}>
                 Submit
             </button>
         </form>

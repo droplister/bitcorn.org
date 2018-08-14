@@ -63,6 +63,34 @@
     </div>
 
     <div class="form-group row">
+        <label for="positions" class="col-md-4 col-form-label text-md-right">{{ __('Positions') }}</label>
+
+        <div class="col-md-6">
+            <input id="positions" type="text" class="form-control{{ $errors->has('positions') ? ' is-invalid' : '' }}" name="positions" value="{{ old('positions') }}" required>
+
+            @if ($errors->has('positions'))
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $errors->first('positions') }}</strong>
+                </span>
+            @endif
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="block_index" class="col-md-4 col-form-label text-md-right">{{ __('Block Index') }}</label>
+
+        <div class="col-md-6">
+            <input id="block_index" type="text" class="form-control{{ $errors->has('block_index') ? ' is-invalid' : '' }}" name="block_index" value="{{ old('block_index') }}" required>
+
+            @if ($errors->has('block_index'))
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $errors->first('block_index') }}</strong>
+                </span>
+            @endif
+        </div>
+    </div>
+
+    <div class="form-group row">
         <label for="scheduled_at" class="col-md-4 col-form-label text-md-right">{{ __('Schedule At') }}</label>
 
         <div class="col-md-6">

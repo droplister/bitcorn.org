@@ -71,6 +71,8 @@ class ElectionsController extends Controller
             'description' => 'required|max:255',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|dimensions:width=200,height=234',
             'asset_id' => 'required|exists:assets,id',
+            'positions' => 'required|integer',
+            'block_index' => 'required|integer',
             'scheduled_at' => 'required|date|after:yesterday',
         ]);
 
@@ -87,6 +89,8 @@ class ElectionsController extends Controller
         $election = Election::create([
             'event_id' => $event->id,
             'asset_id' => $request->asset_id,
+            'positions' => $request->positions,
+            'block_index' => $request->block_index,
         ]);
 
         $event->update([
