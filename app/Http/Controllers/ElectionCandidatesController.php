@@ -43,8 +43,8 @@ class ElectionCandidatesController extends Controller
         $candidate = Candidate::create([
             'election_id' => $election->id,
             'user_id' => Auth::user()->id,
-            'memo' => 'Candidate ' . $election->candidates()->count(),
-            'content' => $request->content,
+            'memo' => 'E' . $election->id . 'C' . $election->candidates()->count() + 1,
+            'content' => strip_tags($request->content),
         ]);
 
         return redirect(route('elections.show', ['election' => $election->id]))

@@ -22,7 +22,6 @@
                             <div class="xs-event-content">
                                 <h4>Voting Info</h4>
                                 <p>Every harvest, we hold an election to decided who will serve on the Bitcorn Foundation. Candidates can nominate themselves and state their platform. And holders of CROPS are distributed a voting token with which they can cast their votes. Nominations start as soon as the last election ends and the election winners are decided at a given block height, roughly approximating the day after the last harvest.</p>
-                                <p>To be valid, votes must be sent to 1BitcornFoundationVotingxxy262cTk before {{ $election->block_index ? 'Block ' . $election->block_index + 1 : 'the polls close' }} with a valid candidate memo code.</p>
                             </div>
                             <!-- horizontal tab -->
                             <div class="xs-horizontal-tabs">
@@ -43,11 +42,15 @@
                                 <div class="tab-content">
                                     <div class="tab-pane fade show active" id="candidates" role="tabpanel">
                                         <ul class="xs-unorder-list circle green-icon">
+                                            <p>Here are our election candidates:</p>
                                             @foreach($candidates_ranked as $candidate)
                                             <li>
                                                 {{ $candidate->user->name }} - {{ $candidate->votes_total }} Votes
                                             </li>
                                             @endforeach
+                                            @if(count($candidates_ranked) === 0)
+                                                <p><em>No candidates yet - Why not you?!</em></p>
+                                            @endif
                                         </ul>
                                     </div><!-- #facilities END -->
                                     <div class="tab-pane" id="candidate" role="tabpanel">
@@ -87,7 +90,6 @@
                                     <div class="tab-pane" id="faq" role="tabpanel">
                                         <ul class="xs-unorder-list circle green-icon">
                                             <p>What are the "perks" of being a board member?</p>
-                                            <li>Become an admin of the chat during your term.</li>
                                             <li>Fancy Title: "Member of the Bitcorn Foundation".</li>
                                             <li>Membership in a private Bitcorn Foundation chat room.</li>
                                             <li>Access to the stream of new and unapproved bitcorn cards.</li>
@@ -98,11 +100,11 @@
                             <div class="row xs-mb-60">
                             <div class="col-md-6 xs-about-feature">
                                 <h3>How to Vote</h3>
-                                <p>Cast your vote by sending {{ $election->asset->name }} to 1BitcornFoundationVotingxxy262cTk, making sure to use the candidate's code in the memo field.</p>
+                                <p>Cast your vote by sending {{ $election->asset->name }} to 1BitcornFoundationVotingxxy262cTk, making sure to use the candidate's vote code as the memo.</p>
                             </div>
                             <div class="col-md-6 xs-about-feature">
                                 <h3>How it Works</h3>
-                                <p>Each candidate is paired with a unique code, like "Candidate 0" (without the quotes). By treating asset sends as cast ballots, we can simply tally up the votes on-chain.</p>
+                                <p>Each candidate is paired with a unique code, like "E2C3" (without the quotes). We treat asset sends as cast ballots and simply tally up the votes.</p>
                             </div>
                         </div>
                           <!-- End horizontal tab -->
@@ -110,7 +112,7 @@
                                 @foreach($candidates_random as $candidate)
                                 <div class="col-12 xs-about-feature">
                                     <h3>{{ $candidate->user->name }}</h3>
-                                    <h5>Vote: {{ $candidate->memo }}</h5>
+                                    <h5>Vote Code: {{ $candidate->memo }}</h5>
                                     @markdown($candidate->content)
                                 </div>
                                 @endforeach
@@ -130,24 +132,12 @@
                                 </div>
                                 <ul class="list-group xs-list-group">
                                     <li class="d-flex justify-content-between">
-                                        Organized by: 
-                                        <span>Robert Slim</span>
+                                        Polls Close: 
+                                        <span>{{ $election->block_index }}</span>
                                     </li>
                                     <li class="d-flex justify-content-between">
-                                        Start: 
-                                        <span>9.30 am</span>
-                                    </li>
-                                    <li class="d-flex justify-content-between">
-                                        Venue: 
-                                        <span>National Zoo, NY</span>
-                                    </li>
-                                    <li class="d-flex justify-content-between">
-                                        Phone:  
-                                        <span>91 260 5524</span>
-                                    </li>
-                                    <li class="d-flex justify-content-between">
-                                        Email: 
-                                        <span>charity@example.com</span>
+                                        Board Seats: 
+                                        <span>{{ $election->seats }}</span>
                                     </li>
                                 </ul>
                             </div>
