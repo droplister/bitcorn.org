@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'Contact Us')
+@section('description', 'The best way to reach us is by email using this contact form.')
 
 @section('content')
     @include('partials.breadcrumbs', [
