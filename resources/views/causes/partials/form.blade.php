@@ -30,21 +30,28 @@
     </div>
 
     <div class="form-group row">
-        <label for="asset_id" class="col-md-4 col-form-label text-md-right">{{ __('Asset') }}</label>
+        <label for="target" class="col-md-4 col-form-label text-md-right">{{ __('Target') }}</label>
 
-        <div class="col-md-6">
-            <select name="asset_id" id="xs-donate-charity" class="form-control">
-                <option value="">Select</option>
-                @foreach($assets as $asset)
-                <option value="{{ $asset->id }}">{{ $asset->name }}</option>
-                @endforeach
-            </select>
+        <div class="col-8 col-md-3">
+            <input id="target" type="text" class="form-control{{ $errors->has('target') ? ' is-invalid' : '' }}" name="target" value="{{ old('target') }}" required>
 
-            @if ($errors->has('asset_id'))
+            @if ($errors->has('target'))
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $errors->first('target') }}</strong>
+                </span>
+            @elseif ($errors->has('asset_id'))
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $errors->first('asset_id') }}</strong>
                 </span>
             @endif
+        </div>
+
+        <div class="col-4 col-md-3">
+            <select name="asset_id" id="xs-donate-charity" class="form-control">
+                @foreach($assets as $asset)
+                <option value="{{ $asset->id }}">{{ $asset->name }}</option>
+                @endforeach
+            </select>
         </div>
     </div>
 
@@ -99,20 +106,6 @@
             @if ($errors->has('memo'))
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $errors->first('memo') }}</strong>
-                </span>
-            @endif
-        </div>
-    </div>
-
-    <div class="form-group row">
-        <label for="target" class="col-md-4 col-form-label text-md-right">{{ __('Target') }}</label>
-
-        <div class="col-md-6">
-            <input id="target" type="text" class="form-control{{ $errors->has('target') ? ' is-invalid' : '' }}" name="target" value="{{ old('target') }}" required>
-
-            @if ($errors->has('target'))
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $errors->first('target') }}</strong>
                 </span>
             @endif
         </div>
