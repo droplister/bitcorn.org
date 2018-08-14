@@ -16,13 +16,13 @@
     </div>
 
     <div class="form-group row">
-        <label for="asset" class="col-md-4 col-form-label text-md-right">{{ __('Asset') }}</label>
+        <label for="asset_id" class="col-md-4 col-form-label text-md-right">{{ __('Asset') }}</label>
 
         <div class="col-md-6">
             <select name="asset_id" id="xs-donate-charity" class="form-control">
                 <option value="">Select</option>
                 @foreach($assets as $asset)
-                <option value="{{ $asset->id }}">{{ $asset->name }}</option>
+                <option value="{{ $asset->id }}"{{ old('asset_id') && old('asset_id') === $asset->id ? ' selected' : '' }}>{{ $asset->name }}</option>
                 @endforeach
             </select>
 

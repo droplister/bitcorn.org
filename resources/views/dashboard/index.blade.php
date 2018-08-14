@@ -16,7 +16,7 @@
                     <div class="card-header">Welcome Back!</div>
 
                     <div class="card-body">
-                        <p>From your dashboard you can edit your profile and create amazing causes. If you want to change your password, just logout and go through the "Forgot Password" path.</p>
+                        <p>From this dashboard you can edit your profile and create amazing causes. If you want to change your password, just logout and go through the "Forgot Password" path.</p>
                     </div>
                 </div>
                 <div class="card">
