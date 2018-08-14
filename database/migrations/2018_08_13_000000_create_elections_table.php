@@ -18,7 +18,7 @@ class CreateElectionsTable extends Migration
             $table->unsignedInteger('event_id')->unique();
             $table->unsignedInteger('asset_id')->unique();
             $table->unsignedInteger('block')->nullable();
-            $table->boolean('decided_at')->nullable();
+            $table->timestamp('decided_at')->nullable();
             $table->timestamps();
         });
     }
