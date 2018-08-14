@@ -9,4 +9,5 @@ return [
         'user' => env('CP_USER', 'rpc'),
         'password' => env('CP_PASSWORD', '1234'),
     ],
+    'foundation_chatroom' => env('FOUNDATION_CHATROOM'),
 ];

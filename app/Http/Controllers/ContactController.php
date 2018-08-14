@@ -33,12 +33,13 @@ class ContactController extends Controller
             'name' => 'required',
             'email' => 'required|email',
             'message' => 'required',
+            'g-recaptcha-response' => 'required|captcha',
         ]);
 
         Mail::to('bitcorncrops+contact@gmail.com')
             ->send(new ContactEmail($request->name, $request->email, $request->message));
 
-        Notification::route('telegram', '-296131176')
+        Notification::route('telegram', config('bitcorn.foundation_chatroom'))
             ->notify(new EmailReceived($request->name, $request->email, $request->message));
 
         return redirect(route('contact.create'))->with('success', 'Email Sent');

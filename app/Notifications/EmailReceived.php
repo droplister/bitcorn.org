@@ -45,6 +45,6 @@ class EmailReceived extends Notification
     public function toTelegram($notifiable)
     {
         return TelegramMessage::create()
-            ->content("{$this->name} \n {$this->email} \n {$this->message}");
+            ->content("**New Email:**\n{$this->name} <{$this->email}>\n{$this->message}");
     }
 }

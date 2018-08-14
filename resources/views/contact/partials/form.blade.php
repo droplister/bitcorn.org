@@ -1,5 +1,6 @@
 <form action="{{ route('contact.store') }}" method="POST" id="xs-contact-form" class="xs-contact-form contact-form-v2">
     @csrf
+    @captcha
     <div class="input-group">
         <input type="text" name="name" id="xs-name" class="form-control" placeholder="Enter Your Name.....">
         <div class="input-group-append">
