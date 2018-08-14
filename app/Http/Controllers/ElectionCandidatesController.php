@@ -7,7 +7,7 @@ use App\Candidate;
 use StephenHill\Base58;
 use Illuminate\Http\Request;
 
-class CandidatesController extends Controller
+class ElectionCandidatesController extends Controller
 {
     /**
      * Instantiate a new controller instance.

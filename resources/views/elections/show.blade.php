@@ -55,7 +55,7 @@
                                     </div><!-- #facilities END -->
                                     <div class="tab-pane" id="candidate" role="tabpanel">
                                         <div class="xs-contact-form-wraper">
-                                            <form action="{{ route('candidates.store', ['election' => $election->id]) }}" method="POST" id="xs-contact-form" class="xs-contact-form">
+                                            <form action="{{ route('elections.candidates.store', ['election' => $election->id]) }}" method="POST" id="xs-contact-form" class="xs-contact-form">
                                                 @csrf
                                                 <div class="input-group message-group">
                                                     <textarea name="content" placeholder="Enter Your Platform....." id="xs-message" class="form-control" cols="30" rows="10"></textarea>

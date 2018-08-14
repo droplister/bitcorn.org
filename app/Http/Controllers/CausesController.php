@@ -66,7 +66,7 @@ class CausesController extends Controller
             'content' => 'required|max:5000',
             'address' => 'required|min:26|max:34',
             'memo' => 'required|unique:causes|min:4|max:12',
-            'target' => 'required|min:0|numeric',
+            'target' => 'required|min:10|numeric',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|dimensions:width=370,height=240',
             'asset_id' => 'required|exists:assets,id',
             'ended_at' => 'required|date|after:yesterday',

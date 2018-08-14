@@ -18,7 +18,7 @@ Route::resource('users', 'UsersController', ['only' => ['update']]);
 Route::resource('users.causes', 'UserCausesController', ['only' => ['index']]);
 Route::resource('causes', 'CausesController');
 Route::resource('elections', 'ElectionsController');
-Route::resource('elections.candidates', 'CandidatesController');
+Route::resource('elections.candidates', 'ElectionCandidatesController');
 Route::resource('events', 'EventsController');
 Route::resource('contact', 'ContactController', ['only' => ['create', 'store']]);
 Route::get('/about', 'AboutController@index')->name('about.index');

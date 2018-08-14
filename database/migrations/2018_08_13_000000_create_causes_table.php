@@ -25,8 +25,8 @@ class CreateCausesTable extends Migration
             $table->string('address');
             $table->string('memo')->unique();
             $table->unsignedBigInteger('target');
-            $table->unsignedBigInteger('pledged');
-            $table->unsignedBigInteger('released');
+            $table->unsignedBigInteger('pledged')->default(0);
+            $table->unsignedBigInteger('released')->default(0);
             $table->timestamp('ended_at');
             $table->timestamp('approved_at')->nullable();
             $table->timestamp('released_at')->nullable();
