@@ -20,13 +20,14 @@
                     </div>
 
                     <div class="card-body">
+                        <p>{{ $cause->pledged }} {{ $cause->asset->name }}</p>
                         <div class="progress mb-3">
-                          <div class="progress-bar bg-success" role="progressbar" style="width: {{ $cause->progress }}%" aria-valuenow="{{ $cause->progress }}" aria-valuemin="0" aria-valuemax="100"></div>
+                          <div class="progress-bar bg-success" role="progressbar" style="width: {{ $cause->progress === 0 ? 1 : $cause->progress }}%" aria-valuenow="{{ $cause->progress === 0 ? 1 : $cause->progress }}" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                         @if($cause->pledged > 0)
                         <p>{{ $cause->asset->name }} will be paid to {{ $cause->address }} on {{ $cause->ended_at->toDateString() }}.</p>
                         @else
-                        <p>You have not yet received any pledges for your cause. Promote it!</p>
+                        <p>You have not received any pledges yet. Promote it!</p>
                         @endif
                     </div>
                 </div>

@@ -12,11 +12,11 @@
                 @include('partials.sidebar', ['active' => 'elections'])
             </div>
             <div class="col-md-8">
+                @include('partials.session')
                 <div class="card">
                     <div class="card-header">New Election</div>
 
                     <div class="card-body">
-                        @include('partials.session')
                         @include('elections.partials.form')
                     </div>
                 </div>

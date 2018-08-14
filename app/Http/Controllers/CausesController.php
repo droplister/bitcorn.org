@@ -80,11 +80,27 @@ class CausesController extends Controller
             'content' => 'required|max:5000',
             'address' => 'required|min:26|max:34',
             'memo' => 'required|unique:causes|min:4|max:12',
-            'target' => 'required|min:10|numeric',
+            'target' => 'required|min:10|integer',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|dimensions:width=370,height=240',
             'asset_id' => 'required|exists:assets,id',
             'ended_at' => 'required|date|after:yesterday',
         ]);
+
+        $asset = Asset::find($request->asset_id);
+
+        if($asset->divisible)
+        {
+            $target = $request->target * 100000000;
+        }
+        else
+        {
+            $target = $request->target;
+        }
+
+        if($target > $asset->issuance)
+        {
+            return back()->with('error', 'You cannot raise more than asset\'s supply.')
+        }
 
         $image_path = Storage::putFile('public/causes', $request->image);
         $image_url = Storage::url($image_path);
@@ -98,7 +114,7 @@ class CausesController extends Controller
             'address' => $request->address,
             'memo' => $request->memo,
             'target' => $request->target,
-            'content' => $request->content,
+            'content' => strip_tags($request->content),
             'image_url' => $image_url,
             'ended_at' => $request->ended_at,
         ]);
