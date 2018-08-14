@@ -21,7 +21,7 @@
                         @endforeach
                         @if(count($causes) === 0)
                             <p>You have not created any causes yet.</p>
-                            <a href="{{ route('causes.create') }}" class="btn btn-xs btn-primary pull-right mt-4">
+                            <a href="{{ route('causes.create') }}" class="btn btn-xs btn-primary">
                                 New Cause
                             </a>
                         @endif

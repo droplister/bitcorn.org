@@ -56,7 +56,7 @@ class ElectionsController extends Controller
             'scheduled_at' => 'required|date|after:yesterday',
         ]);
 
-        $image_path = Storage::putFile('events', $request->image);
+        $image_path = Storage::putFile('public/events', $request->image);
         $image_url = Storage::url($image_path);
 
         $event = Event::create([

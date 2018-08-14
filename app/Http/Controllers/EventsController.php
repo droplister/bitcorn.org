@@ -64,7 +64,7 @@ class EventsController extends Controller
             'scheduled_at' => 'required|date|after:yesterday',
         ]);
 
-        $image_path = Storage::putFile('events', $request->image);
+        $image_path = Storage::putFile('public/events', $request->image);
         $image_url = Storage::url($image_path);
 
         Event::create([
@@ -74,6 +74,8 @@ class EventsController extends Controller
             'event_url' => $request->event_url,
             'scheduled_at' => $request->scheduled_at,
         ]);
+
+        return redirect(route('events.create'))->with('success', 'Event Created');
     }
 
     /**
