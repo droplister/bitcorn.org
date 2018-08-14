@@ -36,4 +36,14 @@ class User extends Authenticatable
     {
         return $this->hasMany(Cause::class);
     }
+
+    /**
+     * Is Admin
+     * 
+     * @return boolean
+     */
+    public function isAdmin()
+    {
+        return $this->id === 1;
+    }
 }

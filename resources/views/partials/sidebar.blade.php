@@ -8,12 +8,14 @@
     <a href="{{ route('causes.create') }}" class="list-group-item list-group-item-action{{ $active === 'cause' ? ' active' : '' }}">
       New Cause
     </a>
+    @if(Auth::user()->isAdmin())
     <a href="{{ route('events.create') }}" class="list-group-item list-group-item-action{{ $active === 'events' ? ' active' : '' }}">
       New Event
     </a>
     <a href="{{ route('elections.create') }}" class="list-group-item list-group-item-action{{ $active === 'elections' ? ' active' : '' }}">
       New Election
     </a>
+    @endif
     <a href="{{ route('logout') }}" class="list-group-item list-group-item-action"
        onclick="event.preventDefault();
                      document.getElementById('logout-form').submit();">
