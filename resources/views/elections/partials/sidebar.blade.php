@@ -14,8 +14,12 @@
             <span>{{ $election->positions }}</span>
         </li>
         <li class="d-flex justify-content-between">
-            Polls Closed: 
+            Polls Close: 
             <span>{{ $election->block_index ? $election->block_index : 'TBD' }}</span>
+        </li>
+        <li class="d-flex justify-content-between">
+            Vote Token: 
+            <span>{{ $election->asset->name }}</span>
         </li>
     </ul>
 </div>

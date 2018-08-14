@@ -1,4 +1,4 @@
-<div class="tab-pane" id="candidate" role="tabpanel">
+<div class="tab-pane" id="nomination" role="tabpanel">
     <div class="xs-contact-form-wraper">
         @guest
             <div class="alert alert-warning">

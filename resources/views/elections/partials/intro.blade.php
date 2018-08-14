@@ -5,7 +5,7 @@
 <div class="row xs-mb-60">
     <div class="col-md-6 xs-about-feature">
         <h3>How to Vote</h3>
-        <p>Cast your vote by sending {{ $election->asset->name }} to <a href="https://xcpfox.com/address/1BitcornFoundationVotingxxy262cTk">1BitcornFoundationVotingxxy262cTk, making sure to use the candidate's vote code as the memo.</p>
+        <p>Cast your vote by sending {{ $election->asset->name }} to <a href="https://xcpfox.com/address/1BitcornFoundationVotingxxy262cTk">1BitcornFoundationVotingxxy262cTk</a>, making sure to use the candidate's vote code as the memo.</p>
     </div>
     <div class="col-md-6 xs-about-feature">
         <h3>How it Works</h3>

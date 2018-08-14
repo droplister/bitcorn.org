@@ -9,6 +9,7 @@
         @foreach($candidates_ranked as $candidate)
         <li>
             {{ $candidate->user->name }} - {{ $candidate->votes_total }} Votes
+            @if($candidate->elected) <strong>ELECTED</strong> @endif
         </li>
         @endforeach
     </ul>

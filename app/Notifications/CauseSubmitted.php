@@ -42,7 +42,7 @@ class CauseSubmitted extends Notification
     public function toTelegram($notifiable)
     {
         return TelegramMessage::create()
-            ->content("**Cause Submitted:**\n{$this->cause->name} by {$this->cause->user->name}")
+            ->content("{$this->cause->name}\nBy: {$this->cause->user->name}")
             ->button('Review Cause', route('causes.show', ['cause' => $this->cause->id]));
     }
 }

@@ -122,7 +122,7 @@ class CausesController extends Controller
             'memo' => $request->memo,
             'target' => $request->target,
             'content' => strip_tags($request->content),
-            'image_url' => $image_url,
+            'image_url' => url($image_url),
             'ended_at' => $request->ended_at,
         ]);
 
