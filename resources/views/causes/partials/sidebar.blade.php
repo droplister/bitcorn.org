@@ -14,7 +14,7 @@
             <span>{{ $cause->memo }}</span>
         </li>
     </ul>
-    <button class="btn btn-block btn-warning">
+    <button class="btn btn-block btn-warning mt-5">
         Pledge {{ $cause->asset->name }}
     </button>
 </div>

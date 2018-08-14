@@ -24,7 +24,7 @@
                                     @markdown($cause->content)
                                     <h3>{{ $cause->progress }}% Pledged</h3>
                                     <div class="progress">
-                                        <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: {{ $cause->progress }}%" aria-valuenow="{{ $cause->progress }}" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: {{ $cause->progress === 0 ? 1 : $cause->progress }}%" aria-valuenow="{{ $cause->progress === 0 ? 1 : $cause->progress }}" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                 </div>
                 
@@ -35,7 +35,7 @@
                                             <div class="comment-body">
                                                 <div class="comment-meta">
                                                     <div class="comment-author">
-                                                        <img alt="avatar" src="assets/images/avatar/avatar_9.jpg" class="avatar">
+                                                        <img alt="avatar" src="{{ asset('assets/images/avatar/avatar_9.jpg') }}" class="avatar">
                                                         <b>Jhony WIlliamson</b>
                                                     </div>
                                                     <div class="comment-metadata">
