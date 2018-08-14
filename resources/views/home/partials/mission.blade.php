@@ -8,7 +8,7 @@
                         <h2 class="xs-line-title">Our Mission</h2>
                         <h3 class="xs-title big" data-title="Moisture">100% Moisture</h3>
                     </div>
-                    <p>We register and regulate Bitcorn cards, to ensure that the public can support moist farms with confidence. As registrar, we are responsible for maintaining accurate records.</p>
+                    <p>We register and regulate Bitcorn cards to ensure that the public can support moist farms with confidence. As registrar, we are responsible for maintaining accurate records.</p>
                     <h5>Our strategic priorities up to 2018 are:</h5>
                     <ul class="xs-unorder-list arrow">
                         <li>Protecting large farms from mismanagement</li>

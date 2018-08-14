@@ -14,7 +14,7 @@ class Candidate extends Model
     protected $fillable = [
         'election_id',
         'user_id',
-        'address',
+        'memo',
         'content',
         'votes_total',
         'elected',

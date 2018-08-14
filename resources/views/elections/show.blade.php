@@ -46,9 +46,7 @@
                                             <li>
                                                 {{ $candidate->user->name }} -
                                                 ({{ $candidate->votes_total }} Votes) -
-                                                <a href="https://xcpfox.com/address/{{ $candidate->address }}">
-                                                    {{ $candidate->address }}
-                                                </a>
+                                                {{ $candidate->memo }}
                                             </li>
                                             @endforeach
                                         </ul>

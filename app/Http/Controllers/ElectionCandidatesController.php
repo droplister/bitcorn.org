@@ -40,12 +40,11 @@ class ElectionCandidatesController extends Controller
             return back()->with('error', 'You are already a candidate!');
         }
 
-        $address = $this->generateBurnAdddress(Auth::user(), $election->id);
 
         $candidate = Candidate::create([
             'election_id' => $election->id,
             'user_id' => Auth::user()->id,
-            'address' => $address,
+            'memo' => 'Candidate ' . $election->candidates()->count(),
             'content' => $request->content,
         ]);
 

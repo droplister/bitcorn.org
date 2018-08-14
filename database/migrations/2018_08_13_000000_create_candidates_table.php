@@ -17,7 +17,7 @@ class CreateCandidatesTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('election_id');
             $table->unsignedInteger('user_id');
-            $table->string('address')->unique();
+            $table->string('memo')->unique();
             $table->text('content');
             $table->unsignedBigInteger('votes_total')->default(0);
             $table->boolean('elected')->default(0);
