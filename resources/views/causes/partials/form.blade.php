@@ -53,7 +53,7 @@
         <label for="content" class="col-md-4 col-form-label text-md-right">{{ __('Content') }}</label>
 
         <div class="col-md-6">
-            <textarea id="content" class="form-control{{ $errors->has('content') ? ' is-invalid' : '' }}" name="content" col="6" required>
+            <textarea id="content" class="form-control{{ $errors->has('content') ? ' is-invalid' : '' }}" name="content" rows="12" required>
                 {{ old('content') }}
             </textarea>
 
@@ -62,7 +62,7 @@
                     <strong>{{ $errors->first('content') }}</strong>
                 </span>
             @else
-                <small class="form-text text-muted">Use of Markdown syntax is allowed. (<a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">Cheatsheet</a>)</small>
+                <small class="form-text text-muted">Use of Markdown is allowed. (<a href="http://markdownlivepreview.com" target="_blank">Preview</a>) (<a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">Cheatsheet</a>)</small>
             @endif
         </div>
     </div>
