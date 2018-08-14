@@ -81,7 +81,7 @@ class ElectionsController extends Controller
             'name' => $request->name,
             'description' => $request->description,
             'image_url' => url($image_url),
-            'scheduled_at' => trim($request->scheduled_at),
+            'scheduled_at' => $request->scheduled_at,
         ]);
 
         $election = Election::create([

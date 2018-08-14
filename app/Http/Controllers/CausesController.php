@@ -34,6 +34,20 @@ class CausesController extends Controller
     }
 
     /**
+     * Show Cause
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  integer  $cause
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Request $request, $cause)
+    {
+        $cause = Cause::findOrFail($cause);
+
+        return view('causes.show', compact('cause'));
+    }
+
+    /**
      * Create Event
      *
      * @param  \Illuminate\Http\Request  $request
@@ -89,7 +103,7 @@ class CausesController extends Controller
             'ended_at' => $request->ended_at,
         ]);
 
-        return back()->with('success', 'Cause Created');
+        return redirect(route('users.causes.index', ['user' => Auth::user()->id]))->with('success', 'Cause Created');
     }
 
     /**
