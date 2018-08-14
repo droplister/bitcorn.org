@@ -74,8 +74,12 @@ class ElectionsController extends Controller
             'scheduled_at' => 'required|date|after:yesterday',
         ]);
 
+        \Log::info('1. ' . $request->scheduled_at);
+
         $image_path = Storage::putFile('public/elections', $request->image);
         $image_url = Storage::url($image_path);
+
+        \Log::info('2. ' . $request->scheduled_at);
 
         $event = Event::create([
             'name' => $request->name,
@@ -84,15 +88,21 @@ class ElectionsController extends Controller
             'scheduled_at' => $request->scheduled_at,
         ]);
 
+        \Log::info('3. ' . $event->scheduled_at);
+
         $election = Election::create([
             'event_id' => $event->id,
             'asset_id' => $request->asset_id,
         ]);
 
+        \Log::info('4. ' . $event->scheduled_at);
+
         $event->update([
             'event_url' => route('elections.show', ['election' => $election->id]),
         ]);
 
+        \Log::info('5. ' . $event->scheduled_at);
+        
         return redirect(route('elections.create'))->with('success', 'Election Created');
     }
 }

@@ -35,6 +35,11 @@ class ElectionCandidatesController extends Controller
 
         $election = Election::findOrFail($election);
 
+        if($election->candidates()->where('user_id', '=', Auth::user()->id)->exists())
+        {
+            return back()->with('error', 'You are already a candidate!');
+        }
+
         $address = $this->generateBurnAdddress(Auth::user(), $election->id);
 
         $candidate = Candidate::create([

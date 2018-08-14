@@ -55,6 +55,7 @@
                                     </div><!-- #facilities END -->
                                     <div class="tab-pane" id="candidate" role="tabpanel">
                                         <div class="xs-contact-form-wraper">
+                                            @include('partials.session')
                                             <form action="{{ route('elections.candidates.store', ['election' => $election->id]) }}" method="POST" id="xs-contact-form" class="xs-contact-form">
                                                 @csrf
                                                 <div class="input-group message-group">
