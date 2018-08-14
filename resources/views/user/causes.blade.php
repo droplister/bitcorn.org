@@ -13,13 +13,14 @@
             </div>
             <div class="col-md-8">
                 @foreach($causes as $cause)
+                @if($cause->approved_at)
                 <div class="card">
                     <div class="card-header">
                         <a href="{{ route('causes.show', ['causes' => $cause->id]) }}">{{ $cause->name }}</a>
                     </div>
 
                     <div class="card-body">
-                        <div class="progress">
+                        <div class="progress mb-3">
                           <div class="progress-bar bg-success" role="progressbar" style="width: {{ $cause->progress }}%" aria-valuenow="{{ $cause->progress }}" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                         @if($cause->pledged > 0)
@@ -29,6 +30,17 @@
                         @endif
                     </div>
                 </div>
+                @else
+                <div class="card">
+                    <div class="card-header">
+                        {{ $cause->name }}
+                    </div>
+
+                    <div class="card-body">
+                        <p>Your cause is pending review and approval.</p>
+                    </div>
+                </div>
+                @endif
                 @endforeach
                 @if(count($causes) === 0)
                 <div class="card">
