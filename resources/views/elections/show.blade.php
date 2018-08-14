@@ -86,6 +86,14 @@
                                         </div>
                                     </div><!-- #mapLocation END -->
                                     <div class="tab-pane" id="faq" role="tabpanel">
+                                        <ul class="xs-unorder-list circle green-icon">
+                                            <p>What are the "perks" of being a board member?</p>
+                                            <li>Become an admin of the chat during your term.</li>
+                                            <li>Fancy title: "Member of the Bitcorn Foundation".</li>
+                                            <li>Membership in a private Bitcorn Foundation chat room.</li>
+                                            <li>Access to the stream of new and unapproved bitcorn cards.</li>
+                                            <li>3/5ths more sway and input into pertinent bitcorn decisions.</li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
