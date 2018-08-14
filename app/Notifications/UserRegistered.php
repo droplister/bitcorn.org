@@ -8,24 +8,22 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class EmailReceived extends Notification
+class UserRegistered extends Notification
 {
     use Queueable;
 
     protected $name;
     protected $email;
-    protected $message;
 
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct($name, $email, $message)
+    public function __construct($name, $email)
     {
         $this->name = $name;
         $this->email = $email;
-        $this->message = $message;
     }
 
     /**
@@ -45,6 +43,6 @@ class EmailReceived extends Notification
     public function toTelegram($notifiable)
     {
         return TelegramMessage::create()
-            ->content("**Contact Form:**\n{$this->name} <{$this->email}>\n{$this->message}");
+            ->content("**User Registered:**\n{$this->name} <{$this->email}>");
     }
 }
