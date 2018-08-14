@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Auth;
 use App\Election;
 use App\Candidate;
-use StephenHill\Base58;
 use Illuminate\Http\Request;
 
 class ElectionCandidatesController extends Controller

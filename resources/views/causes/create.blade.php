@@ -5,7 +5,7 @@
 @section('content')
     <div class="container">
         <h1 class="pb-3 mb-4 border-bottom">
-            New Event
+            New Cause
         </h1>
         <div class="row justify-content-center">
             <div class="col-md-4 mb-4">

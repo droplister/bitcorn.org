@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Notification;
 use App\Mail\ContactEmail;
+use App\Notifications\EmailReceived;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -35,6 +37,9 @@ class ContactController extends Controller
 
         Mail::to('bitcorncrops+contact@gmail.com')
             ->send(new ContactEmail($request->name, $request->email, $request->message));
+
+        Notification::route('telegram', '-296131176')
+            ->notify(new EmailReceived($request->name, $request->email, $request->message));
 
         return redirect(route('contact.create'))->with('success', 'Email Sent');
     }
