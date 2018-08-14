@@ -95,13 +95,13 @@ class ElectionsController extends Controller
             'asset_id' => $request->asset_id,
         ]);
 
-        \Log::info('4. ' . $event->scheduled_at);
+        \Log::info('4. ' . $election->event->scheduled_at);
 
         $event->update([
             'event_url' => route('elections.show', ['election' => $election->id]),
         ]);
 
-        \Log::info('5. ' . $event->scheduled_at);
+        \Log::info('5. ' . $election->event->scheduled_at);
         
         return redirect(route('elections.create'))->with('success', 'Election Created');
     }
