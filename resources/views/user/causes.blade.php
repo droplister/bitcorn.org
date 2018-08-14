@@ -39,7 +39,7 @@
                     </div>
 
                     <div class="card-body">
-                        <p>Your cause is pending review. If not approved, it may be deleted.</p>
+                        <p class="mb-0">Your cause is pending review. Feel free to <a href="{{ route('contact.create') }}">contact us</a>.</p>
                     </div>
                 </div>
                 @endif
