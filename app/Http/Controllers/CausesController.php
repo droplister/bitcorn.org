@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Auth;
 use App\Asset;
 use App\Cause;
+use Auth, Storage;
 use Illuminate\Http\Request;
 
 class CausesController extends Controller
