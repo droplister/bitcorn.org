@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'The Bitcorn Foundation')
+@section('title', 'Bitcorn Foundation')
 @section('description', 'The Bitcorn Foundation is a forward memeing organization that exists only in the hearts and minds of bitcorners. It was founded to eradicate extreme dryness globally.')
 
 @section('content')
