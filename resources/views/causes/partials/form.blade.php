@@ -158,7 +158,7 @@
     <h6 class="font-weight-normal">The final steps...</h6>
 
     <div class="alert alert-danger mt-3">
-        <b>Warning: </b> This is brand new software and bugs may occur. Including, ones that cause pledged funds to be lost or miscounted. If you can't deal with that... Go away.
+        <b>Warning: </b> This is brand new software and bugs may occur. Including, ones that may cause pledged funds to be lost, miscounted, or merely delayed.
     </div>
 
     <div class="alert alert-warning mt-3">
@@ -173,7 +173,7 @@
         <div class="form-check">
             <input class="form-check-input" type="checkbox" name="terms" id="terms" style="height:inherit">
 
-            <label class="form-check-label" for="terms"> I have read the above notices and <a href="https://bitcorn.org/disclaimer" target="_blank">this disclaimer</a>. It's not lost on me that this is a light-hearted memetic project and I submit this cause in good faith. If my cause is not approved, I'm cool with that. There's probably a very reasonable reason for it.</label>
+            <label class="form-check-label" for="terms"> I have read the above notices and <a href="https://bitcorn.org/disclaimer" target="_blank">this disclaimer</a>. It's not lost on me that this is a light-hearted memetic project and I submit this cause in that spirit.</label>
         </div>
     </div>
 
