@@ -1,4 +1,4 @@
-<form method="POST" action="{{ route('users.update', ['user' => $user->id]) }}">
+<form method="POST" action="{{ route('users.update', ['user' => $user->id]) }} enctype="multipart/form-data">
 	@method('PUT')
     @csrf
 
@@ -48,7 +48,7 @@
         <label for="image" class="col-md-4 col-form-label text-md-right">{{ __('Image') }}</label>
 
         <div class="col-md-6">
-            <input id="image" type="file" class="form-control{{ $errors->has('image') ? ' is-invalid' : '' }}" name="image" value="{{ old('image') }}" required>
+            <input id="image" type="file" class="form-control{{ $errors->has('image') ? ' is-invalid' : '' }}" name="image" value="{{ old('image') }}">
 
             @if ($errors->has('image'))
                 <span class="invalid-feedback" role="alert">
@@ -64,7 +64,7 @@
         <label for="description" class="col-md-4 col-form-label text-md-right">{{ __('Profile') }}</label>
 
         <div class="col-md-6">
-            <textarea id="description" class="form-control{{ $errors->has('description') ? ' is-invalid' : '' }}" name="description" rows="4" required>
+            <textarea id="description" class="form-control{{ $errors->has('description') ? ' is-invalid' : '' }}" name="description" rows="4">
                 {{ old('description') ? old('description') : $user->description }}
             </textarea>
 
@@ -81,7 +81,7 @@
         <label for="twitter_url" class="col-md-4 col-form-label text-md-right">{{ __('Twitter') }}</label>
 
         <div class="col-md-6">
-            <input id="twitter_url" type="text" class="form-control{{ $errors->has('twitter_url') ? ' is-invalid' : '' }}" name="twitter_url" value="{{ old('twitter_url') ? old('twitter_url') : $user->twitter_url }}" required>
+            <input id="twitter_url" type="text" class="form-control{{ $errors->has('twitter_url') ? ' is-invalid' : '' }}" name="twitter_url" value="{{ old('twitter_url') ? old('twitter_url') : $user->twitter_url }}">
 
             @if ($errors->has('twitter_url'))
                 <span class="invalid-feedback" role="alert">
@@ -95,7 +95,7 @@
         <label for="website_url" class="col-md-4 col-form-label text-md-right">{{ __('Website') }}</label>
 
         <div class="col-md-6">
-            <input id="website_url" type="text" class="form-control{{ $errors->has('website_url') ? ' is-invalid' : '' }}" name="website_url" value="{{ old('website_url') ? old('website_url') : $user->website_url }}" required>
+            <input id="website_url" type="text" class="form-control{{ $errors->has('website_url') ? ' is-invalid' : '' }}" name="website_url" value="{{ old('website_url') ? old('website_url') : $user->website_url }}">
 
             @if ($errors->has('website_url'))
                 <span class="invalid-feedback" role="alert">
