@@ -35,7 +35,7 @@
 
         <div class="col-md-6">
             @if($user->image_url)
-            <img src="{{ $cause->image_url }}" alt="{{ $cause->user->name }}" class="img-responsive" width="60" />
+            <img src="{{ $user->image_url }}" alt="{{ $user->name }}" class="img-responsive" width="60" />
             @endif
             <input id="image" type="file" class="form-control{{ $errors->has('image') ? ' is-invalid' : '' }}" name="image" value="{{ old('image') }}">
 
