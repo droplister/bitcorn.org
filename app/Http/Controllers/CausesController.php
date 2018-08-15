@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use App\Asset;
 use App\Cause;
 use Carbon\Carbon;
-use Auth, Notification, Storage;
 use App\Notifications\CauseSubmitted;
+use Auth, Cache, Notification, Storage;
 use Illuminate\Http\Request;
 
 class CausesController extends Controller
