@@ -61,7 +61,7 @@ class SendMessageJob implements ShouldQueue
     private function getChats()
     {
         $chats = [
-            'public' => config('bitcorn.public_chat_id')
+            'public' => config('bitcorn.public_chat_id'),
             'private' => config('bitcorn.private_chat_id'),
         ];
 
