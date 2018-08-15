@@ -1,5 +1,5 @@
 <div class="xs-blog-post-comment xs-padding-40 xs-border">
-    <h4 class="comments-title">1 Comment</h4>
+<!--     <h4 class="comments-title"> Comment</h4>
     <ul class="comment-list">
         <li class="comment">
             <div class="comment-body">
@@ -19,7 +19,7 @@
                 </div>
             </div>
         </li>
-    </ul>
+    </ul> -->
     
     <div class="comment-respond">
         <h3 class="comment-reply-title">Leave a comment</h3>
