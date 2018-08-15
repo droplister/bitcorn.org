@@ -28,10 +28,10 @@ class UsersController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users,email,' . (int) $user,
             'image' => 'sometimes|image|mimes:jpeg,png,jpg,gif|dimensions:width=400,height=400',
-            'twitter_url' => 'sometimes|url|max:255',
-            'website_url' => 'sometimes|url|max:255',
-            'location' => 'sometimes|max:255',
-            'description' => 'sometimes|max:255',
+            'twitter_url' => 'sometimes|nullable|url|max:255',
+            'website_url' => 'sometimes|nullable|url|max:255',
+            'location' => 'sometimes|nullable|max:255',
+            'description' => 'sometimes|nullable|max:255',
         ]);
 
         if(Auth::user()->id === (int) $user)
