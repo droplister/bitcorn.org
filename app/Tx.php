@@ -87,4 +87,27 @@ class Tx extends Model
     {
         return $query->has('vote')->doesntHave('cause', 'pledge');
     }
+
+    /**
+     * First or Create Tx
+     *
+     * @param  array  $data
+     * @return \App\Tx
+     */
+    public static function firstOrCreateTx($data)
+    {
+        return static::firstOrCreate([
+            'tx_index' => $data['tx_index'],
+        ],[
+            'status' => $data['status'],
+            'tx_hash' => $data['tx_hash'],
+            'block_index' => $data['block_index'],
+            'source' => $data['source'],
+            'destination' => $data['destination'],
+            'asset' => $data['asset'],
+            'quantity' => $data['quantity'],
+            'memo' => $data['memo'],
+            'memo_hex' => $data['memo_hex'],
+        ]);
+    }
 }

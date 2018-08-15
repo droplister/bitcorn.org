@@ -56,4 +56,23 @@ class Vote extends Model
     {
         return $this->belongsTo(Tx::class);
     }
+
+    /**
+     * First or Create Vote
+     *
+     * @param  \App\Candidate  $candidate
+     * @param  \App\Tx  $tx
+     * @param  array  $data
+     * @return \App\Vote
+     */
+    public static function firstOrCreateVote($candidate, $tx, $data)
+    {
+        return static::firstOrCreate([
+            'candidate_id' => $candidate->id,
+            'tx_id' => $tx->id,
+        ],[
+            'address' => $data['source'],
+            'amount' => $data['quantity'],
+        ]);
+    }
 }

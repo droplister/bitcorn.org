@@ -70,7 +70,7 @@ class Candidate extends Model
     }
 
     /**
-     * Elected Candidates
+     * Elected
      */
     public function scopeElected($query)
     {

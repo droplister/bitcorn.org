@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Notification;
 use App\Mail\ContactEmail;
-use App\Notifications\EmailReceived;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -40,10 +38,6 @@ class ContactController extends Controller
         // Send Via Email
         Mail::to(config('bitcorn.contact_email'))
             ->send(new ContactEmail($request->name, $request->email, $request->message));
-
-        // Telegram Chat
-        Notification::route('telegram', config('bitcorn.foundation_chatroom'))
-            ->notify(new EmailReceived($request->name, $request->email, $request->message));
 
         return redirect(route('contact.create'))->with('success', 'Email Sent');
     }

@@ -5,8 +5,7 @@ namespace App\Http\Controllers;
 use App\Asset;
 use App\Cause;
 use Carbon\Carbon;
-use App\Notifications\CauseSubmitted;
-use Auth, Cache, Notification, Storage;
+use Auth, Cache, Storage;
 use Illuminate\Http\Request;
 
 class CausesController extends Controller
@@ -139,9 +138,6 @@ class CausesController extends Controller
             'image_url' => url($image_url),
             'ended_at' => $request->ended_at,
         ]);
-
-        Notification::route('telegram', config('bitcorn.foundation_chatroom'))
-            ->notify(new CauseSubmitted($cause));
 
         return redirect(route('users.causes.index', ['user' => Auth::user()->id]))
             ->with('success', 'Cause Created');

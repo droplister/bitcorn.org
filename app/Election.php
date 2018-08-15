@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Cache;
 use App\Traits\Touchable;
 use Illuminate\Database\Eloquent\Model;
 
@@ -69,5 +70,25 @@ class Election extends Model
     public function votes()
     {
         return $this->hasManyThrough(Vote::class, Candidate::class);
+    }
+
+    /**
+     * Active
+     */
+    public function scopeActive($query)
+    {
+        $block_index = Cache::get('block_index') - config('bitcorn.confirmations');
+
+        return $query->whereNull('decided_at')->where('block_index', '>', $block_index);
+    }
+
+    /**
+     * Undecided
+     */
+    public function scopeUndecided($query)
+    {
+        $block_index = Cache::get('block_index') - config('bitcorn.confirmations');
+
+        return $query->whereNull('decided_at')->where('block_index', '<=', $block_index);
     }
 }
