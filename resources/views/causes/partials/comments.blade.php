@@ -39,7 +39,7 @@
             <textarea placeholder="Enter Comments *" name="comment" cols="45" rows="8"></textarea>
             
             <div class="text-right">
-                <button type="submit" class="btn btn-primary" name="submit">Post Comment</button>
+                <button type="submit" class="btn btn-primary" name="submit" disabled>Post Comment</button>
             </div>
         </form>
     </div>
