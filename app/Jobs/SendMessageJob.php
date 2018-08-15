@@ -3,6 +3,7 @@
 namespace App\Jobs;
 
 use Telegram;
+use Log, Throwable;
 use Illuminate\Bus\Queueable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
@@ -45,11 +46,18 @@ class SendMessageJob implements ShouldQueue
      */
     public function handle()
     {
-        $chats = $this->getChats();
-
-        foreach($chats as $chat => $chat_id)
+        try
         {
-            $this->sendMessage($chat_id);
+            $chats = $this->getChats();
+
+            foreach($chats as $chat => $chat_id)
+            {
+                $this->sendMessage($chat_id);
+            }
+        }
+        catch(Throwable $e)
+        {
+            Log::error($e->getMessage());
         }
     }
 
