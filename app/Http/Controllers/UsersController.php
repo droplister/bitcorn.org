@@ -30,16 +30,19 @@ class UsersController extends Controller
             'image' => 'sometimes|image|mimes:jpeg,png,jpg,gif|dimensions:width=400,height=400',
             'twitter_url' => 'sometimes|url|max:255',
             'website_url' => 'sometimes|url|max:255',
-            'location' =>  'sometimes|max:255',
+            'location' => 'sometimes|max:255',
             'description' => 'sometimes|max:255',
         ]);
 
         if(Auth::user()->id === (int) $user)
         {
-            $image_path = Storage::putFile('public/users', $request->image);
-            $image_url = Storage::url($image_path);
+            if($request->has('image'))
+            {
+                $image_path = Storage::putFile('public/users', $request->image);
+                $image_url = Storage::url($image_path);
 
-            $request->merge(['image_url' => url($image_url)]);
+                $request->merge(['image_url' => url($image_url)]);
+            }
 
         	Auth::user()->update($request->all());
         }
