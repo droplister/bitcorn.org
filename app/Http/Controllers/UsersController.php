@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Auth;
+use Auth, Storage;
 use Illuminate\Http\Request;
 
 class UsersController extends Controller
