@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'Causes')
+@section('title', 'Bitcorn Causes')
+@section('description', 'The Bitcorn Foundation tries to help entrepreneurs, startups, and starving artists crowdfund.')
 
 @section('content')
     @include('partials.breadcrumbs', [
@@ -22,6 +23,9 @@
                 </div>
                 <div class="row">
                     @foreach($active_causes as $cause)
+                        @include('causes.partials.cause')
+                    @endforeach
+                    @foreach($ended_causes as $cause)
                         @include('causes.partials.cause')
                     @endforeach
                 </div>

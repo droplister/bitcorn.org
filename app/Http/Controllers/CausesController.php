@@ -29,8 +29,19 @@ class CausesController extends Controller
      */
     public function index(Request $request)
     {
-        $active_causes = Cause::popular()->get();
-        $ended_causes = Cause::ended()->get();
+        // Active Causes
+        $active_causes = Cache::remember('active_causes', 60,
+            function () {
+                return Cause::popular()->get();
+            }
+        );
+
+        // Ended Causes
+        $ended_causes = Cache::remember('ended_causes', 60,
+            function () {
+                return Cause::ended()->get();
+            }
+        );
 
         return view('causes.index', compact('active_causes', 'ended_causes'));
     }
@@ -46,7 +57,9 @@ class CausesController extends Controller
     {
         $cause = Cause::findOrFail($cause);
 
-        return view('causes.show', compact('cause'));
+        $pledges = $cause->pledges()->take(10)->latest()->get();
+
+        return view('causes.show', compact('cause', 'pledges'));
     }
 
     /**

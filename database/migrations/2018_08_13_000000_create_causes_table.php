@@ -24,11 +24,13 @@ class CreateCausesTable extends Migration
             $table->string('image_url');
             $table->string('address');
             $table->string('memo')->unique();
-            $table->unsignedBigInteger('target');
+            $table->unsignedBigInteger('target')->default(0);
             $table->unsignedBigInteger('pledged')->default(0);
             $table->unsignedBigInteger('released')->default(0);
             $table->timestamp('ended_at')->nullable();
+            $table->timestamp('funded_at')->nullable();
             $table->timestamp('approved_at')->nullable();
+            $table->timestamp('rejected_at')->nullable();
             $table->timestamp('released_at')->nullable();
             $table->timestamps();
         });

@@ -22,6 +22,16 @@ class Tx extends Model
        'quantity',
        'memo',
        'memo_hex',
+       'confirmed_at',
+    ];
+
+    /**
+     * The attributes that are dates.
+     *
+     * @var array
+     */
+    protected $dates = [
+        'confirmed_at',
     ];
 
     /**

@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Election;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -15,7 +16,14 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name',
+        'email',
+        'password',
+        'location',
+        'image_url',
+        'twitter_url'
+        'website_url',
+        'description',
     ];
 
     /**
@@ -24,7 +32,8 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password',
+        'remember_token',
     ];
 
     /**
@@ -45,5 +54,17 @@ class User extends Authenticatable
     public function isAdmin()
     {
         return $this->id === 1;
+    }
+
+    /**
+     * Is Board
+     * 
+     * @return boolean
+     */
+    public function isBoard()
+    {
+        $last_election = Election::latest('decided_at')->first();
+
+        return $last_election ? $last_election->candidates()->elected()->where('user_id', '=', $this->is)->exists() : false;
     }
 }

@@ -22,3 +22,18 @@
         Pledge {{ $cause->asset->name }}
     </button>
 </div>
+@if(count($pledges))
+<div class="widget widget_categories xs-sidebar-widget">
+    <h3 class="widget-title">Recent Pledges</h3>
+    <ul class="xs-side-bar-list">
+        @foreach($pledges as $pledge)
+        <li>
+            <a href="https://xcpfox.com/tx/{{ $pledge->tx->tx_hash }}" target="_blank">
+                <span>{{ $pledge->tx->confirmed_at->diffForHumans() }}</span>
+                <span>{{ number_format($pledge->amount_normalized) }}</span>
+            </a>
+        </li>
+        @endforeach
+    </ul>
+</div>
+@endif

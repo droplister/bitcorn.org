@@ -25,6 +25,7 @@ class CreateTxsTable extends Migration
             $table->unsignedBigInteger('quantity');
             $table->string('memo')->nullable();
             $table->string('memo_hex')->nullable();
+            $table->string('confirmed_at')->nullable();
             $table->timestamps();
         });
     }

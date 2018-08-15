@@ -29,7 +29,9 @@ class Cause extends Model
         'pledged',
         'released',
         'ended_at',
+        'funded_at',
         'approved_at',
+        'rejected_at',
         'released_at',
     ];
 
@@ -40,7 +42,9 @@ class Cause extends Model
      */
     protected $dates = [
         'ended_at',
+        'funded_at',
         'approved_at',
+        'rejected_at',
         'released_at',
     ];
 
@@ -51,8 +55,8 @@ class Cause extends Model
      */
     protected $appends = [
         'name',
-        'days_left',
         'progress',
+        'days_left',
         'target_normalized',
         'pledged_normalized',
         'released_normalized',
@@ -69,16 +73,6 @@ class Cause extends Model
     }
 
     /**
-     * Days Left
-     *
-     * @return string
-     */
-    public function getDaysLeftAttribute()
-    {
-        return $this->ended_at->diffInDays(Carbon::now());
-    }
-
-    /**
      * Progress %
      *
      * @return string
@@ -86,6 +80,16 @@ class Cause extends Model
     public function getProgressAttribute()
     {
         return number_format($this->pledged / $this->target * 100, 0);
+    }
+
+    /**
+     * Days Left
+     *
+     * @return string
+     */
+    public function getDaysLeftAttribute()
+    {
+        return $this->ended_at->diffInDays(Carbon::now());
     }
 
     /**
@@ -156,6 +160,16 @@ class Cause extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    /**
+     * Has Ended
+     * 
+     * @return boolean
+     */
+    public function hasEnded()
+    {
+        return $this->ended_at < Carbon::now();
     }
 
     /**
