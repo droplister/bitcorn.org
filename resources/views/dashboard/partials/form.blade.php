@@ -1,4 +1,4 @@
-<form method="POST" action="{{ route('users.update', ['user' => $user->id]) }} enctype="multipart/form-data">
+<form method="POST" action="{{ route('users.update', ['user' => $user->id]) }}" enctype="multipart/form-data">
 	@method('PUT')
     @csrf
 
@@ -25,20 +25,6 @@
             @if ($errors->has('email'))
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $errors->first('email') }}</strong>
-                </span>
-            @endif
-        </div>
-    </div>
-
-    <div class="form-group row">
-        <label for="location" class="col-md-4 col-form-label text-md-right">{{ __('Location') }}</label>
-
-        <div class="col-md-6">
-            <input id="location" type="text" class="form-control{{ $errors->has('location') ? ' is-invalid' : '' }}" name="location" value="{{ old('location') ? old('location') : $user->location }}" required>
-
-            @if ($errors->has('location'))
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $errors->first('location') }}</strong>
                 </span>
             @endif
         </div>
@@ -76,6 +62,19 @@
         </div>
     </div>
 
+    <div class="form-group row">
+        <label for="location" class="col-md-4 col-form-label text-md-right">{{ __('Location') }}</label>
+
+        <div class="col-md-6">
+            <input id="location" type="text" class="form-control{{ $errors->has('location') ? ' is-invalid' : '' }}" name="location" value="{{ old('location') ? old('location') : $user->location }}">
+
+            @if ($errors->has('location'))
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $errors->first('location') }}</strong>
+                </span>
+            @endif
+        </div>
+    </div>
 
     <div class="form-group row">
         <label for="twitter_url" class="col-md-4 col-form-label text-md-right">{{ __('Twitter') }}</label>
