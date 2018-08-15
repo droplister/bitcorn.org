@@ -20,6 +20,9 @@
                         <span class="xs-separetor dashed"></span>
                         <p>The Bitcorn.org platform tries to help entrepreneurs, startups, and <br> starving artists achieve their dreams.</p>
                     </div>
+                    <div class="col-xl-3 col-md-3 xs-btn-wraper">
+                        <a href="{{ route('causes.create') }}" class="btn btn-primary">New Causes</a>
+                    </div>
                 </div>
                 <div class="row">
                     @foreach($active_causes as $cause)
