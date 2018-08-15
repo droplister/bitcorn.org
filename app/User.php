@@ -67,4 +67,22 @@ class User extends Authenticatable
 
         return $last_election ? $last_election->candidates()->elected()->where('user_id', '=', $this->is)->exists() : false;
     }
+
+    /**
+     * Complete Profile
+     * 
+     * @return boolean
+     */
+    public function hasCompleteProfile()
+    {
+        if($this->location && $this->image_url && $this->description)
+        {
+            if($this->twitter_url || $this->website_url)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
 }
