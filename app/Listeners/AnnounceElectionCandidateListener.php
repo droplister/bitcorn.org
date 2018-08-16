@@ -32,7 +32,7 @@ class AnnounceElectionCandidateListener
     {
         $message = "*{$candidate->election->event->name}*\n";
         $message.= "{$candidate->user->name} has entered the race!\n\n";
-        $message.= "> {$candidate->content}\n\n";
+        $message.= "\"{$candidate->content}\"\n\n";
         $message.= "Vote Code: {$candidate->memo}";
 
         return $message;
