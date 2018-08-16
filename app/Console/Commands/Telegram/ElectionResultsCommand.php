@@ -30,8 +30,7 @@ class ElectionResultsCommand extends Command
             $link = route('elections.show', ['election' => $election->id]);
             $text = "*{$election->event->name}*\n";
             $text.= $election->decided_at ? "The Final Results" : "Vote Before Block {$election->block_index}!\n";
-            $text.= $election->decided_at ? "" : "Learn how to vote [here]({$link})!\n";
-            $text.= $election->decided_at ? "" : "_So far {$percent}% have voted..._\n";
+            $text.= $election->decided_at ? "" : "Learn how to [VOTE HERE]({$link}). _So far {$percent}% have voted..._\n";
 
             $candidates = $election->candidates()
                 ->orderBy('votes_total', 'desc')
