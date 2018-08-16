@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Events\TxCreatedEvent;
 use Illuminate\Database\Eloquent\Model;
 
 class Tx extends Model
@@ -12,6 +13,15 @@ class Tx extends Model
      * @var string
      */
     protected $table = 'txs';
+
+    /**
+     * The event map for the model.
+     *
+     * @var array
+     */
+    protected $dispatchesEvents = [
+        'created' => TxCreatedEvent::class,
+    ];
 
     /**
      * The attributes that are mass assignable.
