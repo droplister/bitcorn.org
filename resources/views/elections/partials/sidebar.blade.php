@@ -31,8 +31,8 @@
         <li>
             <a href="https://xcpfox.com/tx/{{ $vote->tx->tx_hash }}" target="_blank">
                 <span>
-                    {{ $vote->amount_normalized }} str_plural('vote', $vote->amount_normalized) }}<br />
-                    {{ $vote->candidate->memo }}
+                    {{ $vote->amount_normalized }}<br />
+                    Vote Code: {{ $vote->candidate->memo }}
                 </span>
                 <span>{{ $vote->tx->confirmed_at->diffForHumans() }}</span>
             </a>
