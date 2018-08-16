@@ -24,8 +24,8 @@
     </ul>
 </div>
 @if(count($votes))
-<div class="widget widget_categories xs-sidebar-widget">
-    <h3 class="widget-title">Recent Votes</h3>
+<div class="widget widget_categories xs-sidebar-widget mt-4">
+    <h3 class="widget-title">Latest Votes</h3>
     <ul class="xs-side-bar-list">
         @foreach($votes as $vote)
         <li>
