@@ -92,6 +92,10 @@ class ElectionVotingJob implements ShouldQueue
             $tx = Tx::firstOrCreateTx($data);
             $vote = Vote::firstOrCreateVote($candidate, $tx, $data);
         }
+
+        $votes_total = $candidate->votes()->sum('amount');
+
+        $candidate->update(['votes_total' => $votes_total]);
     }
 
     /**
