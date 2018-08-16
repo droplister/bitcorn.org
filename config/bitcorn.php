@@ -15,4 +15,5 @@ return [
     'deposit_address' => env('DEPOSIT_ADDRESS', '1BitcornFoundationVotingxxy262cTk'),
     'public_chat_id' => env('PUBLIC_CHAT_ID'),
     'private_chat_id' => env('PRIVATE_CHAT_ID'),
+    'telegram_webhook' => env('TELEGRAM_WEB_HOOK'),
 ];
