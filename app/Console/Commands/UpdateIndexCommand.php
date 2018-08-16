@@ -77,7 +77,7 @@ class UpdateIndexCommand extends Command
         }
         catch(Throwable $e)
         {
-            Log::error($e->getMessage());
+            Log::error('1. ' . $e->getMessage());
         }
     }
 
