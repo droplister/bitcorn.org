@@ -1,13 +1,13 @@
 <div class="xs-event-schedule-widget">
     <div class="media xs-event-schedule">
         <div class="media-body">
-            <h5>Seeking {{ number_format($cause->target_normalized) }} {{ $cause->asset->name }}</h5>
+            <h5>Seeking {{ number_format($cause->target_normalized) }} {{ $cause->asset->display_name }}</h5>
         </div>
     </div>
     <ul class="list-group xs-list-group">
         <li class="d-flex justify-content-between">
             Total Raised: 
-            <span>{{ number_format($cause->pledged_normalized) }} {{ $cause->asset->name }}</span>
+            <span>{{ number_format($cause->pledged_normalized) }} {{ $cause->asset->display_name }}</span>
         </li>
         <li class="d-flex justify-content-between">
             Released On: 
@@ -19,7 +19,7 @@
         </li>
     </ul>
     <button class="btn btn-block btn-warning mt-5">
-        Pledge {{ $cause->asset->name }}
+        Pledge {{ $cause->asset->display_name }}
     </button>
 </div>
 @if(count($pledges))

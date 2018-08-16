@@ -14,6 +14,7 @@ class Asset extends Model
     protected $fillable = [
         'type',
         'name',
+        'long_name',
         'issuance',
         'divisible',
     ];
@@ -24,8 +25,19 @@ class Asset extends Model
      * @var array
      */
     protected $appends = [
+        'display_name',
         'issuance_normalized',
     ];
+
+    /**
+     * Display Name
+     *
+     * @return string
+     */
+    public function getDisplayNameAttribute()
+    {
+        return $this->long_name ? $this->long_name : $this->name;
+    }
 
     /**
      * Issuance Normalized

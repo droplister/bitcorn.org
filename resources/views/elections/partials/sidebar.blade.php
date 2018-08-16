@@ -19,7 +19,7 @@
         </li>
         <li class="d-flex justify-content-between">
             Vote Token: 
-            <span>{{ $election->asset->name }}</span>
+            <span>{{ $election->asset->display_name }}</span>
         </li>
     </ul>
 </div>

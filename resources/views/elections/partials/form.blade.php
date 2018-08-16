@@ -22,7 +22,7 @@
             <select name="asset_id" id="xs-donate-charity" class="form-control">
                 <option value="">Select</option>
                 @foreach($assets as $asset)
-                <option value="{{ $asset->id }}"{{ old('asset_id') && old('asset_id') === $asset->id ? ' selected' : '' }}>{{ $asset->name }}</option>
+                <option value="{{ $asset->id }}"{{ old('asset_id') && old('asset_id') === $asset->id ? ' selected' : '' }}>{{ $asset->display_name }}</option>
                 @endforeach
             </select>
 

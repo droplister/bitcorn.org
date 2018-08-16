@@ -81,7 +81,7 @@
         <div class="col-4 col-md-3">
             <select name="asset_id" id="xs-donate-charity" class="form-control">
                 @foreach($assets as $asset)
-                <option value="{{ $asset->id }}">{{ $asset->name }}</option>
+                <option value="{{ $asset->id }}">{{ $asset->display_name }}</option>
                 @endforeach
             </select>
         </div>

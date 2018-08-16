@@ -14,7 +14,7 @@
             <ul class="xs-simple-tag xs-mb-20">
                 <li>
                     <a href="{{ route('causes.show', ['cause' => $cause->id]) }}">
-                        {{ $cause->asset->name }}
+                        {{ $cause->asset->display_name }}
                     </a>
                 </li>
             </ul>

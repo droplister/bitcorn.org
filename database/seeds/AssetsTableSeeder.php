@@ -34,56 +34,72 @@ class AssetsTableSeeder extends Seeder
         $pledge_assets = [
             'BITCORN' => [
                 'divisible' => 0,
+                'long_name' => null,
             ],
             'XCP' => [
                 'divisible' => 1,
+                'long_name' => null,
             ]
         ];
 
         $this->seedAssets($pledge_assets, 'pledge');
 
         $vote_assets = [
-            'CROPS.VOTE0' => [
+            'A13537329360771149435' => [
                 'divisible' => 1,
+                'long_name' => 'CROPS.VOTE1',
             ],
-            'CROPS.VOTE1' => [
+            'A10892938523260130770' => [
                 'divisible' => 1,
+                'long_name' => 'CROPS.VOTE2',
             ],
-            'CROPS.VOTE2' => [
+            'A4881693416436280065' => [
                 'divisible' => 1,
+                'long_name' => 'CROPS.VOTE3',
             ],
-            'CROPS.VOTE3' => [
+            'A9863777744013985218' => [
                 'divisible' => 1,
+                'long_name' => 'CROPS.VOTE4',
             ],
-            'CROPS.VOTE4' => [
+            'A17489903580598755689' => [
                 'divisible' => 1,
+                'long_name' => 'CROPS.VOTE5',
             ],
-            'CROPS.VOTE5' => [
+            'A14543556218607916248' => [
                 'divisible' => 1,
+                'long_name' => 'CROPS.VOTE6',
             ],
-            'CROPS.VOTE6' => [
+            'A2075813956743812002' => [
                 'divisible' => 1,
+                'long_name' => 'CROPS.VOTE7',
             ],
-            'CROPS.VOTE7' => [
+            'A6141367201565052211' => [
                 'divisible' => 1,
+                'long_name' => 'CROPS.VOTE8',
             ],
-            'CROPS.VOTE8' => [
+            'A5155817104121712777' => [
                 'divisible' => 1,
+                'long_name' => 'CROPS.VOTE9',
             ],
-            'CROPS.VOTE9' => [
+            'A15410061088653185720' => [
                 'divisible' => 1,
+                'long_name' => 'CROPS.VOTE10',
             ],
-            'CROPS.VOTE10' => [
+            'A2499516396892145867' => [
                 'divisible' => 1,
+                'long_name' => 'CROPS.VOTE11',
             ],
-            'CROPS.VOTE11' => [
+            'A2841223757163771319' => [
                 'divisible' => 1,
+                'long_name' => 'CROPS.VOTE12',
             ],
-            'CROPS.VOTE12' => [
+            'A17831344322835571411' => [
                 'divisible' => 1,
+                'long_name' => 'CROPS.VOTE13',
             ],
-            'CROPS.VOTE13' => [
+            'A15066922991017750387' => [
                 'divisible' => 1,
+                'long_name' => 'CROPS.VOTE14',
             ],
         ];
 
