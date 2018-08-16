@@ -85,7 +85,7 @@ class UpdateIssuanceJob implements ShouldQueue
     private function getSupply()
     {
         return $this->counterparty->execute('get_supply', [
-            'asset' => $this->asset->name,
+            'asset' => $this->asset->display_name,
         ]);
     }
 }
