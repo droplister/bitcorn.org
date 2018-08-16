@@ -19,7 +19,7 @@ class AnnounceElectionDecisionListener
     {
         $message = $this->getMessage($event->election);
 
-        SendMessageJob::dispatch($message, 'private'); // Todo: Remove in production
+        SendMessageJob::dispatch($message);
     }
 
     /**
