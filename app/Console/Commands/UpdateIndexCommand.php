@@ -68,6 +68,9 @@ class UpdateIndexCommand extends Command
                 // Calculate votes
                 $this->call('election:voting');
 
+                // Warn at the end 
+                $this->call('election:report');
+
                 // Decide election
                 $this->call('election:decide');
 
