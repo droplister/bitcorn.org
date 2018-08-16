@@ -50,7 +50,7 @@ class UpdateIssuanceCommand extends Command
      */
     public function handle()
     {
-        $assets = Asset::get();
+        $assets = Asset::whereName('XCP')->get();
 
         foreach($assets as $asset)
         {
