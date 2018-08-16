@@ -2,10 +2,20 @@
 
 namespace App;
 
+use App\Events\CandidateCreatedEvent;
 use Illuminate\Database\Eloquent\Model;
 
 class Candidate extends Model
 {
+    /**
+     * The event map for the model.
+     *
+     * @var array
+     */
+    protected $dispatchesEvents = [
+        'created' => CandidateCreatedEvent::class,
+    ];
+
     /**
      * The attributes that are mass assignable.
      *
