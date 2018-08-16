@@ -119,12 +119,13 @@ class AssetsTableSeeder extends Seeder
         foreach($assets as $asset => $data)
         {
             // Get supply
-            $issuance = $this->getSupply($asset);
+            $issuance = $this->getSupply($data['long_name'] ? $data['long_name'] : $asset);
 
             // Create it!
             Asset::create([
                 'type' => $type,
                 'name' => $asset,
+                'long_name' => $data['long_name'],
                 'issuance' => $issuance,
                 'divisible' => $data['divisible'],
             ]);
