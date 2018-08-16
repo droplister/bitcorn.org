@@ -30,11 +30,12 @@ class ElectionsController extends Controller
     public function show(Request $request, $election)
     {
         $election = Election::findOrFail($election);
+        $votes = $election->votes()->take(10)->latest()->get();
 
         $candidates_ranked = $election->candidates()->orderBy('votes_total', 'desc')->get();
         $candidates_random = $election->candidates()->inRandomOrder()->get();
 
-        return view('elections.show', compact('election', 'candidates_ranked', 'candidates_random'));
+        return view('elections.show', compact('election', 'votes', 'candidates_ranked', 'candidates_random'));
     }
 
     /**
