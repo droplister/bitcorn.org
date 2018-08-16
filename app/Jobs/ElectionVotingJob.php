@@ -84,6 +84,21 @@ class ElectionVotingJob implements ShouldQueue
      */
     private function updateVotes($candidate)
     {
+        // Find and Save Votes
+        $this->findAndSaveVotes($candidate);
+
+        // Update Votes Total
+        $this->updateVotesTotal($candidate);
+    }
+
+    /**
+     * Find and Save Votes
+     * 
+     * @param  \App\Candidate  $candidate
+     * @return void
+     */
+    private function findAndSaveVotes($candidate)
+    {
         // API Data
         $vote_data = $this->getVoteData($candidate);
 
@@ -92,10 +107,22 @@ class ElectionVotingJob implements ShouldQueue
             $tx = Tx::firstOrCreateTx($data);
             $vote = Vote::firstOrCreateVote($candidate, $tx, $data);
         }
+    }
 
+    /**
+     * Update Votes Total
+     * 
+     * @param  \App\Candidate  $candidate
+     * @return void
+     */
+    private function updateVotesTotal($candidate)
+    {
+        // Sum Votes
         $votes_total = $candidate->votes()->sum('amount');
 
-        $candidate->update(['votes_total' => $votes_total]);
+        return $candidate->update([
+            'votes_total' => $votes_total,
+        ]);
     }
 
     /**
