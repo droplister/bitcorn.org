@@ -26,10 +26,11 @@ class ElectionResultsCommand extends Command
 
         if($election = Election::find($arguments[0]))
         {
-            $percent = number_format($election->votes()->sum('amount') / $election->asset->issuance, 1);
+            $percent = number_format($election->votes()->sum('amount') / $election->asset->issuance * 100, 1);
             $link = route('elections.show', ['election' => $election->id]);
             $text = "*{$election->event->name}*\n";
             $text.= $election->decided_at ? "The Final Results" : "Vote Before Block {$election->block_index}!\n";
+            $text.= $election->decided_at ? "" : "Learn how to vote [here]({$link})!";
             $text.= $election->decided_at ? "" : "_So far {$percent}% have voted..._\n";
 
             $candidates = $election->candidates()
@@ -42,8 +43,6 @@ class ElectionResultsCommand extends Command
                 $i++;
                 $text.= "{$i}. {$candidate->user->name}\n";
             }
-
-            $text.= $election->decided_at ? "" : "\n Learn how to vote [here]({$link})!";
         }
         else
         {
