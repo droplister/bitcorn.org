@@ -27,7 +27,7 @@
 <div class="widget widget_categories xs-sidebar-widget">
     <h3 class="widget-title">Recent Votes</h3>
     <ul class="xs-side-bar-list">
-        @foreach($votes as $votes)
+        @foreach($votes as $vote)
         <li>
             <a href="https://xcpfox.com/tx/{{ $vote->tx->tx_hash }}" target="_blank">
                 <span>{{ $vote->tx->confirmed_at->diffForHumans() }}</span>
