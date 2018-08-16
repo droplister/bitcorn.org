@@ -39,12 +39,18 @@ class ElectionResultsCommand extends Command
                 $i++;
                 $text.= "{$i}. {$candidate->user->name} ({$candidate->memo}) __{$candidate->votes_total_normalized} Votes__\n";
             }
-
-            $this->replyWithMessage(['text' => $text]);
         }
         else
         {
-            $this->replyWithMessage(['text' => 'Please enter a valid election number.']);
+            $max = Election::count();
+            $text = "Please provide a valid election number. (1-{$max})";
         }
+
+        $this->replyWithMessage([
+            'text' => $text,
+            'parse_mode' => 'Markdown',
+            'disable_notification' => true,
+            'disable_web_page_preview' => true,
+        ]);
     }
 }
