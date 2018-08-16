@@ -60,9 +60,9 @@ class UpdateTxJob implements ShouldQueue
     {
         try
         {
-            $data = $this->getRawTransaction();
+            $data = $this->getBlockInfo();
 
-            $confirmed_at = Carbon::createFromTimestamp($data['blocktime'])->toDateTimeString();
+            $confirmed_at = Carbon::createFromTimestamp($data['block_time'])->toDateTimeString();
 
             $this->tx->update([
                 'confirmed_at' => $confirmed_at,
@@ -77,15 +77,14 @@ class UpdateTxJob implements ShouldQueue
 
     /**
      * Counterparty API
-     * https://counterparty.io/docs/api/#getrawtransaction
+     * https://counterparty.io/docs/api/#get_block_info
      *
      * @return mixed
      */
-    private function getRawTransaction()
+    private function getBlockInfo()
     {
-        return $this->counterparty->execute('getrawtransaction', [
-            'tx_hash' => $this->tx->tx_hash,
-            'verbose' => true,
+        return $this->counterparty->execute('get_block_info', [
+            'block_index' => $this->tx->block_index,
         ]);
     }
 }
