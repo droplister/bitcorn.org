@@ -85,7 +85,12 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="xs-copyright-text">
-                                <p>&copy; Copyright {{ date('Y') }} <a href="{{ route('pages.terms') }}" class="ml-3">Terms</a> <a href="{{ route('pages.privacy') }}" class="ml-3">Privacy</a> <a href="{{ route('pages.disclaimer') }}" class="ml-3">Disclaimer</a></p>
+                                <p>
+                                    <a href="https://github.com/droplister/bitcorn.org" target="_blank">GitHub</a>
+                                    <a href="{{ route('pages.terms') }}" class="ml-3">Terms</a>
+                                    <a href="{{ route('pages.privacy') }}" class="ml-3">Privacy</a>
+                                    <a href="{{ route('pages.disclaimer') }}" class="ml-3">Disclaimer</a>
+                                </p>
                             </div>
                         </div>
                         <div class="col-md-6">
