@@ -31,7 +31,8 @@ class AnnounceElectionDecisionListener
     private function getMessage($election)
     {
         $message = "*{$election->event->name}*\n";
-        $message.= "The polls are closed and the election has been decided! Congratulations:\n";
+        $message.= "The polls are closed and the election has been decided!\n";
+        $message.= "\nCongratulations:\n";
 
         $elected_candidates = $election->candidates()->elected()->get();
 
