@@ -101,8 +101,8 @@ class ElectionReportCommand extends Command
         $blocks_left = $this->blocksLeft($election);
         $blocks_word = str_plural('block', $blocks_left);
 
-        $message = "*{$election->event->name}*\n"
-        $message.= "Ends in {$blocks_left} {$blocks_word}..."
+        $message = "*{$election->event->name}*\n";
+        $message.= "Ends in {$blocks_left} {$blocks_word}...";
 
         return $message;
     }
