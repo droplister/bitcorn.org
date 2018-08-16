@@ -29,8 +29,7 @@ class ElectionResultsCommand extends Command
             $percent = number_format($election->votes()->sum('amount') / $election->asset->issuance * 100, 1);
             $link = route('elections.show', ['election' => $election->id]);
             $text = "*{$election->event->name}*\n";
-            $text.= $election->decided_at ? "The Final Results" : "Vote Before Block {$election->block_index}!\n";
-            $text.= $election->decided_at ? "" : "Learn how to [VOTE HERE]({$link}). _So far {$percent}% have voted..._\n";
+            $text.= $election->decided_at ? "" : "Learn how to [VOTE HERE]({$link}). _So far {$percent}% of CROPS have voted..._\n";
 
             $candidates = $election->candidates()
                 ->orderBy('votes_total', 'desc')
@@ -40,7 +39,9 @@ class ElectionResultsCommand extends Command
             foreach($candidates as $candidate)
             {
                 $i++;
+                $percent = number_format($candidate->votes_total / $election->asset->issuance * 100, 1);
                 $text.= "{$i}. {$candidate->user->name}\n";
+                $text.= "_{$candidate->memo} - {$percent}%_\n";
             }
         }
         else
