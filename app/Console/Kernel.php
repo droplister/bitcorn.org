@@ -13,7 +13,10 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        //
+        Commands\ElectionDecideCommand::class,
+        Commands\ElectionVotingCommand::class,
+        Commands\UpdateIndexCommand::class,
+        Commands\UpdateIssuanceCommand::class,
     ];
 
     /**
@@ -24,8 +27,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')
-        //          ->hourly();
+        $schedule->command('update:index')->everyMinute();
     }
 
     /**
