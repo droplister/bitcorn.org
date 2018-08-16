@@ -72,7 +72,7 @@ class ElectionVotingJob implements ShouldQueue
         }
         catch(Throwable $e)
         {
-            Log::error('2. ' . $e->getMessage());
+            Log::error($e->getMessage());
         }      
     }
 

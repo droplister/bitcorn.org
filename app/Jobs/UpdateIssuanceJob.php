@@ -72,7 +72,7 @@ class UpdateIssuanceJob implements ShouldQueue
         }
         catch(Throwable $e)
         {
-            Log::error($this->asset->display_name . ' ' . $e->getMessage());
+            Log::error($e->getMessage());
         }
     }
 

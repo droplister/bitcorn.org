@@ -57,7 +57,7 @@ class SendMessageJob implements ShouldQueue
         }
         catch(Throwable $e)
         {
-            Log::error('3. ' . $e->getMessage());
+            Log::error($e->getMessage());
         }
     }
 
