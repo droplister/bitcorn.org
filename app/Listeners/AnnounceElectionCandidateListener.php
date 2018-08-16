@@ -31,9 +31,9 @@ class AnnounceElectionCandidateListener
     private function getMessage($candidate)
     {
         $message = "*{$candidate->election->event->name}*\n";
-        $message.= "{$candidate->user->name} has entered the race!\n\n";
-        $message.= "\"{$candidate->content}\"\n\n";
-        $message.= "Vote Code: {$candidate->memo}";
+        $message.= "{$candidate->user->name} has entered the race!\n";
+        $message.= "Vote Code: {$candidate->memo}\n\n";
+        $message.= "\"{$candidate->content}\"";
 
         return $message;
     }
