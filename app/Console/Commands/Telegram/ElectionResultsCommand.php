@@ -26,8 +26,9 @@ class ElectionResultsCommand extends Command
 
         if($election = Election::find($arguments[0]))
         {
+            $link = route('elections.show', ['election' => $election->id]);
             $text = "*{$election->event->name}*\n";
-            $text.= $election->decided_at ? "The Final Results" : "Vote Before {$election->block_index}!\n";
+            $text.= $election->decided_at ? "The Final Results" : "Vote Before {$election->block_index} w/ [{$election->asset->display_name}]({$link})!\n";
 
             $candidates = $election->candidates()
                 ->orderBy('votes_total', 'desc')
@@ -37,7 +38,7 @@ class ElectionResultsCommand extends Command
             foreach($candidates as $candidate)
             {
                 $i++;
-                $text.= "{$i}. {$candidate->user->name} ({$candidate->memo}) __{$candidate->votes_total_normalized} Votes__\n";
+                $text.= "{$i}. {$candidate->user->name} ({$candidate->memo}) = {$candidate->votes_total_normalized}\n";
             }
         }
         else
