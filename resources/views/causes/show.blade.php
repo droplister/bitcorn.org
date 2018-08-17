@@ -16,7 +16,6 @@
                     <div class="col-lg-8">
                         @include('causes.partials.content')
                         @include('causes.partials.progress')
-                        @include('causes.partials.comments')
                     </div>
                     <div class="col-lg-4">
                         @include('causes.partials.sidebar')
