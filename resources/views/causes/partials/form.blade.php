@@ -93,7 +93,7 @@
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $errors->first('asset_id') }}</strong>
                 </span>
-            @else
+            @endif
         </div>
 
         <div class="col-12 col-md-6 offset-md-4">
