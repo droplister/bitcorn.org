@@ -175,7 +175,13 @@
         <div class="form-check">
             <input class="form-check-input" type="checkbox" name="terms" id="terms" style="height:inherit">
 
-            <label class="form-check-label" for="terms"> I have read the above notices and <a href="https://bitcorn.org/disclaimer" target="_blank">this disclaimer</a>. It's not lost on me that this is a light-hearted memetic project and I submit this cause in that spirit.</label>
+            <label class="form-check-label" for="terms"> I have read the above notices and <a href="https://bitcorn.org/disclaimer" target="_blank">this disclaimer</a>. It's not lost on me that this is a light-hearted memetic project and I submit this cause in that spirit. <span class="text-danger">*</span></label>
+
+            @if ($errors->has('terms'))
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $errors->first('terms') }}</strong>
+                </span>
+            @endif
         </div>
     </div>
 
