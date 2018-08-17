@@ -114,12 +114,12 @@ class CausesController extends Controller
 
         if($target > $asset->issuance)
         {
-            return back()->with('error', 'You cannot raise more than asset\'s supply.');
+            return back()->withInput()->with('warning', 'You cannot raise more than asset\'s supply.');
         }
 
         if($request->ended_at > Carbon::now()->addDays(45))
         {
-            return back()->with('error', 'You cannot run a campaign longer than 45 days.');
+            return back()->withInput()->with('warning', 'You cannot run a campaign longer than 45 days.');
         }
 
         $image_path = Storage::putFile('public/causes', $request->image);

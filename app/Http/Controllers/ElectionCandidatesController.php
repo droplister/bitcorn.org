@@ -37,7 +37,7 @@ class ElectionCandidatesController extends Controller
 
         if($election->candidates()->where('user_id', '=', Auth::user()->id)->exists())
         {
-            return back()->with('error', 'You are already a candidate!');
+            return back()->withInput()->with('warning', 'You are already a candidate!');
         }
 
         $candidate = Candidate::create([
