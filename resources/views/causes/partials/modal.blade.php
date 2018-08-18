@@ -18,7 +18,7 @@
                 <p>Use this pledge code in the memo field when sending (plain-text):</p>
                 <div class="card mb-3 bg-primary">
                     <div class="card-body text-white">
-                        { $cause->memo }}
+                        {{ $cause->memo }}
                     </div>
                 </div>
                 <p><b>Notice:</b> By sending {{ $cause->asset->display_name }} you are making a non-refundable, non-deductible, pledge. All funds raised will be released to {{ $cause->user->name }} on {{ $cause->ended_at->format('F j, Y') }}, regardless of their target goal.</p>
