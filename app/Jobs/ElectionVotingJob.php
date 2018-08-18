@@ -133,6 +133,9 @@ class ElectionVotingJob implements ShouldQueue
      */
     private function getVoteData($candidate)
     {
+        $end_block = Cache::get('block_index') - config('bitcorn.confirmations');
+        if($end_block >= $this->election->block_index - 1) $end_block = $this->election->block_index - 1;
+
         return $this->counterparty->execute('get_sends', [
             'filters' => [
                 ['field' => 'asset', 'op' => '==', 'value' => $this->election->asset->name],
@@ -140,7 +143,7 @@ class ElectionVotingJob implements ShouldQueue
                 ['field' => 'memo', 'op' => '==', 'value' => $candidate->memo],
                 ['field' => 'status', 'op' => '==', 'value' => 'valid']
             ],
-            'end_block' => $this->election->block_index - 1,
+            'end_block' => $end_block,
         ]);
     }
 }
