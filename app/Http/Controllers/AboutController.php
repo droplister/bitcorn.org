@@ -25,7 +25,7 @@ class AboutController extends Controller
         );
 
         // "The Board"
-        $users = Cache::remember('members', 60,
+        $users = Cache::remember('members', 1440,
             function () {
                 $last_election = Election::latest('decided_at')->first();
 

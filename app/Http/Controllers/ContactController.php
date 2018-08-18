@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Mail\ContactEmail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use App\Http\Requests\Contact\StoreRequest;
 
 class ContactController extends Controller
 {
@@ -22,23 +23,16 @@ class ContactController extends Controller
     /**
      * Handle Contact
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\Contact\StoreRequest
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreRequest $request)
     {
-        // Basic Validation
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required|email',
-            'message' => 'required',
-            'g-recaptcha-response' => 'required|captcha',
-        ]);
+        $email = new ContactEmail($request->name, $request->email, $request->message);
 
-        // Send Via Email
-        Mail::to(config('bitcorn.contact_email'))
-            ->send(new ContactEmail($request->name, $request->email, $request->message));
+        Mail::to(config('bitcorn.contact_email'))->send($email);
 
-        return redirect(route('contact.create'))->with('success', 'Email Sent');
+        return redirect(route('contact.create'))
+            ->with('success', 'Success - Email Sent');
     }
 }
