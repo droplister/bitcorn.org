@@ -179,7 +179,7 @@ class Cause extends Model
      */
     public function isFunded()
     {
-        return $this->funded_at;
+        return $this->funded_at !== null;
     }
 
     /**
@@ -189,7 +189,7 @@ class Cause extends Model
      */
     public function isApproved()
     {
-        return $this->approved_at;
+        return $this->approved_at !== null;
     }
 
     /**
@@ -199,7 +199,7 @@ class Cause extends Model
      */
     public function isRejected()
     {
-        return $this->rejected_at;
+        return $this->rejected_at !== null;
     }
 
     /**
