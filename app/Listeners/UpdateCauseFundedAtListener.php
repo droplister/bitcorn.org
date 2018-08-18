@@ -37,9 +37,7 @@ class UpdateCauseFundedAtListener
     {
         $message = "*{$cause->title}*\n";
         $link = route('causes.show', ['cause' => $cause->id]);
-        $message.= "Target: {$cause->target_normalized} {$cause->asset->display_name}\n";
-        $message.= "Pledged: {$cause->pledged_normalized} {$cause->asset->display_name}\n";
-        $message.= "The target has been met! [LEARN MORE]($link)";
+        $message.= "Target of {$cause->target_normalized} {$cause->asset->display_name} has [been met]($link)!";
 
         return $message;
     }
