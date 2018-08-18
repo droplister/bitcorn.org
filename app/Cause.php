@@ -220,7 +220,7 @@ class Cause extends Model
      */
     public function isPending()
     {
-        return ! $this->approved_at && ! $this->rejected_at;
+        return $this->approved_at === null && $this->rejected_at === null;
     }
 
     /**
