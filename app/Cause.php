@@ -227,7 +227,7 @@ class Cause extends Model
      */
     public function scopeApproved($query)
     {
-        return $query->whereNotNull('approved_at');
+        return $query->whereNotNull('approved_at')->whereNull('rejected_at');
     }
 
     /**
@@ -235,7 +235,7 @@ class Cause extends Model
      */
     public function scopePendingApproval($query)
     {
-        return $query->whereNull('approved_at');
+        return $query->whereNull('approved_at')->whereNull('rejected_at');
     }
 
     /**
