@@ -73,6 +73,18 @@ class Election extends Model
     }
 
     /**
+     * Was Elected
+     * 
+     * @return boolean
+     */
+    public function wasElected($user_id)
+    {
+        return $this->candidates()->elected()
+            ->where('user_id', '=', $user_id)
+            ->exists();        
+    }
+
+    /**
      * Active
      */
     public function scopeActive($query)

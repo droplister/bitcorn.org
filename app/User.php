@@ -65,7 +65,7 @@ class User extends Authenticatable
     {
         $last_election = Election::latest('decided_at')->first();
 
-        return $last_election ? $last_election->candidates()->elected()->where('user_id', '=', $this->is)->exists() : false;
+        return $last_election ? $last_election->wasElected($this->id) : false;
     }
 
     /**
