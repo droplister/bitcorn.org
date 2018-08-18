@@ -2,7 +2,7 @@
     <a href="{{ route('dashboard.index') }}" class="list-group-item list-group-item-action{{ $active === 'dashboard' ? ' active' : '' }}">
       Dashboard
     </a>
-    <a href="{{ route('users.causes.index', ['user' => $user->id]) }}" class="list-group-item list-group-item-action{{ $active === 'causes' ? ' active' : '' }}">
+    <a href="{{ route('users.causes.index', ['user' => Auth::user()->id]) }}" class="list-group-item list-group-item-action{{ $active === 'causes' ? ' active' : '' }}">
       My Causes
     </a>
     <a href="{{ route('causes.create') }}" class="list-group-item list-group-item-action{{ $active === 'cause' ? ' active' : '' }}">
