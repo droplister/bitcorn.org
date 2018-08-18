@@ -1,6 +1,7 @@
 <div class="row mb-5">
     <div class="col">
         <form method="POST" action="{{ route('causes.update', ['cause' => $cause->id]) }}">
+            @method('PUT')
             @csrf
 
             <input type="hidden" name="decision" value="approved_at">
@@ -14,6 +15,7 @@
     </div>
     <div class="col">
         <form method="POST" action="{{ route('causes.update', ['cause' => $cause->id]) }}">
+            @method('PUT')
             @csrf
 
             <input type="hidden" name="decision" value="rejected_at">
