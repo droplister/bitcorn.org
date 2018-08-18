@@ -130,7 +130,7 @@ class CausesPledgesJob implements ShouldQueue
             'filters' => [
                 ['field' => 'asset', 'op' => '==', 'value' => $this->cause->asset->name],
                 ['field' => 'destination', 'op' => '==', 'value' => config('bitcorn.deposit_address')],
-                ['field' => 'memo', 'op' => '==', 'value' => $cause->memo],
+                ['field' => 'memo', 'op' => '==', 'value' => $this->cause->memo],
                 ['field' => 'status', 'op' => '==', 'value' => 'valid']
             ],
         ]);
