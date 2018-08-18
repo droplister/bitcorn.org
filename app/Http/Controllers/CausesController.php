@@ -86,7 +86,7 @@ class CausesController extends Controller
      */
     public function store(Request $request)
     {
-        $this->authorize('create');
+        $this->authorize('create', Cause::class);
 
         $request->validate([
             'title' => 'required|max:255',
