@@ -2,10 +2,20 @@
 
 namespace App;
 
+use App\Events\VoteCreatedEvent;
 use Illuminate\Database\Eloquent\Model;
 
 class Vote extends Model
 {
+    /**
+     * The event map for the model.
+     *
+     * @var array
+     */
+    protected $dispatchesEvents = [
+        'created' => VoteCreatedEvent::class,
+    ];
+
     /**
      * The attributes that are mass assignable.
      *
