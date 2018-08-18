@@ -31,7 +31,7 @@ class AnnounceCausePledgeListener
     private function getMessage($vote)
     {
         $message = "*{$vote->election->event->name}*\n";
-        $message.= "+{$vote->amount_normalized} votes for {$vote->candidate->user->name}!";
+        $message.= "+{$vote->amount_normalized} votes for {$vote->candidate->user->name} ({$vote->candidate->memo})!";
 
         return $message;
     }
