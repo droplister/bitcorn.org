@@ -31,6 +31,7 @@ class CausesController extends Controller
     public function index(Request $request)
     {
         $ended_causes = Cause::ended()->get();
+
         $active_causes = Cause::popular()->get();
 
         return view('causes.index', compact('active_causes', 'ended_causes'));
@@ -93,7 +94,7 @@ class CausesController extends Controller
         $cause = Cause::create($request->all());
 
         return redirect(route('users.causes.index', ['user' => $request->user()->id]))
-            ->with('success', 'Cause Created - Approval Pending');
+            ->with('success', 'Success - Cause Created');
     }
 
     /**

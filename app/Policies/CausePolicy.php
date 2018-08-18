@@ -68,6 +68,6 @@ class CausePolicy
      */
     public function delete(User $user, Cause $cause)
     {
-        return $cause->pledged === 0 && $user->isBoard();
+        return false;
     }
 }
