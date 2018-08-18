@@ -6,19 +6,19 @@
 <h6>Required Info:</h6>
 <ul>
     <li>
-        <i class="fa fa-{{ $user->description ? 'check text-success' : 'times text-warning' }}"></i>
+        <i class="fa fa-{{ Auth::user()->description ? 'check text-success' : 'times text-warning' }}"></i>
         Profile
     </li>
     <li>
-        <i class="fa fa-{{ $user->image_url ? 'check text-success' : 'times text-warning' }}"></i>
+        <i class="fa fa-{{ Auth::user()->image_url ? 'check text-success' : 'times text-warning' }}"></i>
         Image
     </li>
     <li>
-        <i class="fa fa-{{ $user->location ? 'check text-success' : 'times text-warning' }}"></i>
+        <i class="fa fa-{{ Auth::user()->location ? 'check text-success' : 'times text-warning' }}"></i>
         Location
     </li>
     <li>
-        <i class="fa fa-{{ $user->twitter_url || $user->website_url ? 'check text-success' : 'times text-warning' }}"></i>
+        <i class="fa fa-{{ Auth::user()->twitter_url || Auth::user()->website_url ? 'check text-success' : 'times text-warning' }}"></i>
         Twitter or Website
     </li>
 </ul>

@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use Storage;
 use App\Asset;
 use App\Cause;
-use Auth, Storage;
+use Illuminate\Http\Request;
 use App\Events\CauseReviewedEvent;
 use App\Http\Requests\Causes\StoreRequest;
-use Illuminate\Http\Request;
+use App\Http\Requests\Causes\UpdateRequest;
 
 class CausesController extends Controller
 {
@@ -19,9 +20,6 @@ class CausesController extends Controller
     public function __construct()
     {
         $this->middleware('auth')->except(['index', 'show']);
-        $this->middleware('can:view,cause')->only('show');
-        $this->middleware('can:update,cause')->only('update');
-        $this->middleware('can:delete,cause')->only('destroy');
     }
 
     /**
@@ -60,10 +58,9 @@ class CausesController extends Controller
      */
     public function create(Request $request)
     {
-        $user = Auth::user();
         $assets = Asset::whereType('pledge')->get();
 
-        return view('causes.create', compact('user', 'assets'));
+        return view('causes.create', compact('assets'));
     }
 
     /**
@@ -100,16 +97,12 @@ class CausesController extends Controller
     /**
      * Update Cause
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\Causes\UpdateRequest  $request
      * @param  \App\Cause  $cause
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Cause $cause)
+    public function update(UpdateRequest $request, Cause $cause)
     {
-        $request->validate([
-            'decision' => 'required|in:approved_at,rejected_at',
-        ]);
-
         $cause->touchTime($request->decision);
 
         event(new CauseReviewedEvent($cause));
@@ -126,6 +119,8 @@ class CausesController extends Controller
      */
     public function destroy(Request $request, Cause $cause)
     {
+        $this->authorize('delete', $cause);
+
         return $cause->delete();
     }
 

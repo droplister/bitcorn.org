@@ -14,7 +14,7 @@
             </div>
             <div class="col-md-8">
                 @include('partials.session')
-                @if($user->hasCompleteProfile())
+                @if(Auth::user()->hasCompleteProfile())
                 <div class="card">
                     <div class="card-header">New Cause</div>
 
