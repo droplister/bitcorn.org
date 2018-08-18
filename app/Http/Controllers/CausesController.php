@@ -56,6 +56,8 @@ class CausesController extends Controller
     {
         $cause = Cause::findOrFail($cause);
 
+        $this->authorize('view', $cause);
+
         $pledges = $cause->pledges()->take(10)->latest()->get();
 
         return view('causes.show', compact('cause', 'pledges'));
@@ -69,8 +71,6 @@ class CausesController extends Controller
      */
     public function create(Request $request)
     {
-        // Add User Validation
-
         $user = Auth::user();
 
         $assets = Asset::whereType('pledge')->get();
@@ -86,7 +86,7 @@ class CausesController extends Controller
      */
     public function store(Request $request)
     {
-        // Add User Validation
+        $this->authorize('create');
 
         $request->validate([
             'title' => 'required|max:255',
@@ -152,7 +152,7 @@ class CausesController extends Controller
      */
     public function destroy(Request $request, $cause)
     {
-        // Add User Validation
+        $this->authorize('delete', $cause);
 
         $cause = Cause::findOrFail($cause);
         $cause->delete();
