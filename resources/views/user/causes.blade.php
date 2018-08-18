@@ -15,7 +15,7 @@
             <div class="col-md-8">
                 @foreach($causes as $cause)
                 @if($cause->approved_at)
-                <div class="card">
+                <div class="card mb-4">
                     <div class="card-header">
                         <a href="{{ route('causes.show', ['causes' => $cause->id]) }}">{{ $cause->name }}</a>
                     </div>
@@ -33,7 +33,7 @@
                     </div>
                 </div>
                 @else
-                <div class="card">
+                <div class="card mb-4">
                     <div class="card-header">
                         <a href="{{ route('causes.show', ['causes' => $cause->id]) }}">{{ $cause->name }}</a>
                     </div>

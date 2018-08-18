@@ -99,7 +99,7 @@ class CausesPledgesJob implements ShouldQueue
         foreach($pledge_data as $data)
         {
             $tx = Tx::firstOrCreateTx($data);
-            $pledge = Pledge::firstOrCreatePledge($cause, $tx, $data);
+            $pledge = Pledge::firstOrCreatePledge($this->cause, $tx, $data);
         }
     }
 
@@ -111,7 +111,7 @@ class CausesPledgesJob implements ShouldQueue
     private function updateTotalPledged()
     {
         // Sum Pledges
-        $total_pledged = $cause->pledges()->sum('amount');
+        $total_pledged = $this->cause->pledges()->sum('amount');
 
         return $this->cause->update([
             'pledged' => $total_pledged,
