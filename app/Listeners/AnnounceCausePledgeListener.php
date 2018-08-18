@@ -17,10 +17,10 @@ class AnnounceCausePledgeListener
      */
     public function handle(PledgeCreatedEvent $event)
     {
-        $message = $this->getMessage($event->pledge);
-        $channel = $this->getChannel($event->pledge->cause);
+        $chat = $this->getChannel($event->pledge->cause);
+        $message = $this->getMessage($event->pledge, $chat);
 
-        SendMessageJob::dispatch($message, $channel);
+        SendMessageJob::dispatch($message, $chat);
     }
 
     /**
@@ -31,10 +31,12 @@ class AnnounceCausePledgeListener
      */
     private function getMessage($pledge)
     {
-        $message = "*{$pledge->cause->title}*\n";
         $link = route('causes.show', ['cause' => $pledge->cause->id]);
-        $message.= "{$pledge->amount_normalized} {$pledge->cause->asset->display_name} pledged to [this cause]($link).\n";
-        $message.= $pledge->cause->hasEnded() && $pledge->cause->fundsWereReleased() ? "*PLEDGE RECEIVED AFTER PAYOUT*" : "";
+        $amount = "{$pledge->amount_normalized} {$pledge->cause->asset->display_name}";
+
+        $message = "*{$pledge->cause->title}*\n";
+        $message.= "{$amount} pledged to [this cause]($link).\n";
+        $message.= $chat === 'private' ? "*Cause Inactive - Please investigate.*" : "";
 
         return $message;
     }
@@ -47,7 +49,7 @@ class AnnounceCausePledgeListener
      */
     private function getChannel($cause)
     {
-        if($cause->hasEnded())
+        if($cause->hasEnded() || $cause->isRejected())
         {
             return 'private';
         }

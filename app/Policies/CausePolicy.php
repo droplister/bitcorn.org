@@ -56,7 +56,7 @@ class CausePolicy
      */
     public function update(User $user, Cause $cause)
     {
-        return $cause->isPending() && $user->isBoard();
+        return $cause->pledged === 0 && $user->isBoard();
     }
 
     /**
