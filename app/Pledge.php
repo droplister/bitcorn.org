@@ -2,10 +2,20 @@
 
 namespace App;
 
+use App\Events\PledgeCreatedEvent;
 use Illuminate\Database\Eloquent\Model;
 
 class Pledge extends Model
 {
+    /**
+     * The event map for the model.
+     *
+     * @var array
+     */
+    protected $dispatchesEvents = [
+        'created' => PledgeCreatedEvent::class,
+    ];
+
     /**
      * The attributes that are mass assignable.
      *
@@ -55,5 +65,24 @@ class Pledge extends Model
     public function tx()
     {
         return $this->belongsTo(Tx::class);
+    }
+
+    /**
+     * First or Create Pledge
+     *
+     * @param  \App\Cause  $cause
+     * @param  \App\Tx  $tx
+     * @param  array  $data
+     * @return \App\Pledge
+     */
+    public static function firstOrCreatePledge($cause, $tx, $data)
+    {
+        return static::firstOrCreate([
+            'cause_id' => $cause->id,
+            'tx_id' => $tx->id,
+        ],[
+            'address' => $data['source'],
+            'amount' => $data['quantity'],
+        ]);
     }
 }

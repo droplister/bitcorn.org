@@ -2,21 +2,20 @@
 
 namespace App\Console\Commands;
 
-use Cache;
-use App\Election;
-use App\Jobs\ElectionReportJob;
+use App\Cause;
+use App\Jobs\CausesPledgesJob;
 use Illuminate\Console\Command;
 
-class ElectionReportCommand extends Command
+class CausesPledgesCommand extends Command
 {
     /*
     |--------------------------------------------------------------------------
-    | Election Report Command
+    | Causes Pledges Command
     |--------------------------------------------------------------------------
     |
-    | The purpose of this command is to check if any elections are ending
-    | soon and if any are it reports that to Telegram as a sort of
-    | coundown to the polls closing and the final decision.
+    | The purpose of this command is to constantly check for deposits
+    | made using a cause's pledge code by firing the job which
+    | handles that function for every cause, always.
     |
     */
 
@@ -25,14 +24,14 @@ class ElectionReportCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'election:report';
+    protected $signature = 'causes:pledges';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Report Ending Elections';
+    protected $description = 'Handle Cause Pledges';
 
     /**
      * Create a new command instance.
@@ -51,11 +50,11 @@ class ElectionReportCommand extends Command
      */
     public function handle()
     {
-        $elections = Election::active()->get();
+        $causes = Cause::get();
 
-        foreach($elections as $election)
+        foreach($causes as $cause)
         {
-            ElectionReportJob::dispatch($election);
+            CausesPledgesJob::dispatch($cause);
         }
     }
 }

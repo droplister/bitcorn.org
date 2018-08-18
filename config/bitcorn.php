@@ -12,7 +12,7 @@ return [
     'confirmations' => env('CONFIRMATIONS', 2),
     'contact_email' => env('CONTACT_EMAIL', 'bitcorncrops+contact@gmail.com'),
     'ballot_address' => env('BALLOT_ADDRESS', '1VoteMg3ENEknHm6WyJMcXMaFdQqz9GvQ'),
-    'deposit_address' => env('DEPOSIT_ADDRESS', '1BitcornFoundationVotingxxy262cTk'),
+    'deposit_address' => env('DEPOSIT_ADDRESS', '1Cause3Csh36GMnDEHatN6hXyTRUCNyM8y'),
     'public_chat_id' => env('PUBLIC_CHAT_ID'),
     'private_chat_id' => env('PRIVATE_CHAT_ID'),
     'telegram_webhook' => env('TELEGRAM_WEB_HOOK'),

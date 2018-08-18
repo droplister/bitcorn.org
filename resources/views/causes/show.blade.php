@@ -24,4 +24,5 @@
             </div>
         </section>
     </main>
+    @include('causes.partials.modal')
 @endsection

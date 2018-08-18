@@ -173,6 +173,36 @@ class Cause extends Model
     }
 
     /**
+     * Is Approved
+     * 
+     * @return boolean
+     */
+    public function isApproved()
+    {
+        return $this->approved_at;
+    }
+
+    /**
+     * Is Rejected
+     * 
+     * @return boolean
+     */
+    public function isRejected()
+    {
+        return $this->rejected_at;
+    }
+
+    /**
+     * Funds Released
+     * 
+     * @return boolean
+     */
+    public function fundsWereReleased()
+    {
+        return $this->released_at;
+    }
+
+    /**
      * Approved Causes
      */
     public function scopeApproved($query)

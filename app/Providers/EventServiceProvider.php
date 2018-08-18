@@ -19,6 +19,10 @@ class EventServiceProvider extends ServiceProvider
         'App\Events\CandidateCreatedEvent' => [
             'App\Listeners\AnnounceElectionCandidateListener',
         ],
+        'App\Events\PledgeCreatedEvent' => [
+            'App\Listeners\UpdateCauseFundedAtListener',
+            'App\Listeners\AnnounceCausePledgeListener',
+        ],
         'App\Events\TxCreatedEvent' => [
             'App\Listeners\UpdateTxListener',
         ],

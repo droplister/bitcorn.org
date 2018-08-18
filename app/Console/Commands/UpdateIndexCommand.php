@@ -65,6 +65,9 @@ class UpdateIndexCommand extends Command
             // Only fire when necessary
             if($this->isNewBlockIndex())
             {
+                // Handle pledges
+                $this->call('causes:pledges');
+
                 // Calculate votes
                 $this->call('election:voting');
 

@@ -18,9 +18,11 @@
             <span>{{ $cause->memo }}</span>
         </li>
     </ul>
-    <button class="btn btn-block btn-warning mt-5">
+    @if(! $cause->hasEnded())
+    <button type="button" class="btn btn-block btn-warning mt-5" data-toggle="modal" data-target="#pledgeModalCenter">
         Pledge {{ $cause->asset->display_name }}
     </button>
+    @endif
 </div>
 @if(count($pledges))
 <div class="widget widget_categories xs-sidebar-widget">
