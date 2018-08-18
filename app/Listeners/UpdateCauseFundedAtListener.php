@@ -17,8 +17,6 @@ class UpdateCauseFundedAtListener
      */
     public function handle(PledgeCreatedEvent $event)
     {
-        sleep(10); // Causes Are Updated After Pledge
-
         $this->updateFundedAt($event->pledge->cause);
     }
 
