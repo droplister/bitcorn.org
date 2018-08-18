@@ -9,7 +9,7 @@
         </h1>
         <div class="row justify-content-center">
             <div class="col-md-4 mb-4">
-                @include('partials.sidebar', ['active' => 'elections'])
+                @include('dashboard.sidebar', ['active' => 'elections'])
             </div>
             <div class="col-md-8">
                 @include('partials.session')

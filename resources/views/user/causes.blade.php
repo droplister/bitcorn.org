@@ -10,7 +10,7 @@
         </h1>
         <div class="row justify-content-center">
             <div class="col-md-4 mb-4">
-                @include('partials.sidebar', ['active' => 'causes'])
+                @include('dashboard.sidebar', ['active' => 'causes'])
             </div>
             <div class="col-md-8">
                 @foreach($causes as $cause)

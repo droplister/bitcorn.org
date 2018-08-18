@@ -20,7 +20,7 @@
                         @include('elections.partials.platforms')
                     </div>
                     <div class="col-lg-4">
-                        @include('elections.partials.sidebar')
+                        @include('elections.sidebar')
                     </div>
                 </div>
             </div>
