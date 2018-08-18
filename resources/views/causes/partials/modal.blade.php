@@ -9,11 +9,19 @@
                 </button>
             </div>
             <div class="modal-body">
-                <p>You can support this cause by sending {{ $cause->asset->display_name }} to the addess shown below:</p>
-                <blockquote>{{ config('bitcorn.deposit_address') }}</blockquote>
-                <p>When making your pledge, make sure you include this pledge code as a plain-text memo:</p>
-                <blockquote>{{ $cause->memo }}</blockquote>
-                <p>By sending {{ $cause->asset->display_name }} you are making a non-refundable, non-deductible, pledge. All funds raised will be released to {{ $cause->user->name }} on {{ $cause->ended_at->format('F j, Y') }}.</p>
+                <p>You can support this cause by sending {{ $cause->asset->display_name }} to this addess:</p>
+                <div class="card mb-3 bg-primary">
+                    <div class="card-body text-white">
+                        {{ config('bitcorn.deposit_address') }}
+                    </div>
+                </div>
+                <p>Use this pledge code in the memo field when sending (plain-text):</p>
+                <div class="card mb-3 bg-primary">
+                    <div class="card-body text-white">
+                        { $cause->memo }}
+                    </div>
+                </div>
+                <p><b>Notice:</b> By sending {{ $cause->asset->display_name }} you are making a non-refundable, non-deductible, pledge. All funds raised will be released to {{ $cause->user->name }} on {{ $cause->ended_at->format('F j, Y') }}, regardless of their target goal.</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
