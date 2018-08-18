@@ -173,6 +173,16 @@ class Cause extends Model
     }
 
     /**
+     * Is Funded
+     * 
+     * @return boolean
+     */
+    public function isFunded()
+    {
+        return $this->funded_at;
+    }
+
+    /**
      * Is Approved
      * 
      * @return boolean

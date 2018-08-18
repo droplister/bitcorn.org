@@ -17,14 +17,38 @@ class UpdateCauseFundedAtListener
      */
     public function handle(PledgeCreatedEvent $event)
     {
-        if($event->pledge->cause->pledged >= $event->pledge->cause->target)
+        sleep(10); // Causes Are Updated After Pledge
+
+        $this->updateFundedAt($event->pledge->cause);
+    }
+
+    /**
+     * Update Funded At
+     *
+     * @param  \App\Cause  $cause
+     * @return void
+     */
+    private function updateFundedAt($cause)
+    {
+        if(! $cause->isFunded() && $cause->pledged >= $cause->target)
         {
-            $event->pledge->cause->touchTime('funded_at');
+            $cause->touchTime('funded_at');
 
-            $message = $this->getMessage($event->pledge->cause);
-
-            SendMessageJob::dispatch($message);
+            $this->sendMessage($cause);
         }
+    }
+
+    /**
+     * Send Message
+     *
+     * @param  \App\Cause  $cause
+     * @return void
+     */
+    private function sendMessage($cause)
+    {
+        $message = $this->getMessage($cause);
+
+        SendMessageJob::dispatch($message);
     }
 
     /**
