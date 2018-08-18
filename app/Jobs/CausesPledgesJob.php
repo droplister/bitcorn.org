@@ -84,6 +84,9 @@ class CausesPledgesJob implements ShouldQueue
 
         // Update Total Pledged
         $this->updateTotalPledged();
+
+        // Update Funded At
+        $this->updateFundedAt();
     }
 
     /**
@@ -116,6 +119,19 @@ class CausesPledgesJob implements ShouldQueue
         return $this->cause->update([
             'pledged' => $total_pledged,
         ]);
+    }
+
+    /**
+     * Update Funded At
+     * 
+     * @return void
+     */
+    private function updateFundedAt()
+    {
+        if(! $this->cause->isFunded() && $this->cause->pledged >= $this->cause->target)
+        {
+            return $this->cause->touchTime('funded_at');
+        }
     }
 
     /**
