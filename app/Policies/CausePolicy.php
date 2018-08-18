@@ -56,7 +56,7 @@ class CausePolicy
      */
     public function update(User $user, Cause $cause)
     {
-        return $user->isBoard() || $cause->user_id === $user->id;
+        return $user->isBoard();
     }
 
     /**

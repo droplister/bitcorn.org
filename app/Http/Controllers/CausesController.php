@@ -79,7 +79,7 @@ class CausesController extends Controller
     }
 
     /**
-     * Store Event
+     * Store Cause
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -141,6 +141,28 @@ class CausesController extends Controller
 
         return redirect(route('users.causes.index', ['user' => Auth::user()->id]))
             ->with('success', 'Cause Created');
+    }
+
+    /**
+     * Update Cause
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  integer  $cause
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $cause)
+    {
+        $cause = Cause::findOrFail($cause);
+
+        $this->authorize('update', $cause);
+
+        $request->validate([
+            'decision' => 'required|in:approved_at,rejected_at',
+        ]);
+
+        $cause->touchTime($request->decision);
+
+        return redirect(route('causes.show', ['cause' => $cause->id]));
     }
 
     /**

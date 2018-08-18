@@ -15,7 +15,11 @@
                 <div class="row">
                     <div class="col-lg-8">
                         @include('causes.partials.content')
-                        @include('causes.partials.progress')
+                        @if($cause->isPending())
+                            @include('causes.partials.approval')
+                        @else
+                            @include('causes.partials.progress')
+                        @endif
                     </div>
                     <div class="col-lg-4">
                         @include('causes.partials.sidebar')

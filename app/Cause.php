@@ -193,6 +193,16 @@ class Cause extends Model
     }
 
     /**
+     * Is Pending
+     * 
+     * @return boolean
+     */
+    public function isPending()
+    {
+        return ! $this->approved_at && ! $this->rejected_at;
+    }
+
+    /**
      * Funds Released
      * 
      * @return boolean
