@@ -22,7 +22,7 @@
                         @endif
                     </div>
                     <div class="col-lg-4">
-                        @include('causes.sidebar')
+                        @include('causes.partials.sidebar')
                     </div>
                 </div>
             </div>
