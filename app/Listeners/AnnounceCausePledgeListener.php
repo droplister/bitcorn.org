@@ -33,7 +33,7 @@ class AnnounceCausePledgeListener
     {
         $message = "*{$pledge->cause->title}*\n";
         $link = route('causes.show', ['cause' => $pledge->cause->id]);
-        $message.= "{$pledge->amount_normalized} {$pledge->cause->asset->display_name} pledged! [LEARN MORE]($link)\n";
+        $message.= "{$pledge->amount_normalized} {$pledge->cause->asset->display_name} pledged to [this cause]($link).\n";
         $message.= $pledge->cause->hasEnded() && $pledge->cause->fundsWereReleased() ? "*PLEDGE RECEIVED AFTER PAYOUT*" : "";
 
         return $message;

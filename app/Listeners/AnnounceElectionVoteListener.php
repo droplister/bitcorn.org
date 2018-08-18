@@ -31,7 +31,8 @@ class AnnounceElectionVoteListener
     private function getMessage($vote)
     {
         $message = "*{$vote->candidate->election->event->name}*\n";
-        $message.= "+{$vote->amount_normalized} votes for {$vote->candidate->user->name} ({$vote->candidate->memo})!";
+        $link = route('elections.show', ['election' => $vote->candidate->election->id]);
+        $message.= "+{$vote->amount_normalized} votes for [{$vote->candidate->user->name}]($link) ({$vote->candidate->memo})";
 
         return $message;
     }
