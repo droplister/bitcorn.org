@@ -40,10 +40,9 @@ class CausePolicy
      * Determine whether the user can create causes.
      *
      * @param  \App\User  $user
-     * @param  \App\Cause  $cause
      * @return boolean
      */
-    public function create(User $user, Cause $cause)
+    public function create(User $user)
     {
         return $user->hasCompleteProfile();
     }
