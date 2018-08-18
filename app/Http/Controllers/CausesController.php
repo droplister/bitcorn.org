@@ -6,6 +6,7 @@ use App\Asset;
 use App\Cause;
 use Carbon\Carbon;
 use Auth, Cache, Storage;
+use App\Events\CauseReviewedEvent;
 use Illuminate\Http\Request;
 
 class CausesController extends Controller
@@ -161,6 +162,8 @@ class CausesController extends Controller
         ]);
 
         $cause->touchTime($request->decision);
+
+        event(new CauseReviewedEvent($cause));
 
         return redirect(route('causes.show', ['cause' => $cause->id]));
     }
