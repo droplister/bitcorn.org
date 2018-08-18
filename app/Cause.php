@@ -63,6 +63,17 @@ class Cause extends Model
     ];
 
     /**
+     * Set Content
+     *
+     * @param  string  $value
+     * @return void
+     */
+    public function setContentAttribute($value)
+    {
+        $this->attributes['content'] = strip_tags($value);
+    }
+
+    /**
      * Cause Name
      *
      * @return string

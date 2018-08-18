@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Asset;
 use App\Cause;
-use Carbon\Carbon;
-use Auth, Cache, Storage;
+use Auth, Storage;
 use App\Events\CauseReviewedEvent;
+use App\Http\Requests\Causes\StoreRequest;
 use Illuminate\Http\Request;
 
 class CausesController extends Controller
@@ -19,6 +19,9 @@ class CausesController extends Controller
     public function __construct()
     {
         $this->middleware('auth')->except(['index', 'show']);
+        $this->middleware('can:view,cause')->only('show');
+        $this->middleware('can:update,cause')->only('update');
+        $this->middleware('can:delete,cause')->only('destroy');
     }
 
     /**
@@ -29,19 +32,8 @@ class CausesController extends Controller
      */
     public function index(Request $request)
     {
-        // Active Causes
-        $active_causes = Cache::remember('active_causes', 60,
-            function () {
-                return Cause::popular()->get();
-            }
-        );
-
-        // Ended Causes
-        $ended_causes = Cache::remember('ended_causes', 60,
-            function () {
-                return Cause::ended()->get();
-            }
-        );
+        $ended_causes = Cause::ended()->get();
+        $active_causes = Cause::popular()->get();
 
         return view('causes.index', compact('active_causes', 'ended_causes'));
     }
@@ -50,15 +42,11 @@ class CausesController extends Controller
      * Show Cause
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  integer  $cause
+     * @param  \App\Cause  $cause
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request, $cause)
+    public function show(Request $request, Cause $cause)
     {
-        $cause = Cause::findOrFail($cause);
-
-        $this->authorize('view', $cause);
-
         $pledges = $cause->pledges()->take(10)->latest()->get();
 
         return view('causes.show', compact('cause', 'pledges'));
@@ -73,7 +61,6 @@ class CausesController extends Controller
     public function create(Request $request)
     {
         $user = Auth::user();
-
         $assets = Asset::whereType('pledge')->get();
 
         return view('causes.create', compact('user', 'assets'));
@@ -82,81 +69,43 @@ class CausesController extends Controller
     /**
      * Store Cause
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\Causes\StoreRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreRequest $request)
     {
-        $this->authorize('create', Cause::class);
-
-        $request->validate([
-            'title' => 'required|max:255',
-            'subtitle' => 'required|max:255',
-            'content' => 'required|max:5000',
-            'address' => 'required|min:26|max:34',
-            'memo' => 'required|unique:causes|min:4|max:12',
-            'target' => 'required|min:10|integer',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif|dimensions:width=370,height=240',
-            'asset_id' => 'required|exists:assets,id',
-            'ended_at' => 'required|date|after:yesterday',
-            'terms' => 'required',
-        ]);
-
-        $asset = Asset::find($request->asset_id);
-
-        if($asset->divisible)
+        // Additional validation
+        if($warning = $this->guardAgainstInvalidRequests($request))
         {
-            $target = $request->target * 100000000;
-        }
-        else
-        {
-            $target = $request->target;
+            return back()->withInput()->with('warning', $warning);
         }
 
-        if($target > $asset->issuance)
-        {
-            return back()->withInput()->with('warning', 'You cannot raise more than asset\'s supply.');
-        }
-
-        if($request->ended_at > Carbon::now()->addDays(45))
-        {
-            return back()->withInput()->with('warning', 'You cannot run a campaign longer than 45 days.');
-        }
-
+        // Store thumbnail image
         $image_path = Storage::putFile('public/causes', $request->image);
-        $image_url = Storage::url($image_path);
+        $image_url = url(Storage::url($image_path));
 
-        $cause = Cause::create([
-            'user_id' => Auth::user()->id,
-            'asset_id' => $request->asset_id,
-            'title' => $request->title,
-            'subtitle' => $request->subtitle,
-            'content' => $request->content,
-            'address' => $request->address,
-            'memo' => $request->memo,
-            'target' => $request->target,
-            'content' => strip_tags($request->content),
-            'image_url' => url($image_url),
-            'ended_at' => $request->ended_at,
+        // Merge additional data
+        $request->merge([
+            'image_url' => $image_url,
+            'user_id' => $request->user()->id,
         ]);
 
-        return redirect(route('users.causes.index', ['user' => Auth::user()->id]))
-            ->with('success', 'Cause Created');
+        // Create the cause
+        $cause = Cause::create($request->all());
+
+        return redirect(route('users.causes.index', ['user' => $request->user()->id]))
+            ->with('success', 'Cause Created - Approval Pending');
     }
 
     /**
      * Update Cause
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  integer  $cause
+     * @param  \App\Cause  $cause
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $cause)
+    public function update(Request $request, Cause $cause)
     {
-        $cause = Cause::findOrFail($cause);
-
-        $this->authorize('update', $cause);
-
         $request->validate([
             'decision' => 'required|in:approved_at,rejected_at',
         ]);
@@ -172,16 +121,29 @@ class CausesController extends Controller
      * Destroy Cause
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  integer  $cause
+     * @param  \App\Cause  $cause
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request, $cause)
+    public function destroy(Request $request, Cause $cause)
     {
-        $this->authorize('delete', $cause);
+        return $cause->delete();
+    }
 
-        $cause = Cause::findOrFail($cause);
-        $cause->delete();
+    /**
+     * Guard Against Invalid Requests
+     * 
+     * @param  \App\Http\Requests\Causes\StoreRequest  $request
+     * @return mixed
+     */
+    private function guardAgainstInvalidRequests(StoreRequest $request)
+    {
+        $target = Asset::find($request->asset_id)->divisible ? toSatoshi($request->target) : $request->target;
 
-        return 'OK';
+        if($target > $asset->issuance)
+        {
+            return 'You cannot raise more than asset\'s issuance.';
+        }
+
+        return false;
     }
 }
