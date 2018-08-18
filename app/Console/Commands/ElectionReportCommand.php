@@ -2,7 +2,6 @@
 
 namespace App\Console\Commands;
 
-use Cache;
 use App\Election;
 use App\Jobs\ElectionReportJob;
 use Illuminate\Console\Command;

@@ -2,6 +2,7 @@
 
 namespace App\Jobs;
 
+use Cache;
 use App\Election;
 use App\Jobs\SendMessageJob;
 use Illuminate\Bus\Queueable;
