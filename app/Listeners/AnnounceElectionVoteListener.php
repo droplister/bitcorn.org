@@ -7,7 +7,7 @@ use App\Events\VoteCreatedEvent;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class AnnounceCausePledgeListener
+class AnnounceElectionVoteListener
 {
     /**
      * Handle the event.
