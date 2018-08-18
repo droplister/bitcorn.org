@@ -126,6 +126,8 @@ class CausesPledgesJob implements ShouldQueue
      */
     private function getPledgeData()
     {
+        $end_block = Cache::get('block_index') - config('bitcorn.confirmations');
+
         return $this->counterparty->execute('get_sends', [
             'filters' => [
                 ['field' => 'asset', 'op' => '==', 'value' => $this->cause->asset->name],
@@ -133,6 +135,7 @@ class CausesPledgesJob implements ShouldQueue
                 ['field' => 'memo', 'op' => '==', 'value' => $this->cause->memo],
                 ['field' => 'status', 'op' => '==', 'value' => 'valid']
             ],
+            'end_block' => $end_block,
         ]);
     }
 }
