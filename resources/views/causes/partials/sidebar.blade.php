@@ -25,7 +25,7 @@
     @endif
 </div>
 @if(count($pledges))
-<div class="widget widget_categories xs-sidebar-widget">
+<div class="widget widget_categories xs-sidebar-widget mt-5">
     <h3 class="widget-title">Recent Pledges</h3>
     <ul class="xs-side-bar-list">
         @foreach($pledges as $pledge)
