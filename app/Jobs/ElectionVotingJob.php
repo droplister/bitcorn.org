@@ -6,7 +6,7 @@ use App\Tx;
 use App\Vote;
 use App\Election;
 use JsonRPC\Client;
-use Log, Throwable;
+use Cache, Log, Throwable;
 use Illuminate\Bus\Queueable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
