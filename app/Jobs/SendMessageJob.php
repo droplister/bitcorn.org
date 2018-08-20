@@ -86,6 +86,8 @@ class SendMessageJob implements ShouldQueue
             'chat_id' => $chat_id, 
             'text' => $this->message,
             'parse_mode' => 'Markdown',
+            'disable_notification' => true,
+            'disable_web_page_preview' => true,
         ]);
     }
 }

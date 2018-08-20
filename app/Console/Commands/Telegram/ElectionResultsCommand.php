@@ -22,9 +22,9 @@ class ElectionResultsCommand extends Command
      */
     public function handle($arguments)
     {
-        $arguments = explode(' ', $arguments);
+        $election = $this->getElection($arguments);
 
-        if($election = Election::find($arguments[0]))
+        if($election)
         {
             $percent = number_format($election->votes()->sum('amount') / $election->asset->issuance * 100, 1);
             $link = route('elections.show', ['election' => $election->id]);
@@ -47,7 +47,7 @@ class ElectionResultsCommand extends Command
         else
         {
             $max = Election::count();
-            $text = "Please provide a valid election number. (1-{$max})";
+            $text = "No active election. Enter: 1-{$max}.";
         }
 
         $this->replyWithMessage([
@@ -56,5 +56,18 @@ class ElectionResultsCommand extends Command
             'disable_notification' => true,
             'disable_web_page_preview' => true,
         ]);
+    }
+
+    /**
+     * Get Election
+     * 
+     * @param  string  $arguments
+     * @return mixed
+     */
+    private function getElection($arguments)
+    {
+        $id = explode(' ', $arguments)[0];
+
+        return Election::find($id) ? Election::find($id) : Election::active()->first();
     }
 }
