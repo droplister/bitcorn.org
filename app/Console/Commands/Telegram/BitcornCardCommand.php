@@ -2,10 +2,21 @@
 
 namespace App\Console\Commands\Telegram;
 
+use Curl\Curl;
 use Telegram\Bot\Commands\Command;
 
 class BitcornCardCommand extends Command
 {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->curl = new Curl();
+    }
+
     /**
      * @var string Command Name
      */
