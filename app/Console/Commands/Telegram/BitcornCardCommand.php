@@ -35,16 +35,8 @@ class BitcornCardCommand extends Command
         $card = explode(' ', $arguments)[0];
         $data = $this->getCard($card);
 
-        if(! $data)
-        {
-            $cards = $this->getCards();
-            $random = array_rand($cards);
-            $data = $cards[$random];
-        }
-
         if($data)
         {
-            \Log::info(serialize($data));
             if(substr($data['card'], -3) === 'gif')
             {
                 $this->replyWithDocument(['document' => $data['card']]);
@@ -64,20 +56,6 @@ class BitcornCardCommand extends Command
     private function getCard($card)
     {
         $this->curl->get('https://bitcorns.com/api/cards/' . $card);
-
-        if ($this->curl->error) return null; // Errors
-
-        return json_decode($this->curl->response, true);
-    }
-
-    /**
-     * Get Cards API
-     * 
-     * @return array
-     */
-    private function getCards()
-    {
-        $this->curl->get('https://bitcorns.com/api/cards');
 
         if ($this->curl->error) return null; // Errors
 
