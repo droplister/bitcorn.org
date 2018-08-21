@@ -38,7 +38,8 @@ class BitcornCardCommand extends Command
         if(! $data)
         {
             $cards = $this->getCards();
-            $data = array_random($cards, 1)[0];
+            $random = array_rand($cards);
+            $data = $cards[$random];
         }
 
         if($data)
