@@ -9,7 +9,7 @@ class BitcornCardCommand extends Command
     /**
      * @var string Command Name
      */
-    protected $name = '/c';
+    protected $name = 'c';
 
     /**
      * @var string Command Description
