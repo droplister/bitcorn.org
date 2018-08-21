@@ -22,11 +22,13 @@ class AnnounceAsBotCommand extends Command
      */
     public function handle($arguments)
     {
-        $chat_id = $this->getUpdate()->getChat()->getId();
+        $update = $this->getUpdate();
+        $chat = $update->getChat();
+        $chat_id = $chat->getId();
 
         if($chat_id === config('bitcorn.private_chat_id'))
         {
-            $message = $this->getUpdate()->getMessage()->getText();
+            $message = $update->getMessage()->getText();
 
             SendMessageJob::dispatch($message, 'public');
         }
