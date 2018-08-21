@@ -24,7 +24,7 @@ class AnnounceAsBotCommand extends Command
     {
         $chat_id = $this->getUpdate()->getMessage()->getChat()->getId();
 
-        if($chat_id === config('bitcorn.private_chat_id'))
+        if($chat_id == config('bitcorn.private_chat_id'))
         {
             $message = $this->getUpdate()->getMessage()->getText();
 
