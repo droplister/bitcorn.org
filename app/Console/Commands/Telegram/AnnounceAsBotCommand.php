@@ -1,0 +1,34 @@
+<?php
+
+namespace App\Console\Commands\Telegram;
+
+use App\Jobs\SendMessageJob;
+use Telegram\Bot\Commands\Command;
+
+class AnnounceAsBotCommand extends Command
+{
+    /**
+     * @var string Command Name
+     */
+    protected $name = 'a';
+
+    /**
+     * @var string Command Description
+     */
+    protected $description = 'Announce Command';
+
+    /**
+     * {@inheritdoc}
+     */
+    public function handle($arguments)
+    {
+        $chat_id = $this->getUpdate()->getChat()->getId();
+
+        if($chat_id === config('bitcorn.private_chat_id'))
+        {
+            $message = $this->getUpdate()->getMessage()->getText();
+
+            SendMessageJob::dispatch($message, 'public');
+        }
+    }
+}
