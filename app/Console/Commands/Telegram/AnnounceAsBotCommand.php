@@ -26,7 +26,7 @@ class AnnounceAsBotCommand extends Command
 
         if($chat_id == config('bitcorn.private_chat_id'))
         {
-            $message = $this->getUpdate()->getMessage()->getText();
+            $message = str_replace('/a ', '', $this->getUpdate()->getMessage()->getText());
 
             SendMessageJob::dispatch($message, 'public');
         }
