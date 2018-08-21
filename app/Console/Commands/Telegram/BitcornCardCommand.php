@@ -43,6 +43,7 @@ class BitcornCardCommand extends Command
 
         if($data)
         {
+            \Log::info(serialize($data));
             if(substr($data['card'], -3) === 'gif')
             {
                 $this->replyWithDocument(['document' => $data['card']]);
