@@ -53,9 +53,9 @@ class ElectionReportJob implements ShouldQueue
     {
         if($this->isEnding())
         {
-            $message = $this->getMessage();
+            // $message = $this->getMessage();
 
-            SendMessageJob::dispatch($message);
+            // SendMessageJob::dispatch($message);
         }
     }
 
