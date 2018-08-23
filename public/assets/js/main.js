@@ -258,7 +258,7 @@ $(document).ready(function() {
             + '<span class="timer-count">%-D <span class="timer-title">Days</span></span>  ' 
             + '<span class="timer-count">%H <span class="timer-title">Hours</span></span> ' 
             + '<span class="timer-count">%M <span class="timer-title">Minutes</span></span> ' 
-            + '<span class="timer-count">%S <span class="timer-title">Secods</span></span>'));
+            + '<span class="timer-count">%S <span class="timer-title">Seconds</span></span>'));
         });
     });
 
