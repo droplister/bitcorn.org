@@ -43,14 +43,7 @@ class BitcornCardCommand extends Command
 
         if($data && isset($data['card']))
         {
-            if(substr($data['card'], -3) === 'gif')
-            {
-                $this->replyWithDocument(['document' => $data['card']]);
-            }
-            else
-            {
-                $this->replyWithPhoto(['photo' => $data['card']]);
-            }
+            $this->replyWithDocument(['document' => $data['card']]);
         }
     }
 
