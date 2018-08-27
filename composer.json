@@ -15,7 +15,7 @@
         "albertcht/invisible-recaptcha": "^1.8",
         "andreasindal/laravel-markdown": "3.0",
         "curl/curl": "^1.9",
-        "droplister/json-rpc": "dev-master",
+        "fguillot/json-rpc": "dev-master",
         "fideloper/proxy": "^4.0",
         "guzzlehttp/guzzle": "^6.3",
         "irazasyed/telegram-bot-sdk": "^2.0",
