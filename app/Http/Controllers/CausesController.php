@@ -135,7 +135,9 @@ class CausesController extends Controller
      */
     private function guardAgainstInvalidRequests(StoreRequest $request)
     {
-        $target = Asset::find($request->asset_id)->divisible ? toSatoshi($request->target) : $request->target;
+        $asset = Asset::find($request->asset_id);
+
+        $target = $asset->divisible ? toSatoshi($request->target) : $request->target;
 
         if($target > $asset->issuance)
         {
