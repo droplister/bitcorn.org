@@ -39,7 +39,7 @@
     </ul>
 </div>
 @endif
-@if(Auth::user()->isAdmin())
+@if(Auth::user() && Auth::user()->isAdmin())
 <div class="mt-5">
     <form method="POST" action="{{ route('causes.destroy', ['cause' => $cause->id]) }}">
         @method('DELETE')

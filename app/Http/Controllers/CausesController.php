@@ -46,7 +46,7 @@ class CausesController extends Controller
      */
     public function show(Request $request, Cause $cause)
     {
-        if($cause->approved_at === null)
+        if($cause->isPending())
         {
             $this->authorize('view', $cause);
         }
