@@ -10,18 +10,20 @@
             </div>
             <div class="modal-body">
                 <p>You can support this cause by sending {{ $cause->asset->display_name }} to this addess:</p>
-                <div class="card mb-3 bg-primary">
-                    <div class="card-body text-white">
-                        {{ config('bitcorn.deposit_address') }}
+                <div class="card mb-3 bg-default">
+                    <div class="card-body">
+                        <a href="https://xchain.io/address/{{ config('bitcorn.deposit_address') }}" target="_blank">
+                            {{ config('bitcorn.deposit_address') }}
+                        </a>
                     </div>
                 </div>
                 <p>Use this pledge code in the memo field when sending (plain-text):</p>
-                <div class="card mb-3 bg-primary">
-                    <div class="card-body text-white">
+                <div class="card mb-3 bg-default">
+                    <div class="card-body">
                         {{ $cause->memo }}
                     </div>
                 </div>
-                <p><b>Notice:</b> By sending {{ $cause->asset->display_name }} you are making a non-refundable, non-deductible, pledge. All funds raised will be released to {{ $cause->user->name }} on {{ $cause->ended_at->format('F j, Y') }}, regardless of their target goal.</p>
+                <p><small><em><b>Notice:</b> By sending {{ $cause->asset->display_name }} you are making a non-refundable, non-deductible, pledge.</em></small></p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

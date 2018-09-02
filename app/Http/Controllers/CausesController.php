@@ -84,10 +84,14 @@ class CausesController extends Controller
         $image_path = Storage::putFile('public/causes', $request->image);
         $image_url = url(Storage::url($image_path));
 
+        // Asset
+        $asset = Asset::find($request->asset_id);
+
         // Merge additional data
         $request->merge([
             'image_url' => $image_url,
             'user_id' => $request->user()->id,
+            'target' => $asset->divisible ? normalizeQuantity($request->target, true) : $request->target,
         ]);
 
         // Create the cause
