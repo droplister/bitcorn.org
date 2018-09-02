@@ -46,6 +46,11 @@ class CausesController extends Controller
      */
     public function show(Request $request, Cause $cause)
     {
+        if($cause->approved_at === null)
+        {
+            $this->authorize('view', $cause);
+        }
+
         $pledges = $cause->pledges()->take(10)->latest()->get();
 
         return view('causes.show', compact('cause', 'pledges'));
