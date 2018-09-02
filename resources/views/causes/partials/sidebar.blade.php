@@ -19,7 +19,7 @@
         </li>
     </ul>
     @if(! $cause->hasEnded())
-    <button type="button" class="btn btn-block btn-warning mt-5" data-toggle="modal" data-target="#pledgeModalCenter">
+    <button type="button" class="btn btn-block btn-primary mt-5" data-toggle="modal" data-target="#pledgeModalCenter">
         Pledge {{ $cause->asset->display_name }}
     </button>
     @endif
