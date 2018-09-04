@@ -23,7 +23,7 @@
             </a>
             <ul class="xs-list-with-content">
                 <li>
-                    {{ $cause->pledged }} <span>Pledged</span>
+                    {{ number_format($cause->pledged_normalized) }} <span>Pledged</span>
                 </li>
                 <li>
                     <span class="number-percentage-count number-percentage" data-value="{{ $cause->progress }}" data-animation-duration="3500">0</span>% <span>Funded</span>
