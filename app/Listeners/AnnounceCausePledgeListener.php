@@ -29,7 +29,7 @@ class AnnounceCausePledgeListener
      * @param  \App\Pledge  $pledge
      * @return void
      */
-    private function getMessage($pledge)
+    private function getMessage($pledge, $chat)
     {
         $link = route('causes.show', ['cause' => $pledge->cause->id]);
         $amount = "{$pledge->amount_normalized} {$pledge->cause->asset->display_name}";
