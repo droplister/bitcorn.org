@@ -19,7 +19,7 @@ class CausePolicy
      */
     public function before($user, $ability)
     {
-        if ($user->isAdmin()) {
+        if ($user->isAdmin() || $user->isBoard()) {
             return true;
         }
     }
@@ -33,7 +33,7 @@ class CausePolicy
      */
     public function view(User $user, Cause $cause)
     {
-        return $cause->isApproved() || $user->isBoard() || $cause->user_id === $user->id;
+        return $cause->user_id === $user->id;
     }
 
     /**
@@ -56,7 +56,7 @@ class CausePolicy
      */
     public function update(User $user, Cause $cause)
     {
-        return $cause->pledged === 0 && $user->isBoard();
+        return false;
     }
 
     /**
