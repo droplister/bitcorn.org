@@ -32,7 +32,7 @@ class QueueCommand extends Command
             $message = "Card Queue:\n";
 
             foreach($cards as $card) {
-                $message.= "{$card['name']}";
+                $message.= "{$card['name']}\n";
             }
 
             SendMessageJob::dispatch($message, 'private');
