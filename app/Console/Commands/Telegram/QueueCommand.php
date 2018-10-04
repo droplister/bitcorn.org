@@ -46,6 +46,8 @@ class QueueCommand extends Command
      */
     private function getCards()
     {
+        $curl = new Curl();
+
         $curl->get(config('bitcorn.queue_route'));
 
         if ($curl->error) return []; // Some Error
