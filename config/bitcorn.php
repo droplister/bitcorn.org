@@ -16,4 +16,5 @@ return [
     'public_chat_id' => env('PUBLIC_CHAT_ID'),
     'private_chat_id' => env('PRIVATE_CHAT_ID'),
     'telegram_webhook' => env('TELEGRAM_WEB_HOOK'),
+    'queue_route' => env('BITCORN_QUEUE'),
 ];

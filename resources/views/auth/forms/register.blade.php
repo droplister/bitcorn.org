@@ -51,7 +51,7 @@
 
                 <label class="form-check-label" for="terms">
                     {{ __('I agree to the') }}
-                    <a href="{{ route('pages.terms') }}" target="_blank">{{ __('Terms of Service') }}</a>.
+                    <a href="#" target="_blank">{{ __('Terms of Service') }}</a>.
                 </label>
             </div>
         </div>
@@ -60,7 +60,7 @@
     <div class="form-group row mb-0">
         <div class="col-md-6 offset-md-4">
             <button type="submit" class="btn btn-primary">
-                {{ __('Register') }}
+                <i aria-hidden="true" class="fa fa-sign-in"></i> {{ __('Sign up') }}
             </button>
         </div>
     </div>

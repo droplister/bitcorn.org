@@ -58,5 +58,7 @@ return [
     'commands' => [
         App\Console\Commands\Telegram\AnnounceAsBotCommand::class,
         App\Console\Commands\Telegram\ElectionResultsCommand::class,
+        App\Console\Commands\Telegram\QueueCommand::class,
+        App\Console\Commands\Telegram\QueueCardsCommand::class,
     ],
 ];
