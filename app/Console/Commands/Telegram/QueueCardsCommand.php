@@ -42,11 +42,11 @@ class QueueCardsCommand extends Command
      */
     private function getCards()
     {
-        $this->curl->get(config('bitcorn.queue_route'));
+        $curl->get(config('bitcorn.queue_route'));
 
-        if ($this->curl->error) return []; // Some Error
+        if ($curl->error) return []; // Some Error
 
-        return json_decode($this->curl->response, true);
+        return json_decode($curl->response, true);
     }
 
     /**
