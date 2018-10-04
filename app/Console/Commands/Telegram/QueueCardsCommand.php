@@ -27,6 +27,8 @@ class QueueCardsCommand extends Command
 
         if($chat_id == config('bitcorn.private_chat_id'))
         {
+            $cards = $this->getCards();
+            
             foreach($cards as $card)
             {
                 $this->replyWithImage($card);
