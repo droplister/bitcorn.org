@@ -147,7 +147,7 @@ class CausesPledgesJob implements ShouldQueue
         return $this->counterparty->execute('get_sends', [
             'filters' => [
                 ['field' => 'asset', 'op' => '==', 'value' => $this->cause->asset->name],
-                ['field' => 'destination', 'op' => '==', 'value' => config('bitcorn.deposit_address')],
+                ['field' => 'destination', 'op' => '==', 'value' => $this->cause->address],
                 ['field' => 'memo', 'op' => '==', 'value' => $this->cause->memo],
                 ['field' => 'status', 'op' => '==', 'value' => 'valid']
             ],

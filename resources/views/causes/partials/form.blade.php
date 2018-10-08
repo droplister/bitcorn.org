@@ -150,7 +150,7 @@
                     <strong>{{ $errors->first('address') }}</strong>
                 </span>
             @else
-                <small class="form-text text-muted">Bitcorn.org will collect funds and payout to here.</small>
+                <small class="form-text text-muted">Pledgers will pay you directly at this address.</small>
             @endif
         </div>
     </div>
@@ -159,16 +159,8 @@
 
     <h6 class="font-weight-normal">The final steps...</h6>
 
-    <div class="alert alert-danger mt-3">
-        <b>Warning: </b> This is brand new software and bugs may occur. Including, ones that may cause pledged funds to be lost, miscounted, or merely delayed.
-    </div>
-
     <div class="alert alert-warning mt-3">
-        <b>Notice:</b> Once submitted, you cannot edit your cause. Please, review everything above, especially the address where you will be receiving funds raised.
-    </div>
-
-    <div class="alert alert-info mt-3">
-        <b>Info:</b> The way Bitcorn.org works, when your campaign ends, you will be sent whatever amount you were able to raise, regardless of the target you set.
+        <b>Notice:</b> At this time, once submitted, you cannot edit a cause. Please, review everything above, especially the address where you will be receiving funds raised.
     </div>
 
     <div class="form-group">
@@ -188,7 +180,7 @@
     <div class="form-group row mb-0">
         <div class="col-md-6">
             <button type="submit" class="btn btn-primary">
-                {{ __('Submit for Review') }}
+                {{ __('Publish Cause') }}
             </button>
         </div>
     </div>

@@ -99,6 +99,7 @@ class CausesController extends Controller
 
         // Create the cause
         $cause = Cause::create($request->all());
+        $cause->touchTime('approved_at');
 
         return redirect(route('users.causes.index', ['user' => $request->user()->id]))
             ->with('success', 'Success - Cause Created');

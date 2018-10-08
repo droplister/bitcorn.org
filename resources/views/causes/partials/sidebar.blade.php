@@ -39,17 +39,3 @@
     </ul>
 </div>
 @endif
-@if(Auth::user() && Auth::user()->isAdmin())
-<div class="mt-5">
-    <form method="POST" action="{{ route('causes.destroy', ['cause' => $cause->id]) }}">
-        @method('DELETE')
-        @csrf
-
-        <div class="form-group">
-            <button type="submit" class="btn btn-block btn-warning">
-                {{ __('Delete') }}
-            </button>
-        </div>
-    </form>
-</div>
-@endif

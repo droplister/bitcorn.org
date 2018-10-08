@@ -12,8 +12,8 @@
                 <p>You can support this cause by sending {{ $cause->asset->display_name }} to this addess:</p>
                 <div class="card mb-3 bg-default">
                     <div class="card-body">
-                        <a href="https://xchain.io/address/{{ config('bitcorn.deposit_address') }}" target="_blank">
-                            {{ config('bitcorn.deposit_address') }}
+                        <a href="https://xchain.io/address/{{ $cause->address }}" target="_blank">
+                            {{ $cause->address }}
                         </a>
                     </div>
                 </div>
