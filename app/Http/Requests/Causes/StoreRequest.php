@@ -33,7 +33,7 @@ class StoreRequest extends FormRequest
             'content' => 'required|max:5000',
             'address' => 'required|min:26|max:34',
             'memo' => 'required|unique:causes|min:4|max:12',
-            'target' => 'required|min:10|integer',
+            'target' => 'required|min:1|integer',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|dimensions:width=370,height=240',
             'asset_id' => 'required|exists:assets,id',
             'ended_at' => 'required|date|after:yesterday|before_or_equal:' . $fortyFiveDays,

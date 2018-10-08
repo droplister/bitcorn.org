@@ -10,12 +10,12 @@
             <span>{{ number_format($cause->pledged_normalized) }} {{ $cause->asset->display_name }}</span>
         </li>
         <li class="d-flex justify-content-between">
-            Released On: 
-            <span>{{ $cause->ended_at->format('F j') }}</span>
-        </li>
-        <li class="d-flex justify-content-between">
             Pledge Code: 
             <span>{{ $cause->memo }}</span>
+        </li>
+        <li class="d-flex justify-content-between">
+            Campaign {{ $cause->hasEnded() ? 'Ended:' : 'Ends:' }}
+            <span>{{ $cause->ended_at->toDateFormat() }}</span>
         </li>
     </ul>
     @if(! $cause->hasEnded())
