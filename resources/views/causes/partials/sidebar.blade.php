@@ -15,7 +15,7 @@
         </li>
         <li class="d-flex justify-content-between">
             Campaign {{ $cause->hasEnded() ? 'Ended:' : 'Ends:' }}
-            <span>{{ $cause->ended_at->toDateFormat() }}</span>
+            <span>{{ $cause->ended_at->format('F j') }}</span>
         </li>
     </ul>
     @if(! $cause->hasEnded())
