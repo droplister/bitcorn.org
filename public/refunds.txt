@@ -1,4 +1,4 @@
 It is the policy of the Bitcorn Foundation to not give refunds, but exceptions and edge cases do exist.
 
-Cause | Name | Reason
-#5 | Crowdfund New XCP Listings | First cause, not fully funded, re-evaluation of exchange's reputation.
+# | Name | Reason
+1 | Crowdfund New XCP Listings | First cause, not fully funded, re-evaluation of exchange's reputation.
