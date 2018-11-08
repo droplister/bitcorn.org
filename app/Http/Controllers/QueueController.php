@@ -69,15 +69,26 @@ class QueueController extends Controller
         $deny = Decision::where('card', '=', $card)->sum('deny');
 
         // Report to Bitcorns API
-        if($approve + $deny === 4 && $decisions === 2) {
+        if($approve + $deny === 4 && $decisions === 2 && $approve !== $deny) {
             // Final Decision
             $decision = $approve > $deny ? 'approve' : 'deny';
 
             // Touch the API
             $this->touchCard($card, $decision);
+
+            // Success Message
+            $success = 'The decision has been made to ' . $decision . ' this card.';
+        }
+        elseif($approve + $deny === 4 && $decisions === 2 && $approve === $deny) {
+            // Stalemate Restart
+            Decision::where('card', '=', $card)->delete();
+
+            // Success Message
+            $success = 'Voting resulted in a stalemate and has been reset';
         }
 
-        return redirect(route('queue.index'))->with('success', 'Your vote has been cast!');
+        // First Two Voters
+        return redirect(route('queue.index'))->with('success', isset($success) ? $success : 'Your vote has been cast!');
     }
 
     /**
