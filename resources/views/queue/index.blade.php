@@ -15,19 +15,22 @@
             <div class="col-md-8">
                 @foreach($cards as $card)
                 <div class="card mb-4">
-                    <div class="card-header">
-                        <a href="{{ $card['link'] }}?preview=true">
-                            {{ $card['name'] }}
-                        </a>
-                    </div>
-
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-6">
-                                <img src="{{ $card['card'] }}" />
+                            <div class="col-3">
+                                <a href="{{ $card['link'] }}?preview=true" target="_blank">
+                                    <img src="{{ $card['card'] }}" width="100%" />
+                                </a>
                             </div>
-                            <div class="col-6">
-                                <h4>Issued: {{ $card['issued'] }} / Burned: {{ $card['burned'] }} / Supply: {{ $card['supply'] }}</h4>
+                            <div class="col-9">
+                                <h3>
+                                    <a href="{{ $card['link'] }}?preview=true" target="_blank">
+                                        {{ $card['name'] }}
+                                    </a>
+                                </h3>
+                                <h6>
+                                    Issued: {{ $card['issued'] }} / Burned: {{ $card['burned'] }} / Supply: {{ $card['supply'] }}
+                                </h6>
                             </div>
                         </div>
                     </div>
