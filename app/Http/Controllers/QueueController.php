@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Auth;
 use Curl\Curl;
+use App\Decision;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
