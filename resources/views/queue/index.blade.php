@@ -13,6 +13,7 @@
                 @include('dashboard.partials.sidebar', ['active' => 'queue'])
             </div>
             <div class="col-md-8">
+                @include('partials.session')
                 @foreach($cards as $card)
                 <div class="card mb-4">
                     <div class="card-body">

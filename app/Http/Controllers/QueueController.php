@@ -66,12 +66,18 @@ class QueueController extends Controller
 
         // Weigh Their Decisions
         $approve = Decision::where('card', '=', $card)->sum('approve');
-        $deny = Decision::where('card', '=', $card)->sum('approve');
+        $deny = Decision::where('card', '=', $card)->sum('deny');
 
         // Report to Bitcorns API
         if($approve + $deny === 4 && $decisions === 2) {
-            $this->touchCard($card, $approve > $deny ? 'approve' : 'deny');
+            // Final Decision
+            $decision = $approve > $deny ? 'approve' : 'deny';
+
+            // Touch the API
+            $this->touchCard($card, $decision);
         }
+
+        return redirect(route('queue.index'))->with('success', 'Your vote has been cast!');
     }
 
     /**
