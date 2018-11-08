@@ -29,7 +29,7 @@ class QueueController extends Controller
         if(Auth::user()->isAdmin() || Auth::user()->isBoard()) {
             $cards = $this->getCards();
 
-            return view('queue.index');
+            return view('queue.index', compact('cards'));
         }
     }
 
