@@ -2,6 +2,11 @@
     <a href="{{ route('dashboard.index') }}" class="list-group-item list-group-item-action{{ $active === 'dashboard' ? ' active' : '' }}">
       Dashboard
     </a>
+    @if(Auth::user()->isAdmin() || Auth::user()->isBoard())
+    <a href="{{ route('queue.index') }}" class="list-group-item list-group-item-action{{ $active === 'queue' ? ' active' : '' }}">
+      Card Queue
+    </a>
+    @endif
     <a href="{{ route('users.causes.index', ['user' => Auth::user()->id]) }}" class="list-group-item list-group-item-action{{ $active === 'causes' ? ' active' : '' }}">
       My Causes
     </a>
