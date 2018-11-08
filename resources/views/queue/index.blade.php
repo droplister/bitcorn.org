@@ -28,9 +28,24 @@
                                         {{ $card['name'] }}
                                     </a>
                                 </h3>
-                                <h6>
-                                    Issued: {{ $card['issued'] }} / Burned: {{ $card['burned'] }} / Supply: {{ $card['supply'] }}
+                                <h6 class="mb-3">
+                                    Issued: {{ $card['issued'] }} / Burned: {{ $card['burned'] }}
                                 </h6>
+                                @if($decision = Auth::user()->decisions()->where('card', '=', $card['name'])->first())
+                                    <h6 class="mb-3">
+                                        You voted to:
+                                        <span class="{{ $decision->approve ? 'text-success' : 'text-danger' }}">
+                                            {{ $decision->approve ? 'APPROVE' : 'DENY' }}
+                                        </span>
+                                    </h6>
+                                @else
+                                    <a href="{{ route('queue.store', ['card' => $card['name'], 'decision' => 'approve']) }}" class="btn btn-success mr-2">
+                                        Approve
+                                    </a>
+                                    <a href="{{ route('queue.store', ['card' => $card['name'], 'decision' => 'deny']) }}" class="btn btn-danger">
+                                        Deny
+                                    </a>
+                                @endif
                             </div>
                         </div>
                     </div>

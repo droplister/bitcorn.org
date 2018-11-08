@@ -34,6 +34,46 @@ class QueueController extends Controller
     }
 
     /**
+     * Decide on card
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request, $card, $decision)
+    {
+        // Decisions so far...
+        $decisions = Decision::where('card', '=', $card)->count();
+
+        // Cast Their Votes
+        if($decisions < 3) {
+            if(Auth::user()->isAdmin()) {
+                Decision::firstOrCreate([
+                    'user_id' => Auth::user()->id,
+                    'card' => $card,
+                ],[
+                    $decision => 2,
+                ]);
+            }
+            elseif(Auth::user()->isBoard()) {
+                Decision::firstOrCreate([
+                    'user_id' => Auth::user()->id,
+                    'card' => $card,
+                ],[
+                    $decision => 1,
+                ]);
+            }
+        }
+
+        // Weigh Their Decisions
+        $approve = Decision::where('card', '=', $card)->sum('approve');
+        $deny = Decision::where('card', '=', $card)->sum('approve');
+
+        // Report to Bitcorns API
+        if($approve + $deny === 4 && $decisions === 2) {
+            $this->touchCard($card, $approve > $deny ? 'approve' : 'deny');
+        }
+    }
+
+    /**
      * Get Cards API
      * 
      * @return array
@@ -43,6 +83,24 @@ class QueueController extends Controller
         $curl = new Curl();
 
         $curl->get(config('bitcorn.queue_route'));
+
+        if ($curl->error) return []; // Some Error
+
+        return json_decode($curl->response, true);
+    }
+
+    /**
+     * Touch Card API
+     *
+     * @param  string  $card
+     * @param  string  $decision
+     * @return array
+     */
+    private function touchCard($card, $decision)
+    {
+        $curl = new Curl();
+
+        $curl->get(config('bitcorn.approval_route') . '/' . $card . '?decision=' . $decision);
 
         if ($curl->error) return []; // Some Error
 

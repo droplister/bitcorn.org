@@ -45,6 +45,15 @@ class User extends Authenticatable
     {
         return $this->hasMany(Cause::class);
     }
+    /**
+     * User Decisions
+     * 
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function decisions()
+    {
+        return $this->hasMany(Decision::class);
+    }
 
     /**
      * Is Admin

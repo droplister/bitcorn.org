@@ -15,6 +15,7 @@ Auth::routes();
 Route::get('/', 'HomeController@index')->name('home.index');
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard.index');
 Route::get('/queue', 'QueueController@index')->name('queue.index');
+Route::get('/queue/{card}/{decision}', 'QueueController@store')->name('queue.store');
 Route::resource('users', 'UsersController', ['only' => ['update']]);
 Route::resource('users.causes', 'UserCausesController', ['only' => ['index']]);
 Route::resource('causes', 'CausesController');
