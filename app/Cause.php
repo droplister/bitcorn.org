@@ -90,7 +90,7 @@ class Cause extends Model
      */
     public function getProgressAttribute()
     {
-        return number_format($this->pledged / $this->target * 100, 0);
+        return $this->target > 0 ? number_format($this->pledged / $this->target * 100, 0) : 0;
     }
 
     /**
