@@ -12,10 +12,10 @@
     <main class="xs-main">
         <section class="xs-content-section-padding">
             <div class="container">
+                @if(! $cause->isPending())
+                    @include('causes.partials.progress')
+                @endif
                 <div class="d-sm-none">
-                    @if(! $cause->isPending())
-                        @include('causes.partials.progress')
-                    @endif
                     <div class="xs-event-schedule-widget mb-5">
                         <div class="media xs-event-schedule">
                             <div class="media-body">

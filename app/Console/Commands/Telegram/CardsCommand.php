@@ -6,17 +6,17 @@ use Curl\Curl;
 use App\Jobs\SendMessageJob;
 use Telegram\Bot\Commands\Command;
 
-class QueueCardsCommand extends Command
+class CardsCommand extends Command
 {
     /**
      * @var string Command Name
      */
-    protected $name = 'qc';
+    protected $name = 'c';
 
     /**
      * @var string Command Description
      */
-    protected $description = 'Card Queue Command';
+    protected $description = 'Cards Command';
 
     /**
      * {@inheritdoc}

@@ -17,4 +17,14 @@ class Decision extends Model
         'approve',
         'deny',
     ];
+
+    /**
+     * User
+     * 
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

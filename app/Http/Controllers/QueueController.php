@@ -96,11 +96,15 @@ class QueueController extends Controller
      * 
      * @return array
      */
-    private function getCards()
+    private function getCards($publish=false)
     {
         $curl = new Curl();
 
-        $curl->get(config('bitcorn.queue_route'));
+        if ($publish) {
+            $curl->get(config('bitcorn.publish_queue_route'));
+        } else {
+            $curl->get(config('bitcorn.queue_route'));
+        }
 
         if ($curl->error) return []; // Some Error
 
@@ -119,6 +123,24 @@ class QueueController extends Controller
         $curl = new Curl();
 
         $curl->get(config('bitcorn.approval_route') . '/' . $card . '?decision=' . $decision);
+
+        if ($curl->error) return []; // Some Error
+
+        return json_decode($curl->response, true);
+    }
+
+    /**
+     * Publish Card API
+     *
+     * @param  string  $card
+     * @param  string  $decision
+     * @return array
+     */
+    private function publishCard($card)
+    {
+        $curl = new Curl();
+
+        $curl->get(config('bitcorn.publish_route') . '/' . $card);
 
         if ($curl->error) return []; // Some Error
 
