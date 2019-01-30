@@ -28,15 +28,11 @@ class PublishableCommand extends Command
         if($chat_id == config('bitcorn.private_chat_id'))
         {
             $cards = $this->getCards();
-
-            $message = "Publishable:\n";
-
+            
             foreach($cards as $card) {
-                $publish = "[[publish]({$card['link']})]";
-                $message.= "{$card['name']} {$publish}\n";
+                $this->replyWithImage($card);
+                $this->replyWithText($card['name']);
             }
-
-            SendMessageJob::dispatch($message, 'private');
         }
     }
 
@@ -54,5 +50,64 @@ class PublishableCommand extends Command
         if ($curl->error) return []; // Some Error
 
         return json_decode($curl->response, true);
+    }
+
+    /**
+     * Reply With Text
+     * 
+     * @param  string  $text
+     * @return mixed
+     */
+    private function replyWithText($text)
+    {
+        // Reply w/ Message
+        $this->replyWithMessage([
+            'text' => $text,
+            'parse_mode' => 'Markdown',
+            'disable_notification' => true,
+        ]);
+
+        return $text;
+    }
+
+    /**
+     * Reply With Image
+     * 
+     * @param  \App\Card  $card
+     * @return mixed
+     */
+    private function replyWithImage($card)
+    {
+        // Image URL
+        $image_url = $card['card'];
+
+        // Reply w/ Image
+        if($this->isAnimated($image_url))
+        {
+            $this->replyWithDocument([
+                'document' => $image_url,
+                'disable_notification' => true,
+            ]);
+        }
+        else
+        {
+            $this->replyWithPhoto([
+                'photo' => $image_url,
+                'disable_notification' => true,
+            ]);
+        }
+
+        return $image_url;
+    }
+
+    /**
+     * Is Animated
+     *
+     * @param  string  $image_url
+     * @return array
+     */
+    private function isAnimated($image_url)
+    {
+        return substr($image_url, -3) === 'gif';
     }
 }

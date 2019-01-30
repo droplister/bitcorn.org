@@ -18,4 +18,6 @@ return [
     'telegram_webhook' => env('TELEGRAM_WEB_HOOK'),
     'approval_route' => env('BITCORN_APPROVAL_ROUTE'),
     'queue_route' => env('BITCORN_QUEUE_ROUTE'),
+    'faucet_address' => env('FAUCET_ADDRESS'),
+    'faucet_private_key' => env('FAUCET_PRIVATE_KEY'),
 ];

@@ -35,6 +35,15 @@ class QueueCommand extends Command
                 $message.= "{$card['name']}\n";
             }
 
+            $cards = $this->getPublishableCards();
+
+            $message.= "\nPublishable:\n";
+
+            foreach($cards as $card) {
+                $publish = "[publish]({$card['link']})";
+                $message.= "{$card['name']} {$publish}\n";
+            }
+
             SendMessageJob::dispatch($message, 'private');
         }
     }
@@ -52,6 +61,19 @@ class QueueCommand extends Command
 
         if ($curl->error) return []; // Some Error
 
+        return json_decode($curl->response, true);
+    }
+
+    /**
+     * Get Cards API
+     * 
+     * @return array
+     */
+    private function getPublishableCards()
+    {
+        $curl = new Curl();
+        $curl->get(config('bitcorn.queue_route') . '/approved');
+        if ($curl->error) return []; // Some Error
         return json_decode($curl->response, true);
     }
 }
