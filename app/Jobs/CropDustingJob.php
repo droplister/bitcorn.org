@@ -128,7 +128,7 @@ class CropDustingJob implements ShouldQueue
                 'source' => config('bitcorn.faucet_address'),
                 'destination' => $address,
                 'asset' => 'CROPS',
-                'quantity' => 10000,
+                'quantity' => 100000,
                 'memo' => 'Crop Dusted',
                 'allow_unconfirmed_inputs' => true,
                 'fee' => 1000,
