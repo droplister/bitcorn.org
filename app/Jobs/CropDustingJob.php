@@ -86,16 +86,12 @@ class CropDustingJob implements ShouldQueue
 
         // Broadcast Once
         if($dusting->tx_hash === null) {
-            \Log::info($dusting->address);
             // Dust the Address
             $unsigned = $this->createSend($dusting->address);
-            \Log::info($unsigned);
             // Sign the HEX
-            $signed = $this->signSendTx($unsigned); // TODO
-            \Log::info($signed);
+            $signed = $this->signSendTx($unsigned);
             // Publish TX
             $send = $this->publishSend($signed);
-            \Log::info($send);
 
             // Record & Notify
             if($send !== null) {
@@ -104,18 +100,23 @@ class CropDustingJob implements ShouldQueue
                 $dusting->save();
 
                 // Message TXT
-                $message = "You have been dusted with 0.00123456 CROPS!\n";
-                $message.= "Once this send transaction confirms, your farm will have been established on the blockchain and you can visit it here: https://bitcorns.com/farms/{$this->address}\n";
-                $message.= "Monitor the transaction: https://xchain.io/tx/{$dusting->tx_hash}\n";
-
-                // Notify User
-                $this->notifyUser($message);
+                $message = "You have been dusted with 0.001 CROPS! Once this transaction confirms, your farm will have been established on the blockchain and you can visit it here: https://bitcorns.com/farms/{$this->address} (This page will 404 until then.)\n\n";
+                $message.= "Monitor the transaction: https://xchain.io/tx/{$dusting->tx_hash}";
             }
             else
             {
-                \Log::info('Send is NULL');
+                // Message TXT
+                $message = "An error occured when we tried to dust your address.";
             }
         }
+        else
+        {
+            // Message TXT
+            $message = "This address has been dusted before. Sorry! Maybe invite a friend to farm?";
+        }
+
+        // Notify User
+        $this->notifyUser($message);
     }
 
     /**
@@ -131,7 +132,7 @@ class CropDustingJob implements ShouldQueue
                 'source' => config('bitcorn.faucet_address'),
                 'destination' => $address,
                 'asset' => 'CROPS',
-                'quantity' => 123456,
+                'quantity' => 10000,
                 'memo' => 'Crop Dusted',
                 'allow_unconfirmed_inputs' => true,
                 'fee' => 1000,

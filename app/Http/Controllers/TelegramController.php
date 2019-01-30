@@ -66,7 +66,7 @@ class TelegramController extends Controller
      * @return boolean
      */
     private function isBitcornChat($chat_id) {
-        return $chat_id === (int) config('bitcorn.private_chat_id');
+        return $chat_id === (int) config('bitcorn.public_chat_id');
     }
 
     /**
