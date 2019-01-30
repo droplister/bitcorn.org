@@ -29,6 +29,13 @@ class CropDustingJob implements ShouldQueue
     public $tries = 1;
 
     /**
+     * Chat ID
+     *
+     * @var integer
+     */
+    protected $chat_id;
+
+    /**
      * User ID
      *
      * @var integer
@@ -61,8 +68,9 @@ class CropDustingJob implements ShouldQueue
      *
      * @return void
      */
-    public function __construct($user_id, $address)
+    public function __construct($chat_id, $user_id, $address)
     {
+        $this->chat_id = $chat_id;
         $this->user_id = $user_id;
         $this->address = $address;
         $this->bitcoin = new Client(config('bitcorn.bc.api'));
@@ -111,12 +119,7 @@ class CropDustingJob implements ShouldQueue
         }
 
         // Notify Chatroom
-        $this->replyWithMessage([
-            'text' => $message,
-            'parse_mode' => 'Markdown',
-            'disable_notification' => true,
-            'disable_web_page_preview' => true,
-        ]);
+        $this->notifyChat($message);
     }
 
     /**
@@ -194,5 +197,22 @@ class CropDustingJob implements ShouldQueue
             \Log::info('Failed to Send');
             return null;
         }
+    }
+
+    /**
+     * Notify Chat
+     * 
+     * @param  App\Message $message
+     * @return Telegram
+     */
+    private function notifyChat($message)
+    {
+        return \Telegram::sendMessage([
+            'chat_id' => $this->chat_id, 
+            'text' => $message,
+            'parse_mode' => 'Markdown',
+            'disable_notification' => true,
+            'disable_web_page_preview' => true,
+        ]);
     }
 }

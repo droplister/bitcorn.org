@@ -43,7 +43,7 @@ class DustCommand extends Command
            $this->isValidAddress($address) &&
            $this->userNotDusted($user_id, $address)) {
             // Dust 'Em
-            CropDustingJob::dispatch($user_id, $address);
+            CropDustingJob::dispatch($chat_id, $user_id, $address);
         }
     }
 
