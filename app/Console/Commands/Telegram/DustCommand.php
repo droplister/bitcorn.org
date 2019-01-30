@@ -25,7 +25,7 @@ class DustCommand extends Command
     public function handle($arguments)
     {
         // Get Message
-        $messages = $this->getUpdate()->getMessage();
+        $message = $this->getUpdate()->getMessage();
 
         // Get Data
         $user_id = $message->getFrom()->getId();
