@@ -100,19 +100,23 @@ class CropDustingJob implements ShouldQueue
                 $dusting->save();
 
                 // Message TXT
-                $message = "You have been dusted with 0.001 CROPS. Welcome to the corn fields!\n\nOnce this transaction confirms, your farm will be established on the blockchain and you can visit it here:\n https://bitcorns.com/farms/{$this->address}\n(This page will 404 until then.)\n\n";
-                $message.= "Monitor the transaction:\nhttps://xchain.io/tx/{$dusting->tx_hash}";
+                $message = "Welcome to the corn fields! Monitor the tx here:\nhttps://xchain.io/tx/{$dusting->tx_hash}";
             } else {
                 // Message TXT
-                $message = "An error occured when we tried to dust your address.";
+                $message = "Whoops! An error occured.";
             }
         } else {
             // Message TXT
-            $message = "This address has been dusted before. Sorry! Maybe invite a friend to farm?";
+            $message = "Sorry! Address already dusted.";
         }
 
-        // Notify User
-        $this->notifyUser($message);
+        // Notify Chatroom
+        $this->replyWithMessage([
+            'text' => $message,
+            'parse_mode' => 'Markdown',
+            'disable_notification' => true,
+            'disable_web_page_preview' => true,
+        ]);
     }
 
     /**
@@ -190,21 +194,5 @@ class CropDustingJob implements ShouldQueue
             \Log::info('Failed to Send');
             return null;
         }
-    }
-
-    /**
-     * Notify User
-     * 
-     * @param  App\Message $message
-     * @return Telegram
-     */
-    private function notifyUser($message)
-    {
-        return \Telegram::sendMessage([
-            'chat_id' => $this->user_id, 
-            'text' => $message,
-            'parse_mode' => 'Markdown',
-            'disable_web_page_preview' => true,
-        ]);
     }
 }
