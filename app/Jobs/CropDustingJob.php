@@ -134,7 +134,7 @@ class CropDustingJob implements ShouldQueue
                 'quantity' => 123456,
                 'memo' => 'Crop Dusted',
                 'allow_unconfirmed_inputs' => true,
-                'fee_per_kb' => 1,
+                'fee_per_kb' => 2,
             ]);
         } catch (Throwable $e) {
             \Log::info('Unsigned Failed');
