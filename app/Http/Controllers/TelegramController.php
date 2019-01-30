@@ -35,6 +35,9 @@ class TelegramController extends Controller
     {
         $update = $this->telegram->commandsHandler(true);
 
+        // Get Message
+        $message = $update->getMessage();
+
         // Edge Case?
         if ($message === null) {
             return 'Ok';
@@ -63,7 +66,7 @@ class TelegramController extends Controller
      * @return boolean
      */
     private function isBitcornChat($chat_id) {
-        return $chat_id === config('bitcorn.private_chat_id');
+        return $chat_id === (int) config('bitcorn.private_chat_id');
     }
 
     /**

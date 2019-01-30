@@ -78,11 +78,17 @@ class CropDustingJob implements ShouldQueue
         ]);
 
         // Broadcast Once
-        if($dusting->wasRecentlyCreated && $dusting->tx_hash === null) {
+        if($dusting->tx_hash === null) {
+            \Log::info($dusting->address);
             // Dust the Address
-            $unsigned = $this->createSend($address);
+            $unsigned = $this->createSend($dusting->address);
+            \Log::info($unsigned);
+            // Sign the HEX
             $signed = $this->signSendTx($unsigned); // TODO
+            \Log::info($signed);
+            // Publish TX
             $send = $this->publishSend($signed);
+            \Log::info($send);
 
             // Record & Notify
             if($send !== null) {
@@ -98,6 +104,10 @@ class CropDustingJob implements ShouldQueue
                 // Notify User
                 $this->notifyUser($message);
             }
+            else
+            {
+                \Log::info('Send is NULL');
+            }
         }
     }
 
@@ -109,15 +119,19 @@ class CropDustingJob implements ShouldQueue
      */
     private function createSend($address)
     {
-        return $this->counterparty->execute('create_send', [
-            'source' => config('bitcorn.faucet_address'),
-            'destination' => $address,
-            'asset' => 'CROPS',
-            'quantity' => 123456,
-            'memo' => 'Crop Dusted',
-            'allow_unconfirmed_inputs' => true,
-            'fee_per_kb' => 1,
-        ]);
+        try {
+            return $this->counterparty->execute('create_send', [
+                'source' => config('bitcorn.faucet_address'),
+                'destination' => $address,
+                'asset' => 'CROPS',
+                'quantity' => 123456,
+                'memo' => 'Crop Dusted',
+                'allow_unconfirmed_inputs' => true,
+                'fee_per_kb' => 1,
+            ]);
+        } catch (Throwable $e) {
+            \Log::info('Unsigned Failed');
+        }
     }
 
     /**
@@ -128,26 +142,30 @@ class CropDustingJob implements ShouldQueue
      */
     private function signSendTx($hex) {
 
-        $privateKey = config('bitcorn.faucet_private_key');
+        try {
+            $privateKey = config('bitcorn.faucet_private_key');
 
-        $tx = TransactionFactory::fromHex($hex);
+            $tx = TransactionFactory::fromHex($hex);
 
-        $transactionOutputs = [];
-        foreach ($tx->getInputs() as $idx => $input) {
-            $transactionOutput = new TransactionOutput(0, ScriptFactory::fromHex($input->getScript()->getBuffer()->getHex()));
-            array_push($transactionOutputs, $transactionOutput);
+            $transactionOutputs = [];
+            foreach ($tx->getInputs() as $idx => $input) {
+                $transactionOutput = new TransactionOutput(0, ScriptFactory::fromHex($input->getScript()->getBuffer()->getHex()));
+                array_push($transactionOutputs, $transactionOutput);
+            }
+
+            $priv = PrivateKeyFactory::fromWif($privateKey);
+            $signer = new Signer($tx, Bitcoin::getEcAdapter());
+
+            foreach ($transactionOutputs as $idx => $transactionOutput) {
+                $signer->sign($idx, $priv, $transactionOutput);
+            }
+
+            $signed = $signer->get();
+
+            return $signed->getHex();
+        } catch (Throwable $e) {
+            \Log::info('Failed to Sign');
         }
-
-        $priv = PrivateKeyFactory::fromWif($privateKey);
-        $signer = new Signer($tx, Bitcoin::getEcAdapter());
-
-        foreach ($transactionOutputs as $idx => $transactionOutput) {
-            $signer->sign($idx, $priv, $transactionOutput);
-        }
-
-        $signed = $signer->get();
-
-        return $signed->getHex();
     }
 
     /**
@@ -158,9 +176,13 @@ class CropDustingJob implements ShouldQueue
      */
     private function publishSend($raw_tx)
     {
-        return $this->bitcoin->execute('sendrawtransaction', [
-            $raw_tx,
-        ]);
+        try {
+            return $this->bitcoin->execute('sendrawtransaction', [
+                $raw_tx,
+            ]);
+        } catch (Throwable $e) {
+            \Log::info('Failed to Send');
+        }
     }
 
     /**

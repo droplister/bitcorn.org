@@ -1,9 +1,11 @@
 <?php
 
 return [
-    /**
-     * Counterparty API
-     */
+    'bc' => [
+        'api' => env('BC_API'),
+        'user' => env('BC_USER'),
+        'password' => env('BC_PASSWORD'),
+    ],
     'cp' => [
         'api' => env('CP_API', 'http://public.coindaddy.io:4000/api/'),
         'user' => env('CP_USER', 'rpc'),
