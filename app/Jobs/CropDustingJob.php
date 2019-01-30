@@ -102,15 +102,11 @@ class CropDustingJob implements ShouldQueue
                 // Message TXT
                 $message = "You have been dusted with 0.001 CROPS! Once this transaction confirms, your farm will have been established on the blockchain and you can visit it here: https://bitcorns.com/farms/{$this->address} (This page will 404 until then.)\n\n";
                 $message.= "Monitor the transaction: https://xchain.io/tx/{$dusting->tx_hash}";
-            }
-            else
-            {
+            } else {
                 // Message TXT
                 $message = "An error occured when we tried to dust your address.";
             }
-        }
-        else
-        {
+        } else {
             // Message TXT
             $message = "This address has been dusted before. Sorry! Maybe invite a friend to farm?";
         }
@@ -139,6 +135,7 @@ class CropDustingJob implements ShouldQueue
             ]);
         } catch (Throwable $e) {
             \Log::info('Unsigned Failed');
+            return null;
         }
     }
 
@@ -173,6 +170,7 @@ class CropDustingJob implements ShouldQueue
             return $signed->getHex();
         } catch (Throwable $e) {
             \Log::info('Failed to Sign');
+            return null;
         }
     }
 
@@ -190,6 +188,7 @@ class CropDustingJob implements ShouldQueue
             ]);
         } catch (Throwable $e) {
             \Log::info('Failed to Send');
+            return null;
         }
     }
 
