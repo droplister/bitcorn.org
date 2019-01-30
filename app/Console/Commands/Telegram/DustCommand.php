@@ -32,6 +32,12 @@ class DustCommand extends Command
         $chat_id = $message->getChat()->getId();
         $address = $message->getText();
 
+        // Clean Up
+        $address = str_replace('/d', '', $address);
+        $address = str_replace('@BitcornFoundationBot', '', $address);
+        $address = str_replace('@bitcornfoundationbot', '', $address);
+        $address = trim($address);
+
         // Validate
         if($this->isBitcornChat($chat_id) &&
            $this->isValidAddress($address) &&

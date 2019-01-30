@@ -100,8 +100,8 @@ class CropDustingJob implements ShouldQueue
                 $dusting->save();
 
                 // Message TXT
-                $message = "You have been dusted with 0.001 CROPS! Once this transaction confirms, your farm will have been established on the blockchain and you can visit it here: https://bitcorns.com/farms/{$this->address} (This page will 404 until then.)\n\n";
-                $message.= "Monitor the transaction: https://xchain.io/tx/{$dusting->tx_hash}";
+                $message = "You have been dusted with 0.001 CROPS. Welcome to the corn fields!\n\nOnce this transaction confirms, your farm will be established on the blockchain and you can visit it here:\n https://bitcorns.com/farms/{$this->address}\n(This page will 404 until then.)\n\n";
+                $message.= "Monitor the transaction:\nhttps://xchain.io/tx/{$dusting->tx_hash}";
             } else {
                 // Message TXT
                 $message = "An error occured when we tried to dust your address.";
@@ -204,6 +204,7 @@ class CropDustingJob implements ShouldQueue
             'chat_id' => $this->user_id, 
             'text' => $message,
             'parse_mode' => 'Markdown',
+            'disable_web_page_preview' => true,
         ]);
     }
 }
