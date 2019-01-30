@@ -60,6 +60,7 @@ return [
         App\Console\Commands\Telegram\ElectionResultsCommand::class,
         App\Console\Commands\Telegram\QueueCommand::class,
         App\Console\Commands\Telegram\CardsCommand::class,
+        App\Console\Commands\Telegram\DustCommand::class,
         App\Console\Commands\Telegram\PublishableCommand::class,
     ],
 ];
