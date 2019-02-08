@@ -62,5 +62,7 @@ return [
         App\Console\Commands\Telegram\CardsCommand::class,
         App\Console\Commands\Telegram\DustCommand::class,
         App\Console\Commands\Telegram\PublishableCommand::class,
+        App\Console\Commands\Telegram\MerchGlassesCommand::class,
+        App\Console\Commands\Telegram\MerchHoldersCommand::class,
     ],
 ];
