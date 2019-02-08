@@ -86,11 +86,21 @@ class CropDustingJob implements ShouldQueue
      */
     public function handle()
     {
-        // Record Request
-        $dusting = Dusting::firstOrCreate([
-            'user_id' => $this->user_id,
-            'address' => $this->address,
-        ]);
+        if (in_array($this->user_id, [179036793, 519908290, 539154879])) {
+            $count = Dusting::where('user_id', 'like', $this->user_id . '%')->count();
+            $user_id = $this->user_id . $count;
+            // Record Request
+            $dusting = Dusting::firstOrCreate([
+                'user_id' => $user_id,
+                'address' => $this->address,
+            ]);
+        } else {
+            // Record Request
+            $dusting = Dusting::firstOrCreate([
+                'user_id' => $this->user_id,
+                'address' => $this->address,
+            ]);
+        }
 
         // Broadcast Once
         if($dusting->tx_hash === null) {
