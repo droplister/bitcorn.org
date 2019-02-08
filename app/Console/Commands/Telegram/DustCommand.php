@@ -79,7 +79,9 @@ class DustCommand extends Command
      * @return boolean
      */
     private function userNotDusted($user_id, $address) {
-        if (in_array($user_id, [179036793, 519908290, 539154879])) return true;
+        if (in_array($user_id, [179036793, 519908290, 539154879, 450940578, 102298442, 283005849])) {
+            return ! Dusting::where('address', '=', $address)->exists();
+        }
 
         return ! Dusting::where('user_id', '=', $user_id)
             ->orWhere('address', '=', $address)

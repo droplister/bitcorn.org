@@ -86,7 +86,7 @@ class CropDustingJob implements ShouldQueue
      */
     public function handle()
     {
-        if (in_array($this->user_id, [179036793, 519908290, 539154879])) {
+        if (in_array($this->user_id, [179036793, 519908290, 539154879, 450940578, 102298442, 283005849])) {
             $count = Dusting::where('user_id', 'like', $this->user_id . '%')->count();
             $user_id = $this->user_id . $count;
             // Record Request
