@@ -114,10 +114,10 @@ class Tx extends Model
     public static function firstOrCreateTx($data)
     {
         return static::firstOrCreate([
-            'tx_index' => $data['tx_index'],
-        ],[
-            'status' => $data['status'],
             'tx_hash' => $data['tx_hash'],
+        ],[
+            'tx_index' => $data['tx_index'],
+            'status' => $data['status'],
             'block_index' => $data['block_index'],
             'source' => $data['source'],
             'destination' => $data['destination'],
