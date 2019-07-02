@@ -6,6 +6,11 @@ return [
         'user' => env('BC_USER'),
         'password' => env('BC_PASSWORD'),
     ],
+    'cb' => [
+        'api' => env('XCP_CORE_CB_API', 'http://public.coindaddy.io:4100/api/'),
+        'user' => env('XCP_CORE_CB_USER', 'rpc'),
+        'password' => env('XCP_CORE_CB_PASSWORD', '1234'),
+    ],
     'cp' => [
         'api' => env('CP_API', 'http://public.coindaddy.io:4000/api/'),
         'user' => env('CP_USER', 'rpc'),

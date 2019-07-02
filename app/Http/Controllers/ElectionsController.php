@@ -17,7 +17,20 @@ class ElectionsController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth')->except('show');
+        $this->middleware('auth')->except(['index', 'show']);
+    }
+
+    /**
+     * ElectionIndex
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function index(Request $request)
+    {
+        $events = Event::has('election')->get();
+
+        return view('elections.index', compact('events'));
     }
 
     /**

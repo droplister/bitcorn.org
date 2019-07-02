@@ -28,3 +28,4 @@ Route::get('/donate', 'DonateController@index')->name('donate.index');
 Route::get('/disclaimer', 'PagesController@disclaimer')->name('pages.disclaimer');
 Route::get('/privacy', 'PagesController@privacy')->name('pages.privacy');
 Route::get('/terms', 'PagesController@terms')->name('pages.terms');
+Route::get('/xcp-election', 'XcpFoundationController@index')->name('xcp.index');

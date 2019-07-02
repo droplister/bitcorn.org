@@ -77,4 +77,14 @@ class Event extends Model
     {
         return $query->where('scheduled_at', '>', Carbon::yesterday()->toDateString())->oldest('scheduled_at');
     }
+
+    /**
+     * Event Elections
+     * 
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function election()
+    {
+        return $this->hasOne(Election::class);
+    }
 }

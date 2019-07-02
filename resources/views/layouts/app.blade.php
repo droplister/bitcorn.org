@@ -63,6 +63,9 @@
                                     <a href="{{ route('events.index') }}">Events</a>
                                 </li>
                                 <li>
+                                    <a href="{{ route('elections.index') }}">Elections</a>
+                                </li>
+                                <li>
                                     <a href="{{ route('contact.create') }}">Contact</a>
                                 </li>
                             </ul>
