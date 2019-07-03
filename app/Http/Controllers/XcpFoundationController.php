@@ -90,7 +90,7 @@ class XcpFoundationController extends Controller
         $prefix = $request->input('prefix', 'XCPELECTION2019');
 
         // Calculates all the voting
-        $votes = Cache::remember($prefix . '_xcp_vote', '600', function () use ($prefix) {
+        $votes = Cache::remember($prefix . '_xcp_vote', '10', function () use ($prefix) {
             // Election Broadcasts
             $election_broadcasts = $this->getBroadcasts($prefix);
 
